@@ -22,7 +22,7 @@
 6. 打开WSL, copy the newly generated bit file to the RedPitaya’s `/root/tmp` folder
    
         cd /mnt/c/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1
-        scp system_wrapper.bit root@your_rp_ip:Led_blink.bit
+        scp system_wrapper.bit root@192.168.1.3:Led_blink.bit
 7. [Connect to Redpitaya via WSL](https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html#establish-remote-ssh-connection)
     - Username: root
     - Password: root
