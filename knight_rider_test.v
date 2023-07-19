@@ -21,6 +21,12 @@
 
 
 module knight_rider_test(
+
     input clk,
+    output [7:0] led_out
     );
+
+    parameter LEDS_INIT = 10'b1100000000;
+    parameter DIR_INIT = 1;
+
 endmodule
