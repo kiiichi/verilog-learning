@@ -58,6 +58,45 @@
 2. Blocking and non-blocking assignments
    > Blocking assignment is usually used within the always blocks when we want to get a logic circuit made of **gates** and not **latches** or **flip-flops**. It is good practise **not to mix** blocking and non-blocking assignments within one always block.
    
+   区别于官方文档的跑马灯实现方式。同样是使用了 3 assignment methods (blocking assignment, nonblocking assignment, `assign` keyword)
+   
+        ```
+        module knight_rider_test(
+
+        input clk,
+        output [7:0] led_out
+        );
+
+        parameter LEDS_INIT = 10'b0000110000;
+        parameter DIR_INIT = 1;
+
+        reg [9:0] leds = LEDS_INIT; // register for led output
+        reg [2:0] position = 3; // state counter 0->7
+        reg [0:0] direction = DIR_INIT;   // direction indicator
+
+        always @ (posedge clk) begin
+                if (direction == 0) begin
+                leds <= leds << 1;  // bit-shift leds register
+                end 
+                else begin
+                leds <= leds >> 1;  // bit-shift leds register
+                end
+                position <= position + 1;
+        end
+
+        always @ (negedge clk) begin       // change direction
+                if (position == 7) begin     // in the second half
+                direction = direction + 1 ;
+                end 
+        end
+
+        assign led_out = leds[8:1]; // wire output and leds register
+        
+        endmodule
+
+        ```
+
+
 ### 2.3. Latch, Flip-flop and Register
 #### 2.3.1 Latch 锁存器
 
