@@ -55,4 +55,25 @@
         scp system_wrapper.bit root@192.168.1.3:Knight_rider.bit
 ### 2.2. Customize our module
 1. Project Manager -> Add Sources -> Add or create design sources
-2. 
+2. Blocking and non-blocking assignments
+   > Blocking assignment is usually used within the always blocks when we want to get a logic circuit made of **gates** and not **latches** or **flip-flops**. It is good practise **not to mix** blocking and non-blocking assignments within one always block.
+   
+### 2.3. Latch, Flip-flop and Register
+#### 2.3.1 Latch 锁存器
+
+              ·@@@@@@@@@@@@@·        
+              @@           @@        
+        D ====@@           @@==== Q  
+              @@           @@        
+        E ====@@           @@        
+              @@           @@O=== !Q 
+              @@           @@        
+              ·@@@@@@@@@@@@@·        
+                                逻辑符号
+有效信号 EN (E) 为 0 时 D 对输出值 Q 和 !Q 无影响， Q 和 !Q 保持不变。
+有效信号 EN (E) 为 1 时 Q = D, !Q = !D ( D 与 Q 的变化是同步的 )
+#### 2.3.2 Flip-flop (FF) 触发器
+与锁存器类似，也储存1位二进制信息，并用于实现二进制的翻转。
+不同的是：1. 触发器对上升或下降沿敏感，而锁存器对电平敏感。2. 触发器仅仅实现翻转功能，触发和更改存储值是同时的；锁存器存在两层输入，只有 E = 1 时才可写入数据，且可随时写入数据，也就是触发和更改储存值可以是异步的。
+#### 2.3.3 Register 寄存器
+寄存器的存储电路是由锁存器或触发器构成的，具体的也不是很懂，用来储存N位的值，对边沿敏感。
