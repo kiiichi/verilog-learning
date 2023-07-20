@@ -26,12 +26,12 @@ module knight_rider_test(
     output [7:0] led_out
     );
 
-    parameter LEDS_INIT = 10'b1100000000;
+    parameter LEDS_INIT = 10'b0000110000;
     parameter DIR_INIT = 1;
 
     reg [9:0] leds = LEDS_INIT; // register for led output
-    reg [3:0] position = DIR_INIT*8; // state counter 0->15
-    reg direction = DIR_INIT;   // direction indicator
+    reg [2:0] position = 3; // state counter 0->7
+    reg [0:0] direction = DIR_INIT;   // direction indicator
 
     always @ (posedge clk) begin
         if (direction == 0) begin
@@ -43,13 +43,10 @@ module knight_rider_test(
         position <= position + 1;
     end
 
-    always @ (position) begin       // change direction
-        if (position < 8) begin     // in the second half
-            direction = 0;
+    always @ (negedge clk) begin       // change direction
+        if (position == 7) begin     // in the second half
+            direction = direction + 1 ;
         end 
-        else begin
-            direction = 1;
-        end
     end
 
     assign led_out = leds[8:1]; // wire output and leds register
