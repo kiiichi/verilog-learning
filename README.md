@@ -230,3 +230,32 @@ monitor 0x42000000 2  # write: clear, SCLR = 1, CE = 0
 monitor 0x42000000  # read: cfg  on GPIO1
 monitor 0x42000008  # read: data on GPIO2
 ```
+
+### 3.6. Communicate with FPGA via python
+
+```
+import mmap
+import os
+import time
+import numpy as np
+
+axi_gpio_regset = np.dtype([
+    ('gpio1_data'   , 'uint32'),
+    ('gpio1_control', 'uint32'),
+    ('gpio2_data'   , 'uint32'),
+    ('gpio2_control', 'uint32')
+])
+
+memory_file_handle = os.open('/dev/mem', os.O_RDWR)
+axi_mmap = mmap.mmap(fileno=memory_file_handle, length=mmap.PAGESIZE, offset=0x40000000)
+axi_numpy_array = np.recarray(1, axi_gpio_regset, buf=axi_mmap)
+axi_array_contents = axi_numpy_array[0]
+
+freq = 125000000 #FPGA Clock Frequency Hz
+
+axi_array_contents.gpio1_data = 0x02 #clear timer
+axi_array_contents.gpio1_data = 0x01 #start timer
+time.sleep(34.2) # Count to the maximim LED (8 MSB value)
+axi_array_contents.gpio1_data = 0x00 #stop timer
+print("Clock count: ", axi_array_contents.gpio2_data, " calculated time: ", axi_array_contents.gpio2_data/freq, " Seconds")
+```
