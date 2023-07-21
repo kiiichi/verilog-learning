@@ -191,4 +191,8 @@
 
         cat /root/Stopwatch.bit > /dev/xdevcfg
 
-###
+### 3.2. AXI Communication Protocol
+
+> The AXI (Advanced eXtensible Interface) communication protocol is a widely used and popular high-performance interconnect protocol for System-on-Chip (SoC) designs. It was developed by ARM (now part of NVIDIA) as part of the AMBA (Advanced Microcontroller Bus Architecture) specification.
+
+The AXI protocol is designed to facilitate **communication between various IP blocks** within an SoC or FPGA. It provides a standardized way for these IP blocks to communicate with each other, ensuring compatibility, interoperability, and ease of integration.
