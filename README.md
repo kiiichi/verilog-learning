@@ -55,7 +55,7 @@
         scp system_wrapper.bit root@192.168.1.3:Knight_rider.bit
 ### 2.2. Customize our module
 1. Project Manager -> Add Sources -> Add or create design sources
-2. Use `parameter` to define constants
+2. Use `parameter` to define constants, the parameter can be **easily** changed on the BD diagram.
 3. Use `reg` to declare registers
 4. Use `assign` to give value to `net` variables, can't implement on `reg`
 5. In module declaring, the port declarations is like:
@@ -151,3 +151,28 @@
 寄存器的存储电路是由锁存器或触发器构成的，具体的也不是很懂，用来储存N位的值，对边沿敏感。
 
 ### 2.4. Simulation
+1. Add Sources -> Add or create simulation sources
+2. Filename: 'tb' is the abbreviation for "test bench"
+3. Edit .v
+   ```
+   `timescale 1ns / 1ps
+   module knight_rider_tb();
+        reg clock;
+        wire [7:0] out;
+
+        knight_rider kr(
+                .clk(clock), // Connect 'clock' to the 'clk' input port of module 'knight_rider'
+                .led_out(out)
+        );
+
+        initial begin
+                clock = 0;
+                forever #1 clock = ~clock;
+        end
+
+   endmodule
+   ```
+   The clock period is 2ns (1ns high and 1ns low) based on 2 factors above: `timescale 1ns / 1ps` and `forever #1 clock = ~clock`
+4. Add more internal register from **Scope** pannel, just drag the parameters from knight_rider->kr icon to wavefrom name list.
+5. Right click signal name to modify the color, radix, etc
+6. The empty red circles in .v files used to insert breakpoints for debugging.
