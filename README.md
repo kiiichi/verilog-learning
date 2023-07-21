@@ -233,6 +233,8 @@ monitor 0x42000008  # read: data on GPIO2
 
 ### 3.6. Communicate with FPGA via python
 
+Use Jupyter on redpitaya to run the .py file
+
 ```
 import mmap
 import os
