@@ -7,7 +7,7 @@
 ### 1.1. 部署环境
 
 1. 安装Vivado 2020.1 
-   实测 2023.1 也可使用，但是会有很多警告
+   实测 2023.1 也可使用，但是会有~~很多~~更多警告
 2. windows下安装[WSL](https://learn.microsoft.com/zh-cn/windows/wsl/install)
 ### 1.2. 创建工程
 1. 运行vivado 2020.1，打开tcl console，定位到项目文件夹
@@ -129,7 +129,7 @@
         ```
 7. After finish the .v file, right click on block diagram, choose `add module` to use our customized module.
 
-### 2.3. Latch, Flip-flop and Register
+### 2.3. Sup: Latch, Flip-flop and Register
 #### 2.3.1 Latch 锁存器
 
               ·@@@@@@@@@@@@@·        
@@ -149,3 +149,5 @@
 不同的是：1. 触发器对上升或下降沿敏感，而锁存器对电平敏感。2. 触发器仅仅实现翻转功能，触发和更改存储值是同时的；锁存器存在两层输入，只有 E = 1 时才可写入数据，且可随时写入数据，也就是触发和更改储存值可以是异步的。
 #### 2.3.3 Register 寄存器
 寄存器的存储电路是由锁存器或触发器构成的，具体的也不是很懂，用来储存N位的值，对边沿敏感。
+
+### 2.4. Simulation
