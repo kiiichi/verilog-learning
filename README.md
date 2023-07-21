@@ -57,7 +57,34 @@
 1. Project Manager -> Add Sources -> Add or create design sources
 2. Use `parameter` to define constants
 3. Use `reg` to declare registers
-4. Blocking and non-blocking assignments
+4. Use `assign` to give value to `net` variables, can't implement on `reg`
+5. In module declaring, the port declarations is like:
+   ```
+   module MyModule(
+   input clk,
+   input wire reset_n,
+   output reg data_out,
+   output [7:0] led_out
+   output logic data_logic
+   );
+   // Logic of the module goes here
+   endmodule
+   ```
+   The data type used for ports can be `wire`, `reg`, or `logic` (starting from Verilog-2001). The wire type is commonly used for input and output ports, while reg or logic types are used for internal registers or variables.If we declare a port without specifying a data type, **the default type** is `wire`.
+   Grammar summary:
+
+   ```
+   module module_name (list_of_ports);
+   // Port declarations (input, output, inout, or wire declarations)
+   // Internal signal and variable declarations
+   // Combinational and sequential logic statements
+   // Module instances (instantiations of other modules)
+   // Other procedural blocks (always, initial, task, function, etc.)
+   // Output assignments (for output ports, assign statements, or continuous assignments)
+   endmodule
+   ```
+
+6. Blocking and non-blocking assignments
    > Blocking assignment is usually used within the always blocks when we want to get a logic circuit made of **gates** and not **latches** or **flip-flops**. It is good practise **not to mix** blocking and non-blocking assignments within one always block.
    
    区别于官方文档的跑马灯实现方式。同样是使用了 3 assignment methods (blocking assignment, nonblocking assignment, `assign` keyword)
@@ -97,7 +124,7 @@
         endmodule
 
         ```
-5. After finish the .v file, right click on block diagram, choose `add module` to use our customized module.
+7. After finish the .v file, right click on block diagram, choose `add module` to use our customized module.
 
 ### 2.3. Latch, Flip-flop and Register
 #### 2.3.1 Latch 锁存器
