@@ -40,7 +40,7 @@
     
         redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
     or restart redpitaya
-### 1.4.Block Design
+### 1.4. Block Design
 使用 tcl command 创建 block 间的连线
     
         connect_bd_net [get_bd_pins xlconcat_0/In0] [get_bd_pins exp_p_tri_io]
@@ -59,6 +59,7 @@
 3. Use `reg` to declare registers
 4. Use `assign` to give value to `net` variables, can't implement on `reg`
 5. In module declaring, the port declarations is like:
+   
    ```
    module MyModule(
    input clk,
@@ -70,7 +71,9 @@
    // Logic of the module goes here
    endmodule
    ```
+   
    The data type used for ports can be `wire`, `reg`, or `logic` (starting from Verilog-2001). The wire type is commonly used for input and output ports, while reg or logic types are used for internal registers or variables.If we declare a port without specifying a data type, **the default type** is `wire`.
+
    Grammar summary:
 
    ```
