@@ -177,17 +177,17 @@
 5. Right click signal name to modify the color, radix, etc
 6. The empty red circles in .v files used to insert breakpoints for debugging.
 
-## 3. Stopwatch
+## 3. [Stopwatch](https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/StopWatch.html)
 ### 3.1. Get Ready
-导航
+导航：
 
         cd Examples/Stopwatch/tmp/Stopwatch/Stopwatch.runs/impl_1/
 
-复制
+复制：
 
         scp system_wrapper.bit root@your_rp_ip:Stopwatch.bit
 
-运行
+运行：
 
         cat /root/Stopwatch.bit > /dev/xdevcfg
 
@@ -196,3 +196,37 @@
 > The AXI (Advanced eXtensible Interface) communication protocol is a widely used and popular high-performance interconnect protocol for System-on-Chip (SoC) designs. It was developed by ARM (now part of NVIDIA) as part of the AMBA (Advanced Microcontroller Bus Architecture) specification.
 
 The AXI protocol is designed to facilitate **communication between various IP blocks** within an SoC or FPGA. It provides a standardized way for these IP blocks to communicate with each other, ensuring compatibility, interoperability, and ease of integration.
+
+Key features: 
+
+1. Burst Transfers: AXI supports burst transfers, allowing multiple data transfers to occur in a single transaction, which enhances data throughput and efficiency.
+
+2. Separate Address and Data Channels: AXI has separate channels for address and data transfers, enabling concurrent transactions and improving overall system performance.
+
+3. Read and Write Channels: The AXI protocol has separate channels for read and write operations, ensuring that read and write transactions can occur independently and concurrently.
+
+4. Multiple Interfaces: AXI offers various interfaces, including AXI4, AXI4-Lite, AXI4-Stream, and AXI5, each catering to different communication requirements and system complexities.
+
+5. Support for Multiple Masters and Slaves: AXI allows multiple masters (IPs initiating transactions) and slaves (IPs responding to transactions) to be connected on the same bus, enabling a complex interconnection of IPs in an SoC.
+
+6. Advanced Features: The AXI protocol includes advanced features such as data interleaving, out-of-order transaction support, and exclusive access control, which enhance its capabilities for high-performance and complex designs.
+### 3.3. Block Design
+
+### 3.4. Edit Address
+
+Window -> Address Editor
+
+The address of our GPIO block is `0x4200_0000`
+
+### 3.5. How to run
+
+To write or read from our FPGA program we will use Red Pitaya’s [monitor tool](https://redpitaya.readthedocs.io/en/latest/appsFeatures/command_line_tools/com_line_tool.html#monitor-utility), available in Red Pitaya’s Linux. Try the following commands:
+
+```
+monitor 0x42000000 1  # write: start, SCLR = 0, CE = 1
+monitor 0x42000000 0  # write: stop,  SCLR = 0, CE = 0
+monitor 0x42000000 2  # write: clear, SCLR = 1, CE = 0
+
+monitor 0x42000000  # read: cfg  on GPIO1
+monitor 0x42000008  # read: data on GPIO2
+```
