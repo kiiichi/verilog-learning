@@ -55,11 +55,13 @@
         scp system_wrapper.bit root@192.168.1.3:Knight_rider.bit
 ### 2.2. Customize our module
 1. Project Manager -> Add Sources -> Add or create design sources
-2. Blocking and non-blocking assignments
+2. Use `parameter` to define constants
+3. Use `reg` to declare registers
+4. Blocking and non-blocking assignments
    > Blocking assignment is usually used within the always blocks when we want to get a logic circuit made of **gates** and not **latches** or **flip-flops**. It is good practise **not to mix** blocking and non-blocking assignments within one always block.
    
    区别于官方文档的跑马灯实现方式。同样是使用了 3 assignment methods (blocking assignment, nonblocking assignment, `assign` keyword)
-   
+
         ```
         module knight_rider_test(
 
@@ -95,7 +97,7 @@
         endmodule
 
         ```
-
+5. After finish the .v file, right click on block diagram, choose `add module` to use our customized module.
 
 ### 2.3. Latch, Flip-flop and Register
 #### 2.3.1 Latch 锁存器
@@ -108,7 +110,8 @@
               @@           @@O=== !Q 
               @@           @@        
               ·@@@@@@@@@@@@@·        
-                                逻辑符号
+                              锁存器逻辑符号
+
 有效信号 EN (E) 为 0 时 D 对输出值 Q 和 !Q 无影响， Q 和 !Q 保持不变。
 有效信号 EN (E) 为 1 时 Q = D, !Q = !D ( D 与 Q 的变化是同步的 )
 #### 2.3.2 Flip-flop (FF) 触发器
