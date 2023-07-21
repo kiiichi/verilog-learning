@@ -176,3 +176,19 @@
 4. Add more internal register from **Scope** pannel, just drag the parameters from knight_rider->kr icon to wavefrom name list.
 5. Right click signal name to modify the color, radix, etc
 6. The empty red circles in .v files used to insert breakpoints for debugging.
+
+## 3. Stopwatch
+### 3.1. Get Ready
+导航
+
+        cd Examples/Stopwatch/tmp/Stopwatch/Stopwatch.runs/impl_1/
+
+复制
+
+        scp system_wrapper.bit root@your_rp_ip:Stopwatch.bit
+
+运行
+
+        cat /root/Stopwatch.bit > /dev/xdevcfg
+
+###
