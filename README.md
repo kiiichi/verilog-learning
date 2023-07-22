@@ -220,8 +220,7 @@ The address of our GPIO block is `0x4200_0000`
 
 #### Annotations: 
 Q: Does FPGA have memory?
-A: YES!
->FPGA consist of an array of configurable logic blocks, interconnects, and various types of **memory** elements. The memory in an FPGA can be broadly categorized into two types:
+A: YES! FPGA consist of an array of configurable logic blocks, interconnects, and various types of **memory** elements. The memory in an FPGA can be broadly categorized into two types:
 1.Configurable Memory (Configuration Memory): This is the memory that stores the configuration bitstream that defines the FPGA's behavior. When the FPGA is powered on or reprogrammed, the configuration memory loads the configuration bitstream, configuring the logic blocks and interconnects to create the desired digital circuit.
 2.User Memory: FPGAs often include dedicated memory blocks that can be used for data storage, such as Block RAM (BRAM) or Distributed RAM (Distributed Memory). These memory blocks can be used by the designer to implement registers, buffers, FIFOs, or any other custom memory requirements for the FPGA design.
 
