@@ -212,11 +212,18 @@ Key features:
 6. Advanced Features: The AXI protocol includes advanced features such as data interleaving, out-of-order transaction support, and exclusive access control, which enhance its capabilities for high-performance and complex designs.
 ### 3.3. Block Design
 
-### 3.4. Edit Address
+### 3.4. Edit Memory Address
 
 Window -> Address Editor
 
 The address of our GPIO block is `0x4200_0000`
+
+#### Annotations: 
+Q: Does FPGA have memory?
+A: YES!
+>FPGA consist of an array of configurable logic blocks, interconnects, and various types of **memory** elements. The memory in an FPGA can be broadly categorized into two types:
+1.Configurable Memory (Configuration Memory): This is the memory that stores the configuration bitstream that defines the FPGA's behavior. When the FPGA is powered on or reprogrammed, the configuration memory loads the configuration bitstream, configuring the logic blocks and interconnects to create the desired digital circuit.
+2.User Memory: FPGAs often include dedicated memory blocks that can be used for data storage, such as Block RAM (BRAM) or Distributed RAM (Distributed Memory). These memory blocks can be used by the designer to implement registers, buffers, FIFOs, or any other custom memory requirements for the FPGA design.
 
 ### 3.5. How to run
 
@@ -261,3 +268,18 @@ time.sleep(34.2) # Count to the maximim LED (8 MSB value)
 axi_array_contents.gpio1_data = 0x00 #stop timer
 print("Clock count: ", axi_array_contents.gpio2_data, " calculated time: ", axi_array_contents.gpio2_data/freq, " Seconds")
 ```
+
+This .py file use flie:`/dev/mem` to access GPIO signal. Here is the flow:
+
+>**GPIO_signal** <==> **FPGA_memory** <=(in Linux)=> 
+**file:/dev/mem** <=(mmap)=> **pyfile_memory**
+
+
+#### Annotations: 
+
+Q: What is the `/dev/mem` ?
+A: The `/dev/mem` device file exists on most Unix-like operating systems, including Linux. It provides access to the physical memory of the system. This file allows privileged processes (usually running as the root user) to read from and write to physical memory addresses **directly**.
+
+Q: What is the `mmap` ？
+A: mmap stands for "memory map" in computing. It is a system call and a concept used in operating systems to map files or devices into memory, allowing programs to access their contents **directly** as if they were part of the program's address space. This technique provides a more efficient way to read from or write to files and devices, as it avoids the need for repetitive read or write operations using standard file I/O functions.
+The mmap function is commonly used in low-level programming, especially when working with memory-mapped hardware devices, shared memory regions, or large files that need to be processed efficiently. It allows the contents of a file or a device to be directly accessed in memory, and any changes made to the memory are reflected back to the file or device.
