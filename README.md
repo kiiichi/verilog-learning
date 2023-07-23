@@ -282,3 +282,17 @@ A: The `/dev/mem` device file exists on most Unix-like operating systems, includ
 Q: What is the `mmap` ？
 A: mmap stands for "memory map" in computing. It is a system call and a concept used in operating systems to map files or devices into memory, allowing programs to access their contents **directly** as if they were part of the program's address space. This technique provides a more efficient way to read from or write to files and devices, as it avoids the need for repetitive read or write operations using standard file I/O functions.
 The mmap function is commonly used in low-level programming, especially when working with memory-mapped hardware devices, shared memory regions, or large files that need to be processed efficiently. It allows the contents of a file or a device to be directly accessed in memory, and any changes made to the memory are reflected back to the file or device.
+
+### 3.7. Change the clk on this FPGA SoC device
+
+```
+devcfg=/sys/devices/soc0/amba/f8007000.devcfg
+test -d $devcfg/fclk/fclk0 || echo fclk0 > $devcfg/fclk_export
+echo 0 > $devcfg/fclk/fclk0/enable
+echo 2500000000 > $devcfg/fclk/fclk0/set_rate
+echo 1 > $devcfg/fclk/fclk0/enable
+```
+
+`test -d` // 如果文件存在且为目录则为真
+`||` // in bash or shell 为逻辑‘或’操作，先执行||左侧内容，若成功（返回0）则不执行右侧内容，若不成功（返回1）则执行右侧内容
+`echo`
