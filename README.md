@@ -350,3 +350,20 @@ time.sleep(1) #Allow the counter to stabilise
 count = axi_array_contents.gpio1_data
 print("Counts: ", count, " cycles: ",Ncycles, " frequency: ",freq/(count/Ncycles),"Hz\n")
 ```
+
+## 4.3. Block design
+
+### 4.3.1. Create Hierarchy
+
+Select the desired blocks -> right click -> Create Hierarchy
+to join them to a single hierarchy(架构) block.
+
+### 4.3.2. Signal Generator
+
+1. **DDS Compiler**
+   >In DSP system, we usually use Direct Digtal Synthesizer (DDS) or Numerically Controlled Oscillator (NCO) to generate sinusoid function. DDS is a **LUT** which input is phase and output is current function value.
+
+   The DDS Compiler can easily change SFDR (aka the resolution or the bit width of the analog value), frequency, amplitude, and other parameters.
+
+   The current DDS core settings will generate sin(ωt) on one DAC channel and cos(ωt) on the other, with a maximum amplitude of +/-1V (maximal range) on both.
+
