@@ -305,7 +305,7 @@ The clock frequency can be set from **100000** to **2500000000**. Clock speeds a
 
 move to dic
         
-        cd Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1/
+        cd Examples/Frequency_counter/tmp/freq/freq.runs/impl_1/
 
 send to redpitaya
 
