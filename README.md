@@ -289,7 +289,7 @@ The mmap function is commonly used in low-level programming, especially when wor
 devcfg=/sys/devices/soc0/amba/f8007000.devcfg
 test -d $devcfg/fclk/fclk0 || echo fclk0 > $devcfg/fclk_export
 echo 0 > $devcfg/fclk/fclk0/enable
-echo 2500000000 > $devcfg/fclk/fclk0/set_rate
+echo 125000000 > $devcfg/fclk/fclk0/set_rate
 echo 1 > $devcfg/fclk/fclk0/enable
 ```
 
