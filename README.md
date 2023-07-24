@@ -315,4 +315,38 @@ run on redpitaya
 
         cat /root/Frequency_counter.bit > /dev/xdevcfg
 
-## 4.2. 
+## 4.2. How to run
+
+On redpitaya jupyter
+```
+import mmap
+import os
+import time
+import numpy as np
+
+os.system('cat /root/freq_counter.bit > /dev/xdevcfg')
+
+axi_gpio_regset = np.dtype([
+    ('gpio1_data'   , 'uint32'),
+    ('gpio1_control', 'uint32'),
+    ('gpio2_data'   , 'uint32'),
+    ('gpio2_control', 'uint32')
+])
+
+memory_file_handle = os.open('/dev/mem', os.O_RDWR)
+axi_mmap = mmap.mmap(fileno=memory_file_handle, length=mmap.PAGESIZE, offset=0x42000000)
+axi_numpy_array = np.recarray(1, axi_gpio_regset, buf=axi_mmap)
+axi_array_contents = axi_numpy_array[0]
+
+freq = 125000000 #FPGA Clock Frequency Hz
+log2_Ncycles = 1
+freq_in = 2
+phase_inc = 2.147482*freq_in
+Ncycles = 1<<log2_Ncycles
+
+axi_array_contents.gpio2_data = (0x1f & log2_Ncycles) + (int(phase_inc) << 5)
+time.sleep(1) #Allow the counter to stabilise
+
+count = axi_array_contents.gpio1_data
+print("Counts: ", count, " cycles: ",Ncycles, " frequency: ",freq/(count/Ncycles),"Hz\n")
+```
