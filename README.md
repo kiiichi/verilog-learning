@@ -295,4 +295,24 @@ echo 1 > $devcfg/fclk/fclk0/enable
 
 `test -d` // 如果文件存在且为目录则为真
 `||` // in bash or shell 为逻辑‘或’操作，先执行||左侧内容，若成功（返回0）则不执行右侧内容，若不成功（返回1）则执行右侧内容
-`echo`
+`echo` // 写入文件
+
+The clock frequency can be set from **100000** to **2500000000**. Clock speeds above 300000 give better timing results from a Jupyter Notebook. **125000000** is the default.
+
+# 4. [Frequency Counter](https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/FreqCounter.html)
+
+## 4.1. Easy to use
+
+move to dic
+        
+        cd Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1/
+
+send to redpitaya
+
+        scp system_wrapper.bit root@your_rp_ip:Frequency_counter.bit
+
+run on redpitaya
+
+        cat /root/Frequency_counter.bit > /dev/xdevcfg
+
+## 4.2. 
