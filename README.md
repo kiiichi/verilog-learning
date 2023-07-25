@@ -60,7 +60,7 @@
 4. Use `assign` to give value to `net` variables, can't implement on `reg`
 5. In module declaring, the port declarations is like:
    
-   ```
+   ```verilog
    module MyModule(
    input clk,
    input wire reset_n,
@@ -76,7 +76,7 @@
 
    Grammar summary:
 
-   ```
+   ```verilog
    module module_name (list_of_ports);
    // Port declarations (input, output, inout, or wire declarations)
    // Internal signal and variable declarations
@@ -92,7 +92,7 @@
    
    区别于官方文档的跑马灯实现方式。同样是使用了 3 assignment methods (blocking assignment, nonblocking assignment, `assign` keyword)
 
-        ```
+        ```verilog
         module knight_rider_test(
 
         input clk,
@@ -265,7 +265,7 @@ monitor 0x42000008  # read: data on GPIO2
 
 Use Jupyter on redpitaya to run the .py file
 
-```
+```python
 import mmap
 import os
 import time
