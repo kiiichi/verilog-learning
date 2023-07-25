@@ -601,7 +601,7 @@ module pow2 #
 endmodule
 ```
 
-#### 4.3.2.6. ADC & DAC
+#### 4.3.2.6. [ADC & DAC](https://github.com/pavel-demin/red-pitaya-notes/issues/479)
 
 1. ADC and DAC commonly use **offset binary** to transfer digital and analog, e.g. in a 14 bit convertor `00 0000 0000 0000` represent `-1V`(lowest voltage), `10 0000 0000 0000` represent `0V`, `11 1111 1111 1111` represent `1V`(highest voltage).
 2. In DSP IP cores (CIC, FIR, Complex Multiplier) provided by Xilinx work with the **two's complement** format, so do the redpitaya IP cores.
