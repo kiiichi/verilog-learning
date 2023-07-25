@@ -529,17 +529,17 @@ endmodule
 
 #### 4.3.2.4. 原码、反码与补码
 
-| 正数 | 原反补码 | 负数 | 原码 | 反码 | 补码 |
-| --- | --- | --- | --- | --- | --- |
-| 0 | 0000 | -0 | 1000 | 1111 | 0000 |
-| 1 | 0001 | -1 | 1001 | 1110 | 1111 |
-| 2 | 0010 | -2 | 1010 | 1101 | 1110 |
-| 3 | 0011 | -3 | 1011 | 1100 | 1101 |
-| 4 | 0100 | -4 | 1100 | 1011 | 1100 |
-| 5 | 0101 | -5 | 1101 | 1010 | 1011 |
-| 6 | 0110 | -6 | 1110 | 1001 | 1010 |
-| 7 | 0111 | -7 | 1111 | 1000 | 1001 |
-|   |      | -8 |      |      | 1000 | 
+| 正数 | 原反补码 | 移码 | 负数 | 原码 | 反码 | 补码 | 移码 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 0000 | 1000 | -0 | 1000 | 1111 | 0000 | 1000 |
+| 1 | 0001 | 1001 | -1 | 1001 | 1110 | 1111 | 0111 |
+| 2 | 0010 | 1010 | -2 | 1010 | 1101 | 1110 | 0110 |
+| 3 | 0011 | 1011 | -3 | 1011 | 1100 | 1101 | 0101 |
+| 4 | 0100 | 1100 | -4 | 1100 | 1011 | 1100 | 0100 |
+| 5 | 0101 | 1101 | -5 | 1101 | 1010 | 1011 | 0011 |
+| 6 | 0110 | 1110 | -6 | 1110 | 1001 | 1010 | 0010 |
+| 7 | 0111 | 1111 | -7 | 1111 | 1000 | 1001 | 0001 |
+|   |      || -8 |      |      | 1000 | 0000 |
 
 原码 (True Form): 直观，存在问题: 1. 加减运算复杂. 2. 有两个0.
 反码 (Inverse Code): 负数的原码除符号位外按位取反，实现了一个数加上它的相反数是0.  
@@ -601,3 +601,8 @@ module pow2 #
 endmodule
 ```
 
+#### 4.3.2.6. ADC & DAC
+
+1. ADC and DAC commonly use **offset binary** to transfer digital and analog, e.g. in a 14 bit convertor `00 0000 0000 0000` represent `-1V`(lowest voltage), `10 0000 0000 0000` represent `0V`, `11 1111 1111 1111` represent `1V`(highest voltage).
+2. In DSP IP cores (CIC, FIR, Complex Multiplier) provided by Xilinx work with the **two's complement** format, so do the redpitaya IP cores.
+3. There is an **inverting amplifier** somewhere between the SMA connector and the ADC input. My ADC IP core inverts the ADC samples to have the same signal polarity as at the SMA connector.
