@@ -526,3 +526,78 @@ endmodule
 5. Logic + DCM + BUFG的使用方法：
    
    DCM同样也可以控制并变换普通时钟信号，即DCM的输入也可以是普通片内信号。
+
+#### 4.3.2.4. 原码、反码与补码
+
+| 正数 | 原反补码 | 负数 | 原码 | 反码 | 补码 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 0000 | -0 | 1000 | 1111 | 0000 |
+| 1 | 0001 | -1 | 1001 | 1110 | 1111 |
+| 2 | 0010 | -2 | 1010 | 1101 | 1110 |
+| 3 | 0011 | -3 | 1011 | 1100 | 1101 |
+| 4 | 0100 | -4 | 1100 | 1011 | 1100 |
+| 5 | 0101 | -5 | 1101 | 1010 | 1011 |
+| 6 | 0110 | -6 | 1110 | 1001 | 1010 |
+| 7 | 0111 | -7 | 1111 | 1000 | 1001 |
+|   |      | -8 |      |      | 1000 | 
+
+原码 (True Form): 直观，存在问题: 1. 加减运算复杂. 2. 有两个0.
+反码 (Inverse Code): 负数的原码除符号位外按位取反，实现了一个数加上它的相反数是0.  
+补码 (Two's Complement): 负数的反码 + 1，实现了：1. 带着符号运算. 2. 只有一个0. 3. 负数多了一个数.
+
+#### 4.3.2.5. Register Transfer Level (RTL)
+
+直译为寄存器转换级，顾名思义，也就是在这个级别下，要描述各级寄存器（时序逻辑中的寄存器），以及寄存器之间的信号的是如何转换的（时序逻辑中的组合逻辑）。通俗来讲，RTL代码不是在“写代码”，是在画电路结构。RTL代码需要“画”出输入输出端口，各级寄存器，寄存器之间的组合逻辑和前三者之间的连接。对于组合逻辑，只需要软件级描述，将其功能包装在“黑匣子”中即可，无需考虑其门级结构。
+
+signal spliter
+```
+`timescale 1ns / 1ps
+
+module signal_split #
+(
+    parameter ADC_DATA_WIDTH = 16,
+    parameter AXIS_TDATA_WIDTH = 32
+)
+(
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 125000000" *)
+    input [AXIS_TDATA_WIDTH-1:0]        S_AXIS_tdata,
+    input                               S_AXIS_tvalid,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 125000000" *)
+    output wire [AXIS_TDATA_WIDTH-1:0]  M_AXIS_PORT1_tdata,
+    output wire                         M_AXIS_PORT1_tvalid,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 125000000" *)
+    output wire [AXIS_TDATA_WIDTH-1:0]  M_AXIS_PORT2_tdata,
+    output wire                         M_AXIS_PORT2_tvalid
+);
+
+    assign M_AXIS_PORT1_tdata = {{(AXIS_TDATA_WIDTH-ADC_DATA_WIDTH+1){S_AXIS_tdata[ADC_DATA_WIDTH-1]}},S_AXIS_tdata[ADC_DATA_WIDTH-1:0]};
+    assign M_AXIS_PORT2_tdata = {{(AXIS_TDATA_WIDTH-ADC_DATA_WIDTH+1){S_AXIS_tdata[AXIS_TDATA_WIDTH-1]}},S_AXIS_tdata[AXIS_TDATA_WIDTH-1:ADC_DATA_WIDTH]};
+    assign M_AXIS_PORT1_tvalid = S_AXIS_tvalid;
+    assign M_AXIS_PORT2_tvalid = S_AXIS_tvalid;
+
+endmodule
+```
+
+#### 4.3.2.6. Quick power 2
+
+Input: n 
+
+Output: 2^n
+
+```
+`timescale 1ns / 1ps
+module pow2 # 
+(
+	parameter LOG2N_WIDTH = 5,
+	parameter N_WIDTH = 32
+)
+(
+    input unsigned [LOG2N_WIDTH-1:0]  log2N,
+    output unsigned [N_WIDTH-1:0]	  N
+);
+	
+    assign N = (1<<log2N);
+	
+endmodule
+```
+
