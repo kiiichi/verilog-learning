@@ -176,6 +176,30 @@
 4. Add more internal register from **Scope** pannel, just drag the parameters from knight_rider->kr icon to wavefrom name list.
 5. Right click signal name to modify the color, radix, etc
 6. The empty red circles in .v files used to insert breakpoints for debugging.
+7. There is a module instantiation example:
+
+        ```
+        module MyModule(
+        input wire A,
+        input wire B,
+        output wire Y
+        );
+        // Logic of the module goes here
+        endmodule
+
+        module TopLevel(
+        input wire in_A,
+        input wire in_B,
+        output wire out_Y
+        );
+        // Instantiating MyModule using named port connection
+        MyModule instance_name(
+                .A(in_A),    // Connect 'in_A' to the 'A' input port of MyModule
+                .B(in_B),    // Connect 'in_B' to the 'B' input port of MyModule
+                .Y(out_Y)    // Connect 'out_Y' to the 'Y' output port of MyModule
+        );
+        endmodule
+        ```
 
 ## 3. [Stopwatch](https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/StopWatch.html)
 ### 3.1. Get Ready
@@ -360,10 +384,136 @@ to join them to a single hierarchy(架构) block.
 
 ### 4.3.2. Signal Generator
 
-1. **DDS Compiler**
+#### 4.3.2.1. DDS Compiler
    >In DSP system, we usually use Direct Digtal Synthesizer (DDS) or Numerically Controlled Oscillator (NCO) to generate sinusoid function. DDS is a **LUT** which input is phase and output is current function value.
 
    The DDS Compiler can easily change SFDR (aka the resolution or the bit width of the analog value), frequency, amplitude, and other parameters.
 
    The current DDS core settings will generate sin(ωt) on one DAC channel and cos(ωt) on the other, with a maximum amplitude of +/-1V (maximal range) on both.
 
+   The signal frequency can be set fixed at the design stage by choosing Fixed Phase Increment in the DDS re-customization dialog -> implementation tab. In this case, the dialog automatically calculates the required constant phase increment for a desired frequency and frequency resolution. 
+
+   To change the frequency during an operation, we choose Streaming Phase Increment in the re-customization dialog, which requires a phase increment value to be continuously supplied to the S_AXIS_PHASE input interface.
+
+   More details on Xilinix search Product Guide (PG141), or on [zhihu](https://zhuanlan.zhihu.com/p/350989496)
+
+
+#### 4.3.2.2. AXI4-Stream Constant
+
+There are official IPs in AXI to achieve fast data flow, due to the simple scenario here, we write our own module.
+
+```
+`timescale 1 ns / 1 ps
+
+module axis_constant #
+(
+    parameter integer AXIS_TDATA_WIDTH = 32
+)
+(
+    // System signals
+    input  wire                        aclk,
+
+    input  wire [AXIS_TDATA_WIDTH-1:0] cfg_data,
+
+    // Master side
+    output wire [AXIS_TDATA_WIDTH-1:0] m_axis_tdata,
+    output wire                        m_axis_tvalid
+);
+
+    assign m_axis_tdata = cfg_data;
+    assign m_axis_tvalid = 1'b1;
+
+endmodule
+```
+
+The `# (...)` before `(ports declaration);` is used to define a variable to use below (on `input wire [variable-1:0] cfg_data`). It can be also used to define a parameter list in the module declaration that can be overridden at the time of instantiation of the module. like below:
+
+```
+// Parameterized knight_rider module
+module knight_rider #(
+    parameter LEDS_INIT = 10'b1100000000,
+    parameter DIR_INIT = 1
+) (
+    input clk,
+    output [7:0] led_out
+);
+    reg [9:0] leds = LEDS_INIT; // register for led output
+    reg [3:0] position = DIR_INIT*8; // state counter 0->15
+    reg direction = DIR_INIT;   // direction indicator
+
+    always @ (posedge clk)
+    begin
+        if (direction == 0) begin
+            leds <= leds << 1;  // bit-shift leds register
+        end else begin
+            leds <= leds >> 1;  // bit-shift leds register
+        end
+        position <= position + 1;
+    end
+
+    always @*               // change direction
+    begin
+        if (position < 8) begin     // in the second half
+            direction = 0;
+        end else begin
+            direction = 1;
+        end
+    end
+
+    assign led_out = leds[8:1]; // wire output and leds register
+endmodule
+
+// Testbench module
+module knight_rider_tb;
+    reg clock;
+    wire [7:0] out;
+
+    // Instantiate the knight_rider module with overridden parameters
+    knight_rider #(
+        .LEDS_INIT(10'b1100000000),
+        .DIR_INIT(1)
+    ) kr (
+        .clk(clock),
+        .led_out(out)
+    );
+
+    initial begin
+        clock = 0;
+        forever #1 clock = ~clock;
+    end
+endmodule
+```
+
+#### 4.3.2.3. [Global Clock Resource](https://www.jianshu.com/p/c8128a90b33b)
+
+概念：**Primitive**(原语)
+
+与全局时钟资源相关的Xilinx器件原语：
+- IBUFG
+  与专用**全局时钟**输入管脚相连接的首级全局缓冲。所有从全局时钟管脚输入的信号必须经过IBUF元，否则在布局布线时会报错。
+- IBUFGDS
+  是IBUFG的差分形式，当信号从一对差分**全局时钟**管脚输入时，必须使用IBUFGDS作为全局时钟输入缓冲。
+- BUFG
+- BUFGCE
+- BUFGMUX
+- BUFGP
+- BUFGDLL
+- DCM
+
+>使用 IBUFG 或 IBUFGDS 的充分必要条件是信号从专用**全局时钟**管脚输入。换言之，当某个信号从全局时钟管脚输入，不论它是否为时钟信号，都必须使用 IBUFG或IBUFGDS；如果对某个信号使用了IBUFG或IBUFGDS硬件原语，则这个信号必定是从全局时钟管脚输入的。如果违反了这条原则，那么在布局布线时会报错。这条规则的使用是由FPGA的内部结构决定的：IBUFG和IBUFGDS的输入端仅仅与芯片的专用全局时钟输入管脚有物理连接，与普通IO和其它内部CLB等没有物理连接。另外，由于BUFGP相当于IBUFG和BUFG的组合，所以BUFGP的使用也必须遵循上述的原则。
+
+使用全局时钟的五种方法：
+1. IBUFG + BUFG的使用方法：
+IBUFG后面连接BUFG的方法是最基本的全局时钟资源使用方法，由于IBUFG组合BUFG相当于BUFGP，所以在这种使用方法也称为BUFGP方法。
+
+2. IBUFGDS + BUFG的使用方法：
+当输入时钟信号为差分信号时，需要使用IBUFGDS代替IBUFG。
+
+3. IBUFG + DCM + BUFG的使用方法：
+这种使用方法最灵活，对全局时钟的控制更加有效。通过DCM模块不仅仅能对时钟进行同步、移相、分频和倍频等变换，而且可以使全局时钟的输出达到无抖动延迟。
+
+4. Logic ＋ BUFG的使用方法：
+BUFG不但可以驱动IBUFG的输出，还可以驱动其它普通信号的输出。当某个信号(时钟、使能、快速路径)的扇出非常大，并且要求抖动延迟最小时，可以使用BUFG驱动该信号，使该信号利用全局时钟资源。但需要注意的是，普通IO的输入或普通片内信号进入全局时钟布线层需要一个固有的延时，一般在 10ns左右，即普通IO和普通片内信号从输入到BUFG输出有一个约10ns左右的固有延时，但是BUFG的输出到片内所有单元(IOB、CLB、选择性块RAM)的延时可以忽略不计为“0”ns。
+
+5. Logic + DCM + BUFG的使用方法：
+DCM同样也可以控制并变换普通时钟信号，即DCM的输入也可以是普通片内信号。
