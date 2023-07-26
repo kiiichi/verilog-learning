@@ -154,7 +154,7 @@
 1. Add Sources -> Add or create simulation sources
 2. Filename: 'tb' is the abbreviation for "test bench"
 3. Edit .v
-   ```
+   ```verilog
    `timescale 1ns / 1ps
    module knight_rider_tb();
         reg clock;
@@ -178,7 +178,7 @@
 6. The empty red circles in .v files used to insert breakpoints for debugging.
 7. There is a module instantiation example:
 
-        ```
+        ```verilog
         module MyModule(
         input wire A,
         input wire B,
@@ -309,7 +309,7 @@ The mmap function is commonly used in low-level programming, especially when wor
 
 ### 3.7. Change the clk on this FPGA SoC device
 
-```
+```shell
 devcfg=/sys/devices/soc0/amba/f8007000.devcfg
 test -d $devcfg/fclk/fclk0 || echo fclk0 > $devcfg/fclk_export
 echo 0 > $devcfg/fclk/fclk0/enable
@@ -342,7 +342,7 @@ run on redpitaya
 ## 4.2. How to run
 
 On redpitaya jupyter
-```
+```python
 import mmap
 import os
 import time
@@ -402,7 +402,7 @@ to join them to a single hierarchy(架构) block.
 
 There are official IPs in AXI to achieve fast data flow, due to the simple scenario here, we write our own module.
 
-```
+```verilog
 `timescale 1 ns / 1 ps
 
 module axis_constant #
@@ -428,7 +428,7 @@ endmodule
 
 The `# (...)` before `(ports declaration);` is used to define a variable to use below (on `input wire [variable-1:0] cfg_data`). It can be also used to define a parameter list in the module declaration that can be overridden at the time of instantiation of the module. like below:
 
-```
+```verilog
 // Parameterized knight_rider module
 module knight_rider #(
     parameter LEDS_INIT = 10'b1100000000,
@@ -484,7 +484,9 @@ module knight_rider_tb;
 endmodule
 ```
 
-#### 4.3.2.3. [Global Clock Resource](https://www.jianshu.com/p/c8128a90b33b)
+### 4.3.3. DataAcquistion
+
+#### 4.3.3.1. [Global Clock Resource](https://www.jianshu.com/p/c8128a90b33b)
 
 概念：**Primitive**(原语)
 
@@ -527,7 +529,7 @@ endmodule
    
    DCM同样也可以控制并变换普通时钟信号，即DCM的输入也可以是普通片内信号。
 
-#### 4.3.2.4. 原码、反码与补码
+#### 4.3.3.2. 原码、反码与补码
 
 | 正数 | 原反补码 | 移码 | 负数 | 原码 | 反码 | 补码 | 移码 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -545,12 +547,154 @@ endmodule
 反码 (Inverse Code): 负数的原码除符号位外按位取反，实现了一个数加上它的相反数是0.  
 补码 (Two's Complement): 负数的反码 + 1，实现了：1. 带着符号运算. 2. 只有一个0. 3. 负数多了一个数.
 
-#### 4.3.2.5. Register Transfer Level (RTL)
+#### 4.3.3.3. [ADC & DAC](https://github.com/pavel-demin/red-pitaya-notes/issues/479)
+
+1. ADC and DAC commonly use **offset binary** to transfer digital and analog, e.g. in a 14 bit convertor `00 0000 0000 0000` represent `-1V`(lowest voltage), `10 0000 0000 0000` represent `0V`, `11 1111 1111 1111` represent `1V`(highest voltage).
+2. In DSP IP cores (CIC, FIR, Complex Multiplier) provided by Xilinx work with the **two's complement** format, so do the redpitaya IP cores.
+3. There is an **inverting amplifier** somewhere between the SMA connector and the ADC input. My ADC IP core inverts the ADC samples to have the same signal polarity as at the SMA connector.
+4. [The ODDR primitive](https://bbs.huaweicloud.com/blogs/283583)
+
+
+**DAC module**
+```verilog
+
+`timescale 1 ns / 1 ps
+
+module axis_red_pitaya_dac #
+(
+  parameter integer DAC_DATA_WIDTH = 14,
+  parameter integer AXIS_TDATA_WIDTH = 32
+)
+(
+  // PLL signals
+  input  wire                        aclk, // 125M
+  input  wire                        ddr_clk, // Having used Clocking Wizard to double clk (250M)
+  input  wire                        locked,
+
+  // DAC signals
+  output wire                        dac_clk,
+  output wire                        dac_rst,
+  output wire                        dac_sel,
+  output wire                        dac_wrt,
+  output wire [DAC_DATA_WIDTH-1:0]   dac_dat,
+
+  // Slave side
+  output wire                        s_axis_tready,
+  input  wire [AXIS_TDATA_WIDTH-1:0] s_axis_tdata,
+  input  wire                        s_axis_tvalid
+);
+
+  reg [DAC_DATA_WIDTH-1:0] int_dat_a_reg;
+  reg [DAC_DATA_WIDTH-1:0] int_dat_b_reg;
+  reg int_rst_reg;
+
+  wire [DAC_DATA_WIDTH-1:0] int_dat_a_wire;
+  wire [DAC_DATA_WIDTH-1:0] int_dat_b_wire;
+
+  assign int_dat_a_wire = s_axis_tdata[DAC_DATA_WIDTH-1:0];
+  assign int_dat_b_wire = s_axis_tdata[AXIS_TDATA_WIDTH/2+DAC_DATA_WIDTH-1:AXIS_TDATA_WIDTH/2];
+
+  genvar j;
+
+  always @(posedge aclk)
+  begin
+    if(~locked | ~s_axis_tvalid)
+    begin
+      int_dat_a_reg <= {(DAC_DATA_WIDTH){1'b0}};
+      int_dat_b_reg <= {(DAC_DATA_WIDTH){1'b0}};
+    end
+    else
+    begin
+      int_dat_a_reg <= {int_dat_a_wire[DAC_DATA_WIDTH-1], ~int_dat_a_wire[DAC_DATA_WIDTH-2:0]};
+      int_dat_b_reg <= {int_dat_b_wire[DAC_DATA_WIDTH-1], ~int_dat_b_wire[DAC_DATA_WIDTH-2:0]};
+    end
+    int_rst_reg <= ~locked | ~s_axis_tvalid;
+  end
+
+  ODDR ODDR_rst(.Q(dac_rst), .D1(int_rst_reg), .D2(int_rst_reg), .C(aclk), .CE(1'b1), .R(1'b0), .S(1'b0));
+  ODDR ODDR_sel(.Q(dac_sel), .D1(1'b0), .D2(1'b1), .C(aclk), .CE(1'b1), .R(1'b0), .S(1'b0));
+  ODDR ODDR_wrt(.Q(dac_wrt), .D1(1'b0), .D2(1'b1), .C(ddr_clk), .CE(1'b1), .R(1'b0), .S(1'b0));
+  ODDR ODDR_clk(.Q(dac_clk), .D1(1'b0), .D2(1'b1), .C(ddr_clk), .CE(1'b1), .R(1'b0), .S(1'b0)); //phase shift the clk to align the output of ODDR
+
+  generate
+    for(j = 0; j < DAC_DATA_WIDTH; j = j + 1)
+    begin : DAC_DAT
+      ODDR ODDR_inst(
+        .Q(dac_dat[j]),
+        .D1(int_dat_a_reg[j]),
+        .D2(int_dat_b_reg[j]),
+        .C(aclk),
+        .CE(1'b1),
+        .R(1'b0),
+        .S(1'b0)
+      );
+    end
+  endgenerate
+
+  assign s_axis_tready = 1'b1;
+
+endmodule
+```
+
+**ADC Module**
+```verilog
+`timescale 1 ns / 1 ps
+
+module axis_red_pitaya_adc #
+(
+  parameter integer ADC_DATA_WIDTH = 14,
+  parameter integer AXIS_TDATA_WIDTH = 32
+)
+(
+  // System signals
+  output wire                        adc_clk,
+
+  // ADC signals
+  output wire                        adc_csn,
+  input  wire                        adc_clk_p,
+  input  wire                        adc_clk_n,
+  input  wire [ADC_DATA_WIDTH-1:0]   adc_dat_a,
+  input  wire [ADC_DATA_WIDTH-1:0]   adc_dat_b,
+
+  // Master side
+  output wire                        m_axis_tvalid,
+  output wire [AXIS_TDATA_WIDTH-1:0] m_axis_tdata
+);
+  localparam PADDING_WIDTH = AXIS_TDATA_WIDTH/2 - ADC_DATA_WIDTH;
+
+  reg  [ADC_DATA_WIDTH-1:0] int_dat_a_reg;
+  reg  [ADC_DATA_WIDTH-1:0] int_dat_b_reg;
+  wire                      int_clk0;
+  wire 						int_clk;
+
+  IBUFGDS adc_clk_inst0 (.I(adc_clk_p), .IB(adc_clk_n), .O(int_clk0));
+  BUFG adc_clk_inst (.I(int_clk0), .O(int_clk));
+
+  always @(posedge int_clk)
+  begin
+    int_dat_a_reg <= adc_dat_a;
+    int_dat_b_reg <= adc_dat_b;
+  end
+
+  assign adc_clk = int_clk;
+
+  assign adc_csn = 1'b1;
+
+  assign m_axis_tvalid = 1'b1;
+
+  assign m_axis_tdata = {
+    {(PADDING_WIDTH+1){int_dat_b_reg[ADC_DATA_WIDTH-1]}}, ~int_dat_b_reg[ADC_DATA_WIDTH-2:0],
+    {(PADDING_WIDTH+1){int_dat_a_reg[ADC_DATA_WIDTH-1]}}, ~int_dat_a_reg[ADC_DATA_WIDTH-2:0]};
+
+endmodule
+```
+
+#### 4.3.3.4. Register Transfer Level (RTL)
 
 直译为寄存器转换级，顾名思义，也就是在这个级别下，要描述各级寄存器（时序逻辑中的寄存器），以及寄存器之间的信号的是如何转换的（时序逻辑中的组合逻辑）。通俗来讲，RTL代码不是在“写代码”，是在画电路结构。RTL代码需要“画”出输入输出端口，各级寄存器，寄存器之间的组合逻辑和前三者之间的连接。对于组合逻辑，只需要软件级描述，将其功能包装在“黑匣子”中即可，无需考虑其门级结构。
 
 signal spliter
-```
+```verilog
 `timescale 1ns / 1ps
 
 module signal_split #
@@ -578,13 +722,15 @@ module signal_split #
 endmodule
 ```
 
-#### 4.3.2.6. Quick power 2
+### 4.3.4. FrequencyCounter
+
+#### 4.3.4.1. Quick power 2
 
 Input: n 
 
 Output: 2^n
 
-```
+```verilog
 `timescale 1ns / 1ps
 module pow2 # 
 (
@@ -601,8 +747,6 @@ module pow2 #
 endmodule
 ```
 
-#### 4.3.2.6. [ADC & DAC](https://github.com/pavel-demin/red-pitaya-notes/issues/479)
+#### 4.3.4.2. ...
 
-1. ADC and DAC commonly use **offset binary** to transfer digital and analog, e.g. in a 14 bit convertor `00 0000 0000 0000` represent `-1V`(lowest voltage), `10 0000 0000 0000` represent `0V`, `11 1111 1111 1111` represent `1V`(highest voltage).
-2. In DSP IP cores (CIC, FIR, Complex Multiplier) provided by Xilinx work with the **two's complement** format, so do the redpitaya IP cores.
-3. There is an **inverting amplifier** somewhere between the SMA connector and the ADC input. My ADC IP core inverts the ADC samples to have the same signal polarity as at the SMA connector.
+### 4.3.5. Pin assignment
