@@ -400,7 +400,7 @@ to join them to a single hierarchy(架构) block.
   - phase_increment is what we input on `S_AXIS_PHASE` port
   - B_phasewidth is the number of bits in the phase acumulator, which we can find on Re-customize IP dialog -> Summary tab -> Phase Width
 
-   More details on Xilinix search Product Guide (PG141), or on [zhihu](https://zhuanlan.zhihu.com/p/350989496)
+   More details on Xilinix search Product Guide [(PG141)](reference/pg141-dds-compiler.pdf), or on [zhihu](https://zhuanlan.zhihu.com/p/350989496)
 
 
 #### 4.3.2.2. AXI4-Stream Constant
@@ -757,4 +757,4 @@ endmodule
 ## 4.4. Pin assignment
 
 Use the files in /prj/Examples/Frequency_counter/cfg for configuring the pins.
-[Red_Pitaya_Schematics_v1.0.1.pdf](/Red_Pitaya_Schematics_v1.0.1.pdf) 可查阅引脚名，对应关系可见第三页标红部分。
+[Red_Pitaya_Schematics_v1.0.1.pdf](reference/Red_Pitaya_Schematics_v1.0.1.pdf) 可查阅引脚名，对应关系可见第三页标红部分。
