@@ -365,7 +365,7 @@ axi_array_contents = axi_numpy_array[0]
 freq = 125000000 #FPGA Clock Frequency Hz
 log2_Ncycles = 1
 freq_in = 2
-phase_inc = 2.147482*freq_in
+phase_inc = 2.147482*freq_in # 2^28 / 125E6 = 2.147482
 Ncycles = 1<<log2_Ncycles
 
 axi_array_contents.gpio2_data = (0x1f & log2_Ncycles) + (int(phase_inc) << 5)
@@ -394,6 +394,11 @@ to join them to a single hierarchy(架构) block.
    The signal frequency can be set fixed at the design stage by choosing Fixed Phase Increment in the DDS re-customization dialog -> implementation tab. In this case, the dialog automatically calculates the required constant phase increment for a desired frequency and frequency resolution. 
 
    To change the frequency during an operation, we choose Streaming Phase Increment in the re-customization dialog, which requires a phase increment value to be continuously supplied to the S_AXIS_PHASE input interface.
+
+  **Output Frequency:**
+  f_out = f_clk * phase_increment / 2^(B_phasewidth)
+  - phase_increment is what we input on `S_AXIS_PHASE` port
+  - B_phasewidth is the number of bits in the phase acumulator, which we can find on Re-customize IP dialog -> Summary tab -> Phase Width
 
    More details on Xilinix search Product Guide (PG141), or on [zhihu](https://zhuanlan.zhihu.com/p/350989496)
 
