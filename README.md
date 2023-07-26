@@ -749,4 +749,7 @@ endmodule
 
 #### 4.3.4.2. ...
 
-### 4.3.5. Pin assignment
+## 4.4. Pin assignment
+
+Use the files in /prj/Examples/Frequency_counter/cfg for configuring the pins.
+[Red_Pitaya_Schematics_v1.0.1.pdf](/Red_Pitaya_Schematics_v1.0.1.pdf) 可查阅引脚名，对应关系可见第三页标红部分。
