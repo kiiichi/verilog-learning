@@ -758,3 +758,52 @@ endmodule
 
 Use the files in /prj/Examples/Frequency_counter/cfg for configuring the pins.
 [Red_Pitaya_Schematics_v1.0.1.pdf](reference/Red_Pitaya_Schematics_v1.0.1.pdf) 可查阅引脚名，对应关系可见第三页标红部分。
+
+# 5. Simple Calculator
+
+```
+module calculator (
+input logic [3:0] dat_a_in,
+input logic [3:0] dat_b_in,
+input logic [1:0] function_in,
+output logic [7:0] out
+);
+
+reg [7:0] out_sum, out_sub , out_mult, out_div;
+
+assign out = out_sum | out_sub | out_mult | out_div;
+
+always@(dat_a_in or dat_b_in)
+begin
+    case (function_in)
+
+        2'b00: begin
+            out_sum <= dat_a_in + dat_b_in;
+            out_sub <= 7'b0;
+            out_mult <= 7'b0;
+            out_div <= 7'b0;
+         end
+        2'b01: begin
+            out_sum <= 7'b0;
+            out_sub <= dat_a_in - dat_b_in;
+            out_mult <= 7'b0;
+            out_div <= 7'b0;
+
+        end
+        2'b10: begin
+            out_sum <= 7'b0;
+            out_sub <= 7'b0;
+            out_mult <= dat_a_in * dat_b_in;
+            out_div <= 7'b0;
+        end
+        default: begin
+            out_sum <= 7'b0;
+            out_sub <= 7'b0;
+            out_mult <= 7'b0;
+            out_div <= dat_a_in / dat_b_in;
+        end
+
+    endcase
+end
+endmodule
+```
