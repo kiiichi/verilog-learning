@@ -131,7 +131,7 @@
         ```
 7. After finish the .v file, right click on block diagram, choose `add module` to use our customized module.
 
-####2.2.2. [logic、wire、reg数据类型详解](https://zhuanlan.zhihu.com/p/38563777)
+#### 2.2.2. [logic、wire、reg数据类型详解](https://zhuanlan.zhihu.com/p/38563777)
 
 在Verilog中，wire和reg是最常见的两种数据类型，也是初学者非常容易混淆的概念。SystemVerilog的一大改进是支持logic数据类型，它在多数时候可以不加区分地替代wire和reg。但如果不熟悉logic的限制随意使用，也容易遇到意想不到的错误。
 
