@@ -54,6 +54,8 @@
         cd Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/
         scp system_wrapper.bit root@192.168.1.3:Knight_rider.bit
 ### 2.2. Customize our module
+
+#### 2.2.1. Write our first module
 1. Project Manager -> Add Sources -> Add or create design sources
 2. Use `parameter` to define constants, the parameter can be **easily** changed on the BD diagram.
 3. Use `reg` to declare registers
@@ -128,6 +130,36 @@
 
         ```
 7. After finish the .v file, right click on block diagram, choose `add module` to use our customized module.
+
+####2.2.2. [logic、wire、reg数据类型详解](https://zhuanlan.zhihu.com/p/38563777)
+
+在Verilog中，wire和reg是最常见的两种数据类型，也是初学者非常容易混淆的概念。SystemVerilog的一大改进是支持logic数据类型，它在多数时候可以不加区分地替代wire和reg。但如果不熟悉logic的限制随意使用，也容易遇到意想不到的错误。
+
+**Verilog的wire和reg类型**
+
+在Verilog中，由于需要描述不同的硬件结构，数据类型总体分为**net**和**variable**两大类。
+
+**net**类型设计用于表示导线结构，它不存储状态，只能负责传递驱动级的输出。**net**类型数据需要使用`assign`关键字连续赋值（continuous assignment）。虽然`assign`语句一般被综合成组合逻辑，但**net**本质还是导线，真正被综合成组合逻辑的是`assign`右边的逻辑运算表达式。常见的**net**类型数据包括`wire`、`tri`、`wand`和`supply0`等。
+
+**variable**类型设计用于表示存储结构，它内部存储状态，并在时钟沿到来或异步信号改变等条件触发时改变内部状态。**variable**类型数据需要使用过程赋值（procedural assignment），即赋值定义在`always`、`initial`、`task`或`function`语法块中。`reg`是最典型的**variable**类型数据，但需要说明的是，综合工具可能将`reg`优化综合成组合逻辑，并不一定是寄存器。常见的**variable**类型数据包括`reg`、`integer`、`time`、`real`、`realtime`等。
+
+**SystemVerilog的logic类型**
+
+**SystemVerilog**在**Verilog**基础上新增支持**logic**数据类型，**logic**是**reg**类型的改进，它既可被过程赋值也能被连续赋值，编译器可自动推断`logic`是`reg`还是`wire`。唯一的限制是`logic`只允许一个输入，不能被多重驱动，所以**inout**类型端口不能定义为**logic**。不过这个限制也带来了一个好处，由于大部分电路结构本就是单驱动，如果误接了多个驱动，使用`logic`在编译时会报错，帮助发现bug。所以单驱动时用`logic`，多驱动时用`wire`。
+
+在[Jason的博客](https://www.verilogpro.com/verilog-reg-verilog-wire-systemverilog-logic)评论中，Evan还提到一点`logic`和`wire`的区别。`wire`定义时赋值是连续赋值，而`logic`定义时赋值只是赋初值，并且赋初值是不能被综合的。
+
+```verilog
+wire mysignal0 = A & B;     // continuous assignment, AND gate
+logic mysignal1 = A & B;    // not synthesizable, initializes mysignal1 to the value of A & B at time 0 and then makes no further changes to it.
+logic mysignal2;
+assign mysignal2 = A & B;   // Continuous assignment, AND gate
+```
+
+**总结SystemVerilog logic的使用方法：**
+
+单驱动时logic可完全替代reg和wire，除了Evan提到的赋初值问题。
+多驱动时，如inout类型端口，使用wire。
 
 ### 2.3. Sup: Latch, Flip-flop and Register
 #### 2.3.1 Latch 锁存器
@@ -761,7 +793,8 @@ Use the files in /prj/Examples/Frequency_counter/cfg for configuring the pins.
 
 # 5. Simple Calculator
 
-```
+```verilog
+//System Verilog
 module calculator (
 input logic [3:0] dat_a_in,
 input logic [3:0] dat_b_in,
