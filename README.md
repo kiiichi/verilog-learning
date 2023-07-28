@@ -840,3 +840,9 @@ begin
 end
 endmodule
 ```
+
+# 6. [Moving average on Red Pitaya](https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/SimpleAvarage.html)
+
+## 6.1. Create project
+
+    cd C:/kichi/RedPitaya-FPGA/prj/Examples/Simple_moving_average/
