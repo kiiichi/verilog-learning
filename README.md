@@ -874,3 +874,30 @@ module delay_module(
 endmodule
 
 ```
+
+```
+`timescale 1ns / 1ps
+
+module delay_module(
+    input wire clk,
+    input wire reset,
+    input wire [31:0] delay_cycnum,
+    output reg out
+);
+
+    reg [31:0] counter;
+
+    always @(posedge clk or negedge reset) begin
+        if (!reset) begin
+            counter <= 0;
+            out <= 0;
+        end else if (counter >= delay_cycnum) begin
+            out <= 1;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+
+endmodule
+
+```
