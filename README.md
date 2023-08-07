@@ -846,3 +846,31 @@ endmodule
 ## 6.1. Create project
 
     cd C:/kichi/RedPitaya-FPGA/prj/Examples/Simple_moving_average/
+
+
+```
+`timescale 1ns / 1ps
+
+module delay_module(
+    input logic clk,
+    input logic reset,
+    input logic [31:0] delay_cycnum,
+    output logic out
+);
+
+    logic [31:0] counter;
+
+    always_ff @(posedge clk or negedge reset) begin
+        if (!reset) begin
+            counter <= '0;
+            out <= '0;
+        end else if (counter >= delay_cycnum) begin
+            out <= '1;
+        end else begin
+            counter <= counter + 1'b1;
+        end
+    end
+
+endmodule
+
+```
