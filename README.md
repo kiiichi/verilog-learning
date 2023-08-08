@@ -901,3 +901,37 @@ module delay_module(
 endmodule
 
 ```
+
+
+```
+`timescale 1ns / 1ps
+
+module delay_module(
+    input wire clk,
+    input wire [31:0] delay_cycnum,
+    output reg fifotri,
+    output reg rst_out
+);
+
+    reg [31:0] counter;
+    reg [31:0] prev_delay_cycnum;
+
+    always @(posedge clk) begin
+        if (delay_cycnum != prev_delay_cycnum) begin
+            counter <= 0;
+            fifotri <= 0;
+            rst_out <= 1;
+            prev_delay_cycnum <= delay_cycnum;
+        end else begin
+            rst_out <= 0;
+            if (counter >= delay_cycnum) begin
+                fifotri <= 1;
+            end else begin
+                counter <= counter + 1;
+            end
+        end
+    end
+
+endmodule
+
+```
