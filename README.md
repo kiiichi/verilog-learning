@@ -976,3 +976,57 @@ module delay_module(
 endmodule
 
 ```
+
+```
+module delay_module (
+  input wire clk,
+  input wire rst,
+  input wire [31:0] delay_cycnum_in,
+  output reg [31:0] delay_cycnum,
+  output reg fifotri,
+  output reg reset_out
+  );
+  
+  reg [31:0] delay_cycnum_sync1;
+  reg [31:0] delay_cycnum_sync2;
+
+  // Synchronizer
+  always @(posedge clk or negedge rst) begin
+    if (!rst) begin
+      delay_cycnum_sync1 <= 32'b0;
+      delay_cycnum_sync2 <= 32'b0;
+    end else begin
+      delay_cycnum_sync1 <= delay_cycnum_in;
+      delay_cycnum_sync2 <= delay_cycnum_sync1;
+    end
+  end
+
+  always @(posedge clk or negedge rst) begin
+    if (!rst) begin
+      delay_cycnum <= 32'b0;
+    end else if (delay_cycnum_sync2 != delay_cycnum) begin
+      delay_cycnum <= delay_cycnum_sync2;
+    end
+  end
+
+  reg [31:0] count;
+
+  always @(posedge clk or negedge rst) begin
+    if (!rst) begin
+      count <= 32'b0;
+      fifotri <= 1'b0;
+      reset_out <= 1'b0;
+    end else if (count >= delay_cycnum) begin
+      count <= 32'b0;
+      fifotri <= 1'b1;
+      reset_out <= 1'b1;
+    end else begin
+      count <= count + 1;
+      fifotri <= 1'b0;
+      reset_out <= 1'b0;
+    end
+  end
+
+endmodule
+
+```
