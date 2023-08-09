@@ -1073,3 +1073,38 @@ module counter_module (
     end
 endmodule
 ```
+
+```
+module counter_module (
+    input wire ddr_clk,     // This is the high-frequency clock from the Clocking Wizard
+    input wire areset,
+    input wire locked,      // Indicates that the MMCM/PLL in Clocking Wizard has locked to the input clock
+    input wire [31:0] delay_cycnum,
+    output reg fifotri
+);
+
+    reg [31:0] count;
+    reg pll_locked = 0;    // Internal signal to remember when the PLL was locked
+
+    always @(posedge ddr_clk or negedge areset) begin
+        if (~areset) begin
+            count <= 32'b0;
+            fifotri <= 1'b0;
+            pll_locked <= 0;
+        end else if (locked && !pll_locked) begin
+            // This block will be entered only once when the PLL first locks
+            pll_locked <= 1;
+            count <= 32'b0;
+            fifotri <= 1'b0;
+        end else if (pll_locked) begin
+            if (count >= delay_cycnum) begin
+                fifotri <= 1'b1;
+            end else begin
+                count <= count + 1;
+                fifotri <= 1'b0;
+            end
+        end
+    end
+endmodule
+
+```
