@@ -7,11 +7,17 @@ module float_to_int_axi (
 
     // Interpret the floating point input structure
     reg sign_bit = float_in[31];
-    reg [7:0] exponent = float_in[30:23];
-    reg [22:0] mantissa = float_in[22:0];
+    reg [7:0] exponent;
+    reg [22:0] mantissa;
 
     reg [31:0] integer_value;
     reg [31:0] int_out;
+
+    initial begin
+        exponent = float_in[30:23];
+        mantissa = float_in[22:0];
+    end
+
     always @* begin
         // Using IEEE-754 formula: (-1)^sign_bit * (1 + mantissa) * 2^(exponent-127)
         // For conversion to integer, we are ignoring the fractional part, 

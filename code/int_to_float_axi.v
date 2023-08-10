@@ -6,7 +6,7 @@ module int_to_float_axi (
 );
 
     // Floating point structure
-    reg sign_bit = int_in[31];
+    reg sign_bit ;
     reg [7:0] exponent;
     reg [22:0] mantissa;
 
@@ -14,6 +14,10 @@ module int_to_float_axi (
     reg [31:0] normalized;
     reg [31:0] float_out;
     integer first_one, shift_amount;
+
+    initial begin
+        sign_bit = int_in[31]
+    end
 
     always @* begin
         if(sign_bit) 
