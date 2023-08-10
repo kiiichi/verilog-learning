@@ -1,7 +1,8 @@
 module float_to_int_axi (
     input [31:0] float_in,  // Input single-precision floating point number
+    input        aclk,
     output[31:0] m_axis_tdata,   // Output 32-bit 2's complement integer
-    output      m_axis_tvalid   // Output valid
+    output       m_axis_tvalid   
 );
 
     // Interpret the floating point input structure
