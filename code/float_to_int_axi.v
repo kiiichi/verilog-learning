@@ -6,7 +6,7 @@ module float_to_int_axi (
 );
 
     // Interpret the floating point input structure
-    reg sign_bit = float_in[31];
+    reg sign_bit ;
     reg [7:0] exponent;
     reg [22:0] mantissa;
 
@@ -14,6 +14,7 @@ module float_to_int_axi (
     reg [31:0] int_out;
 
     initial begin
+        sign_bit = float_in[31];
         exponent = float_in[30:23];
         mantissa = float_in[22:0];
     end
