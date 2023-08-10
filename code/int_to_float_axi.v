@@ -1,4 +1,4 @@
-module int_to_float (
+module int_to_float_axi (
     input [31:0] int_in,      // Input 32-bit 2's complement integer
     output[31:0] m_axis_tdata, // Output single-precision floating point number
     output      m_axis_tvalid // Output valid
