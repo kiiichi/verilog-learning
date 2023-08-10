@@ -848,184 +848,17 @@ endmodule
     cd C:/kichi/RedPitaya-FPGA/prj/Examples/Simple_moving_average/
 
 
+# 7. Delay 
+
+GPIO_change
 ```
 `timescale 1ns / 1ps
 
-module delay_module(
-    input logic clk,
-    input logic reset,
-    input logic [31:0] delay_cycnum,
-    output logic out
-);
-
-    logic [31:0] counter;
-
-    always_ff @(posedge clk or negedge reset) begin
-        if (!reset) begin
-            counter <= '0;
-            out <= '0;
-        end else if (counter >= delay_cycnum) begin
-            out <= '1;
-        end else begin
-            counter <= counter + 1'b1;
-        end
-    end
-
-endmodule
-
-```
-
-```
-`timescale 1ns / 1ps
-
-module delay_module(
-    input wire clk,
-    input wire reset,
-    input wire [31:0] delay_cycnum,
-    output reg out
-);
-
-    reg [31:0] counter;
-
-    always @(posedge clk or negedge reset) begin
-        if (!reset) begin
-            counter <= 0;
-            out <= 0;
-        end else if (counter >= delay_cycnum) begin
-            out <= 1;
-        end else begin
-            counter <= counter + 1;
-        end
-    end
-
-endmodule
-
-```
-
-
-```
-`timescale 1ns / 1ps
-
-module delay_module(
-    input wire clk,
-    input wire [31:0] delay_cycnum,
-    output reg fifotri,
-    output reg rst_out
-);
-
-    reg [31:0] counter;
-    reg [31:0] prev_delay_cycnum;
-
-    always @(posedge clk) begin
-        if (delay_cycnum != prev_delay_cycnum) begin
-            counter <= 0;
-            fifotri <= 0;
-            rst_out <= 1;
-            prev_delay_cycnum <= delay_cycnum;
-        end else begin
-            rst_out <= 0;
-            if (counter >= delay_cycnum) begin
-                fifotri <= 1;
-            end else begin
-                counter <= counter + 1;
-            end
-        end
-    end
-
-endmodule
-
-```
-
-```
-`timescale 1ns / 1ps
-
-module delay_module(
-    input wire clk,
-    input wire [31:0] delay_cycnum,
-    output reg fifotri,
-    output reg rst_out
-);
-
-    reg [31:0] counter;
-    reg [31:0] prev_delay_cycnum;
-    reg delay_cycnum_change;
-
-    always @(posedge clk or negedge clk) begin
-        if (delay_cycnum != prev_delay_cycnum) begin
-            delay_cycnum_change <= 1'b1;
-        end
-    end
-
-    always @(posedge clk) begin
-        if (delay_cycnum_change) begin
-            counter <= 0;
-            fifotri <= 0;
-            rst_out <= 1;
-            prev_delay_cycnum <= delay_cycnum;
-            delay_cycnum_change <= 1'b0;
-        end else begin
-            rst_out <= 0;
-            if (counter >= delay_cycnum) begin
-                fifotri <= 1;
-            end else begin
-                counter <= counter + 1;
-            end
-        end
-    end
-
-endmodule
-
-```
-
-```
-module delay_module (
-  input wire clk,
-  input wire [31:0] delay_cycnum_in,
-  output reg [31:0] delay_cycnum,
-  output reg fifotri,
-  output reg reset_out
-  );
-  
-  reg [31:0] delay_cycnum_sync1;
-  reg [31:0] delay_cycnum_sync2;
-
-  // Synchronizer
-  always @(posedge clk) begin
-    delay_cycnum_sync1 <= delay_cycnum_in;
-    delay_cycnum_sync2 <= delay_cycnum_sync1;
-  end
-
-  always @(posedge clk) begin
-    if (delay_cycnum_sync2 != delay_cycnum) begin
-      delay_cycnum <= delay_cycnum_sync2;
-    end
-  end
-
-  reg [31:0] count;
-
-  always @(posedge clk) begin
-    if (count >= delay_cycnum) begin
-      count <= 32'b0;
-      fifotri <= 1'b1;
-      reset_out <= 1'b1;
-    end else begin
-      count <= count + 1;
-      fifotri <= 1'b0;
-      reset_out <= 1'b0;
-    end
-  end
-
-endmodule
-
-
-```
-
-```
-module delay_sync (
+module GPIO_change (
     input wire clk,
     input wire [31:0] delay_cycnum_in,
     output reg [31:0] delay_cycnum,
-    output reg reset_out
+    output reg areset_out
 );
 
     reg [31:0] delay_cycnum_sync1;
@@ -1040,19 +873,21 @@ module delay_sync (
     always @(posedge clk) begin
         if (delay_cycnum_sync2 != delay_cycnum) begin
             delay_cycnum <= delay_cycnum_sync2;
-            reset_out <= 1'b1;  // Generate reset_out when delay_cycnum changes
+            areset_out <= 1'b0;  // Generate reset_out when delay_cycnum changes
         end else begin
-            reset_out <= 1'b0;
+            areset_out <= 1'b1;
         end
     end
 endmodule
-
 ```
 
+counter_trig
 ```
-module counter_module (
+`timescale 1ns / 1ps
+
+module counter_trig (
     input wire clk,
-    input wire reset,
+    input wire areset,
     input wire [31:0] delay_cycnum,
     output reg fifotri
 );
@@ -1060,11 +895,11 @@ module counter_module (
     reg [31:0] count;
 
     always @(posedge clk) begin
-        if (reset) begin
+        if (~areset) begin
             count <= 32'b0;
             fifotri <= 1'b0;
         end else if (count >= delay_cycnum) begin
-            count <= 32'b0;
+//            count <= 32'b0;
             fifotri <= 1'b1;
         end else begin
             count <= count + 1;
@@ -1072,39 +907,4 @@ module counter_module (
         end
     end
 endmodule
-```
-
-```
-module counter_module (
-    input wire ddr_clk,     // This is the high-frequency clock from the Clocking Wizard
-    input wire areset,
-    input wire locked,      // Indicates that the MMCM/PLL in Clocking Wizard has locked to the input clock
-    input wire [31:0] delay_cycnum,
-    output reg fifotri
-);
-
-    reg [31:0] count;
-    reg pll_locked = 0;    // Internal signal to remember when the PLL was locked
-
-    always @(posedge ddr_clk or negedge areset) begin
-        if (~areset) begin
-            count <= 32'b0;
-            fifotri <= 1'b0;
-            pll_locked <= 0;
-        end else if (locked && !pll_locked) begin
-            // This block will be entered only once when the PLL first locks
-            pll_locked <= 1;
-            count <= 32'b0;
-            fifotri <= 1'b0;
-        end else if (pll_locked) begin
-            if (count >= delay_cycnum) begin
-                fifotri <= 1'b1;
-            end else begin
-                count <= count + 1;
-                fifotri <= 1'b0;
-            end
-        end
-    end
-endmodule
-
 ```
