@@ -17,7 +17,7 @@ module int_to_float_optimized(
   integer   i;
 
 always @(posedge clk or posedge rst) begin
-    if (rst) begin
+    if (~rst) begin
         z <= 32'b0;
     end 
     else begin
