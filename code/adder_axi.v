@@ -1,4 +1,4 @@
-module adder (
+module adder_axi (
 
 input aclk,
 input rstn_i,

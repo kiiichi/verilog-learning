@@ -4,7 +4,7 @@ input aclk,
 input rstn_i,
 input [ 14-1: 0] int1_i,
 input [ 14-1: 0] int2_i,
-output [ 14-1: 0] dat_o,
+output [ 14-1: 0] dat_o
 );
 
 
