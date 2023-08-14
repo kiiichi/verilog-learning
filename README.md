@@ -849,3 +849,6 @@ endmodule
 
 
 # 7. Delay 
+
+
+[systemverilog-data-types](https://www.doulos.com/knowhow/systemverilog/systemverilog-tutorials/systemverilog-data-types/)
