@@ -14,9 +14,7 @@ output [ 32-1: 0] m_axis_tdata
 wire [ 15-1: 0] out_sum   ;
 reg  [ 14-1: 0] out_sat   ;
 
-assign int1_i = s_axis_int1_tdata[14-1:0];
-assign int2_i = s_axis_int2_tdata[14-1:0];
-assign out_sum = $signed(int1_i) + $signed(int2_i);
+assign out_sum = $signed(s_axis_int1_tdata[14-1:0]) + $signed(s_axis_int2_tdata[14-1:0]);
 
 
 always @(posedge aclk) begin
@@ -33,9 +31,7 @@ always @(posedge aclk) begin
    end
 end
 
-assign dat_o = out_sat ;
-assign m_axis_tdata = dat_o;
-assign m_axis_tdata = {{(32-14){dat_o[14-1]}},dat_o[14-1:0]};
+assign m_axis_tdata = {{(32-14){out_sat[14-1]}},out_sat[14-1:0]};
 assign m_axis_tvalid = 1'b1;
 
 endmodule
