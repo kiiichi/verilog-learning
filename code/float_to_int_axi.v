@@ -17,7 +17,7 @@ module float_to_int_axi(
   reg [8:0] a_e;
   reg a_s;
 
-  always @(posedge clk or posedge rst) begin
+  always @(posedge aclk or posedge rst) begin
     if (~rst) begin
         z <= 0;
     end else begin

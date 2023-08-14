@@ -18,7 +18,7 @@ module int_to_float_axi(
   reg       z_s;
   integer   i;
 
-always @(posedge clk or posedge rst) begin
+always @(posedge aclk or posedge rst) begin
     if (~rst) begin
         z <= 32'b0;
     end 
