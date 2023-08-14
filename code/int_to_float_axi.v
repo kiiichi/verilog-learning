@@ -1,82 +1,91 @@
-module int_to_float_axi (
-    input [31:0] int_in,      // Input 32-bit 2's complement integer
-    input        aclk,
-    output [31:0] m_axis_tdata, // Output single-precision floating point number
-    output       m_axis_tvalid 
+module int_to_float_axi(
+    aclk,
+    rst,
+    input_a,
+    m_axis_tdata
+    m_axis_tvalid
 );
 
-    // Floating point structure
-    reg sign_bit;
-    reg [7:0] exponent;
-    reg [22:0] mantissa;
+  input     aclk;
+  input     rst;
+  input     [31:0] input_a;
+  output    [31:0] m_axis_tdata;
+  output    m_axis_tvalid;
 
-    reg [31:0] absolute_value;
-    reg [31:0] normalized;
-    reg [31:0] float_out;
-    reg [4:0] first_one; // 5 bits are enough to cover 0-31
-    integer shift_amount;
+  reg       [31:0] a, z;
+  reg       [23:0] z_m;
+  reg       [7:0]  z_e;
+  reg       z_s;
+  integer   i;
 
-    always @* begin
-        sign_bit = int_in[31];
+always @(posedge clk or posedge rst) begin
+    if (~rst) begin
+        z <= 32'b0;
+    end 
+    else begin
+        // Capture input immediately
+        a = input_a;
 
-        if(sign_bit) 
-            absolute_value = ~int_in + 1'b1; // Get positive equivalent
-        else 
-            absolute_value = int_in;
+        // Determine sign and take absolute value
+        z_s = a[31];
+        a = a[31] ? -a : a;
 
-        // Priority Encoder logic for finding first '1'
-        case(absolute_value)
-            32'b1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd31;
-            32'b01xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd30;
-            32'b001xxxxxxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd29;
-            32'b0001xxxxxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd28;
-            32'b00001xxxxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd27;
-            32'b000001xxxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd26;
-            32'b0000001xxxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd25;
-            32'b00000001xxxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd24;
-            32'b000000001xxxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd23;
-            32'b0000000001xxxxxxxxxxxxxxxxxxxxxx: first_one = 5'd22;
-            32'b00000000001xxxxxxxxxxxxxxxxxxxxx: first_one = 5'd21;
-            32'b000000000001xxxxxxxxxxxxxxxxxxxx: first_one = 5'd20;
-            32'b0000000000001xxxxxxxxxxxxxxxxxxx: first_one = 5'd19;
-            32'b00000000000001xxxxxxxxxxxxxxxxxx: first_one = 5'd18;
-            32'b000000000000001xxxxxxxxxxxxxxxxx: first_one = 5'd17;
-            32'b0000000000000001xxxxxxxxxxxxxxxx: first_one = 5'd16;
-            32'b00000000000000001xxxxxxxxxxxxxxx: first_one = 5'd15;
-            32'b000000000000000001xxxxxxxxxxxxxx: first_one = 5'd14;
-            32'b0000000000000000001xxxxxxxxxxxxx: first_one = 5'd13;
-            32'b00000000000000000001xxxxxxxxxxxx: first_one = 5'd12;
-            32'b000000000000000000001xxxxxxxxxxx: first_one = 5'd11;
-            32'b0000000000000000000001xxxxxxxxxx: first_one = 5'd10;
-            32'b00000000000000000000001xxxxxxxxx: first_one = 5'd9;
-            32'b000000000000000000000001xxxxxxxx: first_one = 5'd8;
-            32'b0000000000000000000000001xxxxxxx: first_one = 5'd7;
-            32'b00000000000000000000000001xxxxxx: first_one = 5'd6;
-            32'b000000000000000000000000001xxxxx: first_one = 5'd5;
-            32'b0000000000000000000000000001xxxx: first_one = 5'd4;
-            32'b00000000000000000000000000001xxx: first_one = 5'd3;
-            32'b000000000000000000000000000001xx: first_one = 5'd2;
-            32'b0000000000000000000000000000001x: first_one = 5'd1;
-            32'b00000000000000000000000000000001: first_one = 5'd0;
-            
-            default: first_one = 5'd0;  // or some error value
-        endcase
+        // Check if input is zero
+        if (a == 0) begin
+            z_m = 24'd0;
+            z_e = 8'd0;
+            z   = 32'b0;
+        end else begin
+            // Normalize using priority encoding
+            case (1'b1) // Priority encoder
+                a[31]: z_e = 31;
+                a[30]: z_e = 30;
+                a[29]: z_e = 29;
+                a[28]: z_e = 28;
+                a[27]: z_e = 27;
+                a[26]: z_e = 26;
+                a[25]: z_e = 25;
+                a[24]: z_e = 24;
+                a[23]: z_e = 23;
+                a[22]: z_e = 22;
+                a[21]: z_e = 21;
+                a[20]: z_e = 20;
+                a[19]: z_e = 19;
+                a[18]: z_e = 18;
+                a[17]: z_e = 17;
+                a[16]: z_e = 16;
+                a[15]: z_e = 15;
+                a[14]: z_e = 14;
+                a[13]: z_e = 13;
+                a[12]: z_e = 12;
+                a[11]: z_e = 11;
+                a[10]: z_e = 10;
+                a[9]: z_e = 9;
+                a[8]: z_e = 8;
+                a[7]: z_e = 7;
+                a[6]: z_e = 6;
+                a[5]: z_e = 5;
+                a[4]: z_e = 4;
+                a[3]: z_e = 3;
+                a[2]: z_e = 2;
+                a[1]: z_e = 1;
+                a[0]: z_e = 0;
+                default: z_e = 0; // Shouldn't occur, but just in case
+            endcase
+    
+            z_m = a << (32 - 8 - z_e - 1);
 
-        // Calculate shift required to normalize
-        shift_amount = 23 - first_one;
+            // Pack the result into IEEE format
+            z[22:0]   = z_m[22:0];
+            z[30:23]  = z_e + 127;
+            z[31]     = z_s;
 
-        // Normalize
-        if(shift_amount >= 0)
-            normalized = absolute_value << shift_amount;
-        else
-            normalized = absolute_value >> -shift_amount;
+        end
 
-        exponent = 8'h7F + first_one; 
-        mantissa = normalized[22:0];
-
-        float_out = {sign_bit, exponent, mantissa};
     end
+end
 
-    assign m_axis_tdata = float_out;
-    assign m_axis_tvalid = 1'b1;
+  assign m_axis_tdata = z;
+  assign m_axis_tvalid = 1'b1;
+
 endmodule

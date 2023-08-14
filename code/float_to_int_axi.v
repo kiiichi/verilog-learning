@@ -1,38 +1,54 @@
-module float_to_int_axi (
-    input [31:0] float_in,  // Input single-precision floating point number
-    input        aclk,
-    output [31:0] m_axis_tdata,   // Output 32-bit 2's complement integer
-    output       m_axis_tvalid   
+module float_to_int_axi(
+    aclk,
+    rst,
+    input_a,
+    m_axis_tdata,
+    m_axis_tvalid
 );
 
-    // Interpret the floating point input structure
-    wire sign_bit = float_in[31];
-    wire [7:0] exponent = float_in[30:23];
-    wire [22:0] mantissa = float_in[22:0];
+  input aclk;
+  input rst;
+  input [31:0] input_a;
+  output [31:0] m_axis_tdata;
+  output m_axis_tvalid;
+  
 
-    reg [31:0] integer_value;
-    reg [31:0] int_out;
+  reg [31:0] a_m, a, z;
+  reg [8:0] a_e;
+  reg a_s;
 
-    always @(posedge aclk) begin
-        // Using IEEE-754 formula: (-1)^sign_bit * (1 + mantissa) * 2^(exponent-127)
-        // For conversion to integer, we ignore the fractional part, 
-        // so we use the exponent to shift the mantissa.
+  always @(posedge clk or posedge rst) begin
+    if (~rst) begin
+        z <= 0;
+    end else begin
+        // Unpack Floating Point
+        a = input_a;
+        a_m[31:8] = {1'b1, a[22:0]};
+        a_m[7:0] = 0;
+        a_e = {8'b0, a[30:23]} - 127;
+        a_s = a[31];
 
-        if(exponent >= 127) begin
-            integer_value[22:0] = {1'b1, mantissa}; // Include the implicit leading 1
-            integer_value = integer_value << (exponent-127); // Adjust based on exponent
-        end else begin
-            integer_value = 0;
+        // Handle special cases
+        if (a_e < 0) begin
+            z = 0;
+        end 
+//        else if (a > 32'h4effffff | a < 32'heffffff) begin
+//            z = 32'h7FFFFF80;
+//        end 
+        else begin
+            // Normalize using priority encoding
+            if (a_e < 31) begin
+            
+                a_m = a_m >> (31 - a_e);
+            end
+
+            z = a_s ? -a_m : a_m;
+
         end
 
-        // Apply the sign
-        if(sign_bit) 
-            int_out <= ~integer_value + 1'b1; // Two's complement for negative numbers
-        else 
-            int_out <= integer_value;
-        end
+    end
+  end
 
-        assign m_axis_tdata = int_out;
-        assign m_axis_tvalid = 1'b1;
-    endmodule
-    
+  assign m_axis_tdata = z;
+  assign m_axis_tvalid = 1'b1;
+endmodule

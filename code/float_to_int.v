@@ -1,31 +1,51 @@
-module float_to_int (
-    input [31:0] float_in,  // Input single-precision floating point number
-    output reg [31:0] int_out   // Output 32-bit 2's complement integer
+module float_to_int(
+    clk,
+    rst,
+    input_a,
+    output_z
 );
 
-    // Interpret the floating point input structure
-    reg sign_bit = float_in[31];
-    reg [7:0] exponent = float_in[30:23];
-    reg [22:0] mantissa = float_in[22:0];
+  input clk;
+  input rst;
+  input [31:0] input_a;
+  output [31:0] output_z;
 
-    reg [31:0] integer_value;
+  reg [31:0] a_m, a, z;
+  reg [8:0] a_e;
+  reg a_s;
 
-    always @* begin
-        // Using IEEE-754 formula: (-1)^sign_bit * (1 + mantissa) * 2^(exponent-127)
-        // For conversion to integer, we are ignoring the fractional part, 
-        // so we essentially use the exponent to shift the mantissa.
+  always @(posedge clk or posedge rst) begin
+    if (~rst) begin
+        z <= 0;
+    end else begin
+        // Unpack Floating Point
+        a = input_a;
+        a_m[31:8] = {1'b1, a[22:0]};
+        a_m[7:0] = 0;
+        a_e = {8'b0, a[30:23]} - 127;
+        a_s = a[31];
 
-        integer_value = 1'b0; // Default value
-        if(exponent >= 127) begin
-            integer_value[22:0] = {1'b1, mantissa}; // Include the implicit leading 1
-            integer_value = integer_value << (exponent-127); // Adjust based on exponent
+        // Handle special cases
+        if (a_e < 0) begin
+            z = 0;
+        end 
+//        else if (a > 32'h4effffff | a < 32'heffffff) begin
+//            z = 32'h7FFFFF80;
+//        end 
+        else begin
+            // Normalize using priority encoding
+            if (a_e < 31) begin
+            
+                a_m = a_m >> (31 - a_e);
+            end
+
+            z = a_s ? -a_m : a_m;
+
         end
 
-        // Apply the sign
-        if(sign_bit) 
-            int_out = ~integer_value + 1'b1; // Two's complement for negative numbers
-        else 
-            int_out = integer_value;
     end
+  end
+
+  assign output_z = z;
 
 endmodule
