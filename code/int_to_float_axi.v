@@ -2,7 +2,7 @@ module int_to_float_axi(
     aclk,
     rst,
     input_a,
-    m_axis_tdata
+    m_axis_tdata,
     m_axis_tvalid
 );
 
