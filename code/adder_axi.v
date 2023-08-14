@@ -36,6 +36,6 @@ end
 assign dat_o = out_sat ;
 assign m_axis_tdata = dat_o;
 assign m_axis_tdata = {{(32-14){dat_o[14-1]}},dat_o[14-1:0]};
-assign m_axis_tvalid = s_axis_int1_tvalid | s_axis_int2_tvalid;
+assign m_axis_tvalid = 1'b1;
 
 endmodule
