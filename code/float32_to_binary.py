@@ -13,7 +13,7 @@ import struct
 # binary_representation = float_to_binary32(value)
 # print(binary_representation)
 
-test = struct.pack('!f', 2.25)
+test = struct.pack('!f', -2.25)
 print(test)
-binary = ''.join(f'{byte:08b}' for byte in test)
+binary = ''.join((format(b, '08b') for b in test))
 print(binary)

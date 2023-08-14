@@ -852,3 +852,4 @@ endmodule
 
 
 [systemverilog-data-types](https://www.doulos.com/knowhow/systemverilog/systemverilog-tutorials/systemverilog-data-types/)
+[IEEE 754 floating number](https://www.h-schmidt.net/FloatConverter/IEEE754.html)
