@@ -14,6 +14,7 @@ module int_to_float_axi (
     reg [31:0] normalized;
     reg [31:0] float_out;
     reg [4:0] first_one; // 5 bits are enough to cover 0-31
+    integer shift_amount;
 
     always @* begin
         sign_bit = int_in[31];
@@ -62,7 +63,7 @@ module int_to_float_axi (
         endcase
 
         // Calculate shift required to normalize
-        int shift_amount = 23 - first_one;
+        shift_amount = 23 - first_one;
 
         // Normalize
         if(shift_amount >= 0)
