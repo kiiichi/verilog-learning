@@ -14,7 +14,7 @@ output [ 32-1: 0] m_axis_tdata
 wire [ 15-1: 0] out_sum   ;
 reg  [ 14-1: 0] out_sat   ;
 
-assign out_sum = $signed(s_axis_int1_tdata[14-1:0]) + $signed(s_axis_int2_tdata[14-1:0]);
+assign out_sum = s_axis_int1_tdata[14-1:0] + s_axis_int2_tdata[14-1:0];
 
 
 always @(posedge aclk) begin
