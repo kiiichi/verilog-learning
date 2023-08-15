@@ -35,7 +35,7 @@ axi_array_contents2 = axi_numpy_array2[0]
 
 # Input Parameters
 delay_cycnum_port1 = 17 #Minimum 10
-delay_cycnum_port2 = 10 #Maximum 8192
+delay_cycnum_port2 = 10 #Maximum 16384
 gain11 = 8
 gain12 = -2
 gain21 = 3.1
