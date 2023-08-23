@@ -853,3 +853,5 @@ endmodule
 
 [systemverilog-data-types](https://www.doulos.com/knowhow/systemverilog/systemverilog-tutorials/systemverilog-data-types/)
 [IEEE 754 floating number](https://www.h-schmidt.net/FloatConverter/IEEE754.html)
+
+[how to reduce net delay](https://support.xilinx.com/s/question/0D52E00006hpfv4SAA/method-to-reduce-net-delay-?language=en_US)
