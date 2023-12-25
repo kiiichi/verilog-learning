@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Dec 25 22:34:22 2023
+# Process ID: 22408
+# Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1
+# Command line: vivado.exe -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
+# Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/system_wrapper.vds
+# Journal file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source system_wrapper.tcl -notrace

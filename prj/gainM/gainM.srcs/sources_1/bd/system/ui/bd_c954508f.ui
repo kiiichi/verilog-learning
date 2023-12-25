@@ -1,0 +1,142 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_Layers":"/util_ds_buf_2_OBUF_DS_P:true|/util_ds_buf_1_IBUF_OUT:true|/PS7/processing_system7_0_FCLK_CLK0:true|/PS7/processing_system7_0_FCLK_RESET0_N:true|/PS7/rst_ps7_0_125M_peripheral_aresetn:true|/axis_red_pitaya_dac_0_dac_rst:true|/DataAcquisition/axis_red_pitaya_adc_0_adc_clk:true|/util_ds_buf_2_OBUF_DS_N:true|/clk_wiz_0_clk_out1:true|/axis_red_pitaya_dac_0_dac_clk:true|/adc/axis_red_pitaya_adc_0_adc_clk:true|/dac/axis_red_pitaya_dac_0_dac_clk:true|/dac/axis_red_pitaya_dac_0_dac_rst:true|/dac/clk_wiz_0_clk_out1:true|",
+   "Default View_ScaleFactor":"0.650568",
+   "Default View_TopLeft":"1788,881",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/util_ds_buf_2_OBUF_DS_P:false|/util_ds_buf_1_IBUF_OUT:false|/PS7/processing_system7_0_FCLK_CLK0:false|/PS7/processing_system7_0_FCLK_RESET0_N:false|/PS7/rst_ps7_0_125M_peripheral_aresetn:false|/axis_red_pitaya_dac_0_dac_rst:false|/DataAcquisition/axis_red_pitaya_adc_0_adc_clk:false|/util_ds_buf_2_OBUF_DS_N:false|/clk_wiz_0_clk_out1:false|/axis_red_pitaya_dac_0_dac_clk:false|/adc/axis_red_pitaya_adc_0_adc_clk:false|/dac/axis_red_pitaya_dac_0_dac_clk:false|/dac/axis_red_pitaya_dac_0_dac_rst:false|/dac/clk_wiz_0_clk_out1:false|",
+   "Interfaces View_ScaleFactor":"0.932296",
+   "Interfaces View_TopLeft":"-163,-24",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 7 -x 4660 -y 150 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 4660 -y 1290 -defaultsOSRD
+preplace port Vaux0 -pg 1 -lvl 0 -x -170 -y 20 -defaultsOSRD
+preplace port Vaux1 -pg 1 -lvl 0 -x -170 -y 40 -defaultsOSRD
+preplace port Vaux8 -pg 1 -lvl 0 -x -170 -y 60 -defaultsOSRD
+preplace port Vaux9 -pg 1 -lvl 0 -x -170 -y 80 -defaultsOSRD
+preplace port Vp_Vn -pg 1 -lvl 0 -x -170 -y 100 -defaultsOSRD
+preplace port gpio_rtl_0 -pg 1 -lvl 7 -x 4660 -y 120 -defaultsOSRD
+preplace port gpio_rtl_1 -pg 1 -lvl 7 -x 4660 -y 170 -defaultsOSRD
+preplace port gpio_rtl_2 -pg 1 -lvl 7 -x 4660 -y 190 -defaultsOSRD
+preplace port gpio_rtl_3 -pg 1 -lvl 7 -x 4660 -y 210 -defaultsOSRD
+preplace port adc_clk_n_i -pg 1 -lvl 0 -x -170 -y 1070 -defaultsOSRD
+preplace port adc_clk_p_i -pg 1 -lvl 0 -x -170 -y 1050 -defaultsOSRD
+preplace port adc_csn_o -pg 1 -lvl 7 -x 4660 -y 1310 -defaultsOSRD
+preplace port adc_enc_n_o -pg 1 -lvl 7 -x 4660 -y 20 -defaultsOSRD
+preplace port adc_enc_p_o -pg 1 -lvl 7 -x 4660 -y 40 -defaultsOSRD
+preplace port dac_clk_o -pg 1 -lvl 7 -x 4660 -y 1160 -defaultsOSRD
+preplace port dac_rst_o -pg 1 -lvl 7 -x 4660 -y 1200 -defaultsOSRD
+preplace port dac_sel_o -pg 1 -lvl 7 -x 4660 -y 1220 -defaultsOSRD
+preplace port dac_wrt_o -pg 1 -lvl 7 -x 4660 -y 1240 -defaultsOSRD
+preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x -170 -y 1090 -defaultsOSRD
+preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x -170 -y 1110 -defaultsOSRD
+preplace portBus dac_dat_o -pg 1 -lvl 7 -x 4660 -y 1180 -defaultsOSRD
+preplace portBus dac_pwm_o -pg 1 -lvl 7 -x 4660 -y 60 -defaultsOSRD
+preplace portBus daisy_n_i -pg 1 -lvl 0 -x -170 -y 1410 -defaultsOSRD
+preplace portBus daisy_n_o -pg 1 -lvl 7 -x 4660 -y 1400 -defaultsOSRD
+preplace portBus daisy_p_i -pg 1 -lvl 0 -x -170 -y 1390 -defaultsOSRD
+preplace portBus daisy_p_o -pg 1 -lvl 7 -x 4660 -y 1380 -defaultsOSRD
+preplace portBus exp_n_tri_io -pg 1 -lvl 7 -x 4660 -y 80 -defaultsOSRD
+preplace portBus exp_p_tri_io -pg 1 -lvl 7 -x 4660 -y 100 -defaultsOSRD
+preplace portBus led_o -pg 1 -lvl 7 -x 4660 -y 230 -defaultsOSRD
+preplace inst FIFO_delay_port1 -pg 1 -lvl 5 -x 2500 -y 1206 -defaultsOSRD
+preplace inst FIFO_delay_port2 -pg 1 -lvl 5 -x 2500 -y 502 -defaultsOSRD
+preplace inst GPIO_change_0 -pg 1 -lvl 4 -x 2059 -y 370 -defaultsOSRD
+preplace inst PS7 -pg 1 -lvl 1 -x -20 -y 160 -defaultsOSRD
+preplace inst dac -pg 1 -lvl 6 -x 4421 -y 1202 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 5 -x 2500 -y 2018 -defaultsOSRD
+preplace inst util_ds_buf_2 -pg 1 -lvl 6 -x 4421 -y 1694 -defaultsOSRD
+preplace inst axis_red_pitaya_adc_0 -pg 1 -lvl 1 -x -20 -y 1080 -defaultsOSRD
+preplace inst signal_split_0 -pg 1 -lvl 2 -x 1220 -y 1420 -defaultsOSRD
+preplace inst Amplifier_11 -pg 1 -lvl 3 -x 1690 -y 650 -defaultsOSRD
+preplace inst adder_axi_0 -pg 1 -lvl 4 -x 2059 -y 960 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -x 1220 -y 1590 -defaultsOSRD
+preplace inst adder_axi_1 -pg 1 -lvl 4 -x 2059 -y 530 -defaultsOSRD
+preplace inst Amplifier_12 -pg 1 -lvl 3 -x 1690 -y 990 -defaultsOSRD
+preplace inst Amplifier_21 -pg 1 -lvl 3 -x 1690 -y 492 -defaultsOSRD
+preplace inst Amplifier_22 -pg 1 -lvl 3 -x 1690 -y 820 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 2 -x 1220 -y 210 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 2 -x 1220 -y 410 -defaultsOSRD
+preplace inst axi_gpio_2 -pg 1 -lvl 2 -x 1220 -y 650 -defaultsOSRD
+preplace inst FIFO_delay_port1|counter_trig_PORT1 -pg 1 -lvl 2 -x 2830 -y 1426 -defaultsOSRD
+preplace inst FIFO_delay_port1|fifo_generator_PORT1 -pg 1 -lvl 2 -x 2830 -y 1256 -defaultsOSRD
+preplace inst FIFO_delay_port1|xlslice_fifo_PORT1 -pg 1 -lvl 1 -x 2530 -y 1446 -defaultsOSRD
+preplace inst FIFO_delay_port2|counter_trig_PORT2 -pg 1 -lvl 2 -x 2830 -y 722 -defaultsOSRD
+preplace inst FIFO_delay_port2|fifo_generator_PORT2 -pg 1 -lvl 2 -x 2830 -y 552 -defaultsOSRD
+preplace inst FIFO_delay_port2|xlslice_fifo_PORT2 -pg 1 -lvl 1 -x 2530 -y 742 -defaultsOSRD
+preplace netloc GPIO_change_0_areset_out 1 4 1 2260 380n
+preplace netloc GPIO_change_0_delay_cycnum 1 4 1 2280 360n
+preplace netloc adc_clk_n_i_1 1 0 1 NJ 1070
+preplace netloc adc_clk_p_i_1 1 0 1 NJ 1050
+preplace netloc adc_dat_a_i_1 1 0 1 NJ 1090
+preplace netloc adc_dat_b_i_1 1 0 1 NJ 1110
+preplace netloc axi_gpio_0_gpio2_io_o 1 2 2 1460 380 NJ
+preplace netloc axis_red_pitaya_adc_0_adc_clk 1 1 5 N 1080 1430 402 1830 682 2290 1116 3180J
+preplace netloc axis_red_pitaya_adc_0_adc_csn 1 1 6 NJ 1100 NJ 1100 NJ 1100 NJ 1100 NJ 1100 4610J
+preplace netloc axis_red_pitaya_dac_0_dac_clk 1 6 1 4600J 1160n
+preplace netloc axis_red_pitaya_dac_0_dac_dat 1 6 1 4600J 1180n
+preplace netloc axis_red_pitaya_dac_0_dac_rst 1 6 1 4620J 1200n
+preplace netloc axis_red_pitaya_dac_0_dac_sel 1 6 1 4640J 1220n
+preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 6 1 4640J 1240n
+preplace netloc daisy_n_i_1 1 0 5 NJ 1410 100J 1520 NJ 1520 NJ 1520 2240J
+preplace netloc daisy_p_i_1 1 0 5 NJ 1390 120J 1510 NJ 1510 NJ 1510 2250J
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 1 120 210n
+preplace netloc rst_ps7_0_125M_peripheral_aresetn 1 1 1 130 230n
+preplace netloc util_ds_buf_1_IBUF_OUT 1 5 1 3200 1694n
+preplace netloc util_ds_buf_2_OBUF_DS_N 1 6 1 4630J 1400n
+preplace netloc util_ds_buf_2_OBUF_DS_P 1 6 1 4610J 1380n
+preplace netloc signal_split_0_M_AXIS_PORT1_tdata 1 2 1 1450 502n
+preplace netloc xlconstant_0_dout 1 2 2 1460 900 1840
+preplace netloc signal_split_0_M_AXIS_PORT2_tdata 1 2 1 1470 830n
+preplace netloc axi_gpio_1_gpio_io_o 1 2 1 1420 380n
+preplace netloc axi_gpio_1_gpio2_io_o 1 2 1 1410 440n
+preplace netloc axi_gpio_2_gpio_io_o 1 2 1 1400 482n
+preplace netloc axi_gpio_2_gpio2_io_o 1 2 1 1440 680n
+preplace netloc FIFO_delay_port1_m_axis_tvalid 1 5 1 3180 1182n
+preplace netloc FIFO_delay_port1_m_axis_tdata 1 5 1 3190 1202n
+preplace netloc FIFO_delay_port2_m_axis_tvalid 1 5 1 3200 562n
+preplace netloc FIFO_delay_port2_m_axis_tdata 1 5 1 3210 522n
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 100 NJ 100 NJ 100 NJ 100 NJ 100 4630J
+preplace netloc processing_system7_0_DDR 1 1 6 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 4640J
+preplace netloc ps7_0_axi_periph_M00_AXI 1 1 1 130 120n
+preplace netloc adder_axi_0_m_axis 1 4 1 2270 960n
+preplace netloc Amplifier_12_m_axis 1 3 1 1820 950n
+preplace netloc Amplifier_11_m_axis 1 3 1 1820 650n
+preplace netloc axis_red_pitaya_adc_0_M_AXIS 1 1 1 130 1060n
+preplace netloc PS7_M01_AXI1 1 1 1 110 140n
+preplace netloc PS7_M02_AXI 1 1 1 100 160n
+preplace netloc Amplifier_22_m_axis 1 3 1 1810 520n
+preplace netloc Amplifier_21_m_axis 1 3 1 1840 492n
+preplace netloc adder_axi_1_m_axis 1 4 1 2270 530n
+preplace netloc FIFO_delay_port1|Din_1 1 0 1 NJ 1446
+preplace netloc FIFO_delay_port1|counter_trig_PORT1_fifotri 1 2 1 3020 1246n
+preplace netloc FIFO_delay_port1|fifo_generator_PORT1_m_axis_tdata 1 2 1 N 1226
+preplace netloc FIFO_delay_port1|fifo_generator_PORT1_m_axis_tvalid 1 2 1 N 1266
+preplace netloc FIFO_delay_port1|s_aclk_1 1 0 2 2430J 1386 2630
+preplace netloc FIFO_delay_port1|s_aresetn_1 1 0 2 2420J 1376 2640
+preplace netloc FIFO_delay_port1|xlslice_fifo_PORT1_Dout 1 1 1 N 1446
+preplace netloc FIFO_delay_port1|Conn1 1 0 2 NJ 1236 N
+preplace netloc FIFO_delay_port2|Din_1 1 0 1 2420J 662n
+preplace netloc FIFO_delay_port2|axis_red_pitaya_adc_0_adc_clk 1 0 2 NJ 682 2630
+preplace netloc FIFO_delay_port2|counter_trig_0_fifotri 1 2 1 3020 542n
+preplace netloc FIFO_delay_port2|delay_sync_0_areset_out 1 0 2 2430J 672 2640
+preplace netloc FIFO_delay_port2|fifo_generator_0_m_axis_tdata 1 2 1 N 522
+preplace netloc FIFO_delay_port2|fifo_generator_0_m_axis_tvalid 1 2 1 N 562
+preplace netloc FIFO_delay_port2|xlslice_fifo_PORT2_Dout 1 1 1 N 742
+preplace netloc FIFO_delay_port2|signal_split_0_M_AXIS_PORT2 1 0 2 NJ 532 N
+levelinfo -pg 1 -170 -20 1220 1690 2059 2500 4421 4660
+levelinfo -hier FIFO_delay_port1 * 2530 2830 *
+levelinfo -hier FIFO_delay_port2 * 2530 2830 *
+pagesize -pg 1 -db -bbox -sgen -340 0 4820 2220
+pagesize -hier FIFO_delay_port1 -db -bbox -sgen 2390 1146 3050 1536
+pagesize -hier FIFO_delay_port2 -db -bbox -sgen 2390 442 3050 802
+"
+}
+{
+   "da_axi4_cnt":"5",
+   "da_board_cnt":"3"
+}

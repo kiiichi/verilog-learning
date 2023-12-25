@@ -1,0 +1,29 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-251,-68",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port S_AXIS -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port s_aclk -pg 1 -lvl 0 -x 0 -y 30 -defaultsOSRD
+preplace port s_aresetn -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port m_axis_tvalid -pg 1 -lvl 3 -x 650 -y 250 -defaultsOSRD
+preplace portBus Din -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace portBus m_axis_tdata -pg 1 -lvl 3 -x 650 -y 210 -defaultsOSRD
+preplace inst counter_trig_PORT1 -pg 1 -lvl 2 -x 440 -y 70 -defaultsOSRD
+preplace inst fifo_generator_PORT1 -pg 1 -lvl 2 -x 440 -y 240 -defaultsOSRD
+preplace inst xlslice_fifo_PORT1 -pg 1 -lvl 1 -x 130 -y 90 -defaultsOSRD
+preplace netloc Din_1 1 0 1 NJ 90
+preplace netloc xlslice_fifo_PORT1_Dout 1 1 1 NJ 90
+preplace netloc s_aclk_1 1 0 2 NJ 30 240
+preplace netloc s_aresetn_1 1 0 2 NJ 240 230
+preplace netloc counter_trig_PORT1_fifotri 1 2 1 630 70n
+preplace netloc fifo_generator_PORT1_m_axis_tdata 1 2 1 NJ 210
+preplace netloc fifo_generator_PORT1_m_axis_tvalid 1 2 1 NJ 250
+preplace netloc Conn1 1 0 2 NJ 220 NJ
+levelinfo -pg 1 0 130 440 650
+pagesize -pg 1 -db -bbox -sgen -120 -10 820 350
+"
+}
+

@@ -6,12 +6,14 @@
 
 ### 1.1. 部署环境
 
-1. 安装Vivado 2020.1 
+1. 安装Vivado 2020.1
    实测 2023.1 也可使用，但是会有~~很多~~更多警告
 2. windows下安装[WSL](https://learn.microsoft.com/zh-cn/windows/wsl/install)
+
 ### 1.2. 创建工程
+
 1. 运行vivado 2020.1，打开tcl console，定位到项目文件夹
-   
+
         cd C:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj
    注意：路径中的`/`不能用`\`代替，否则会报错
 2. 使用 tcl console run the script to create the project
@@ -19,10 +21,12 @@
         cd Examples
         source make_project.tcl
    `make_project.tcl` automatically generates a complete project in the RedPitaya-FPGA/prj/Examples/Led_blink/ directory.
+
 ### 1.3. 烧录程序
+
 1. Click Generate Bitstream at the bottom-left part of the window to generate a bitstream file. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at `Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/system_wrapper.bit`
 2. 打开WSL, copy the newly generated bit file to the RedPitaya’s `/root/tmp` folder
-   
+
         cd /mnt/c/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1
         scp system_wrapper.bit root@192.168.1.3:Led_blink.bit
 3. [Connect to Redpitaya via WSL](https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html#establish-remote-ssh-connection)
@@ -36,13 +40,15 @@
 4. Program the FPGA with our own bitstream file located in the /root/ folder on Red Pitaya
 
         cat /root/Led_blink.bit > /dev/xdevcfg
-5.  To roll back to the official Red Pitaya FPGA program
-    
+5. To roll back to the official Red Pitaya FPGA program
+
         redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
     or restart redpitaya
+
 ### 1.4. Block Design
+
 使用 tcl command 创建 block 间的连线
-    
+
         connect_bd_net [get_bd_pins xlconcat_0/In0] [get_bd_pins exp_p_tri_io]
     
     `bd` means block design, `get_bd_pins xlconcat_0/In0` means get the specific pin named `In0` from the IP block instance `xlconcat_0`, `connect_bd_net` connects the two parts, `net` refers to a collection of connected electrical connections or wires.
@@ -53,15 +59,17 @@
 
         cd Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/
         scp system_wrapper.bit root@192.168.1.3:Knight_rider.bit
+
 ### 2.2. Customize our module
 
 #### 2.2.1. Write our first module
+
 1. Project Manager -> Add Sources -> Add or create design sources
 2. Use `parameter` to define constants, the parameter can be **easily** changed on the BD diagram.
 3. Use `reg` to declare registers
 4. Use `assign` to give value to `net` variables, can't implement on `reg`
 5. In module declaring, the port declarations is like:
-   
+
    ```verilog
    module MyModule(
    input clk,
@@ -73,7 +81,7 @@
    // Logic of the module goes here
    endmodule
    ```
-   
+
    The data type used for ports can be `wire`, `reg`, or `logic` (starting from Verilog-2001). The wire type is commonly used for input and output ports, while reg or logic types are used for internal registers or variables.If we declare a port without specifying a data type, **the default type** is `wire`.
 
    Grammar summary:
@@ -91,7 +99,7 @@
 
 6. Blocking and non-blocking assignments
    > Blocking assignment is usually used within the always blocks when we want to get a logic circuit made of **gates** and not **latches** or **flip-flops**. It is good practise **not to mix** blocking and non-blocking assignments within one always block.
-   
+
    区别于官方文档的跑马灯实现方式。同样是使用了 3 assignment methods (blocking assignment, nonblocking assignment, `assign` keyword)
 
         ```verilog
@@ -162,6 +170,7 @@ assign mysignal2 = A & B;   // Continuous assignment, AND gate
 多驱动时，如inout类型端口，使用wire。
 
 ### 2.3. Sup: Latch, Flip-flop and Register
+
 #### 2.3.1 Latch 锁存器
 
               ·@@@@@@@@@@@@@·        
@@ -176,16 +185,22 @@ assign mysignal2 = A & B;   // Continuous assignment, AND gate
 
 有效信号 EN (E) 为 0 时 D 对输出值 Q 和 !Q 无影响， Q 和 !Q 保持不变。
 有效信号 EN (E) 为 1 时 Q = D, !Q = !D ( D 与 Q 的变化是同步的 )
+
 #### 2.3.2 Flip-flop (FF) 触发器
+
 与锁存器类似，也储存1位二进制信息，并用于实现二进制的翻转。
 不同的是：1. 触发器对上升或下降沿敏感，而锁存器对电平敏感。2. 触发器仅仅实现翻转功能，触发和更改存储值是同时的；锁存器存在两层输入，只有 E = 1 时才可写入数据，且可随时写入数据，也就是触发和更改储存值可以是异步的。
+
 #### 2.3.3 Register 寄存器
+
 寄存器的存储电路是由锁存器或触发器构成的，具体的也不是很懂，用来储存N位的值，对边沿敏感。
 
 ### 2.4. Simulation
+
 1. Add Sources -> Add or create simulation sources
 2. Filename: 'tb' is the abbreviation for "test bench"
 3. Edit .v
+
    ```verilog
    `timescale 1ns / 1ps
    module knight_rider_tb();
@@ -204,6 +219,7 @@ assign mysignal2 = A & B;   // Continuous assignment, AND gate
 
    endmodule
    ```
+
    The clock period is 2ns (1ns high and 1ns low) based on 2 factors above: `timescale 1ns / 1ps` and `forever #1 clock = ~clock`
 4. Add more internal register from **Scope** pannel, just drag the parameters from knight_rider->kr icon to wavefrom name list.
 5. Right click signal name to modify the color, radix, etc
@@ -234,7 +250,9 @@ assign mysignal2 = A & B;   // Continuous assignment, AND gate
         ```
 
 ## 3. [Stopwatch](https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/StopWatch.html)
+
 ### 3.1. Get Ready
+
 导航：
 
         cd Examples/Stopwatch/tmp/Stopwatch/Stopwatch.runs/impl_1/
@@ -253,7 +271,7 @@ assign mysignal2 = A & B;   // Continuous assignment, AND gate
 
 The AXI protocol is designed to facilitate **communication between various IP blocks** within an SoC or FPGA. It provides a standardized way for these IP blocks to communicate with each other, ensuring compatibility, interoperability, and ease of integration.
 
-Key features: 
+Key features:
 
 1. Burst Transfers: AXI supports burst transfers, allowing multiple data transfers to occur in a single transaction, which enhances data throughput and efficiency.
 
@@ -266,6 +284,7 @@ Key features:
 5. Support for Multiple Masters and Slaves: AXI allows multiple masters (IPs initiating transactions) and slaves (IPs responding to transactions) to be connected on the same bus, enabling a complex interconnection of IPs in an SoC.
 
 6. Advanced Features: The AXI protocol includes advanced features such as data interleaving, out-of-order transaction support, and exclusive access control, which enhance its capabilities for high-performance and complex designs.
+
 ### 3.3. Block Design
 
 ### 3.4. Edit Memory Address
@@ -274,7 +293,8 @@ Window -> Address Editor
 
 The address of our GPIO block is `0x4200_0000`
 
-#### Annotations: 
+#### Annotations
+
 Q: Does FPGA have memory?
 A: YES! FPGA consist of an array of configurable logic blocks, interconnects, and various types of **memory** elements. The memory in an FPGA can be broadly categorized into two types:
 1.Configurable Memory (Configuration Memory): This is the memory that stores the configuration bitstream that defines the FPGA's behavior. When the FPGA is powered on or reprogrammed, the configuration memory loads the configuration bitstream, configuring the logic blocks and interconnects to create the desired digital circuit.
@@ -326,11 +346,10 @@ print("Clock count: ", axi_array_contents.gpio2_data, " calculated time: ", axi_
 
 This .py file use flie:`/dev/mem` to access GPIO signal. Here is the flow:
 
->**GPIO_signal** <==> **FPGA_memory** <=(in Linux)=> 
+>**GPIO_signal** <==> **FPGA_memory** <=(in Linux)=>
 **file:/dev/mem** <=(mmap)=> **pyfile_memory**
 
-
-#### Annotations: 
+#### Annotations
 
 Q: What is the `/dev/mem` ?
 A: The `/dev/mem` device file exists on most Unix-like operating systems, including Linux. It provides access to the physical memory of the system. This file allows privileged processes (usually running as the root user) to read from and write to physical memory addresses **directly**.
@@ -360,7 +379,7 @@ The clock frequency can be set from **100000** to **2500000000**. Clock speeds a
 ## 4.1. Easy to use
 
 move to dic
-        
+
         cd Examples/Frequency_counter/tmp/freq/freq.runs/impl_1/
 
 send to redpitaya
@@ -374,6 +393,7 @@ run on redpitaya
 ## 4.2. How to run
 
 On redpitaya jupyter
+
 ```python
 import mmap
 import os
@@ -417,23 +437,24 @@ to join them to a single hierarchy(架构) block.
 ### 4.3.2. Signal Generator
 
 #### 4.3.2.1. DDS Compiler
+   >
    >In DSP system, we usually use Direct Digtal Synthesizer (DDS) or Numerically Controlled Oscillator (NCO) to generate sinusoid function. DDS is a **LUT** which input is phase and output is current function value.
 
    The DDS Compiler can easily change SFDR (aka the resolution or the bit width of the analog value), frequency, amplitude, and other parameters.
 
    The current DDS core settings will generate sin(ωt) on one DAC channel and cos(ωt) on the other, with a maximum amplitude of +/-1V (maximal range) on both.
 
-   The signal frequency can be set fixed at the design stage by choosing Fixed Phase Increment in the DDS re-customization dialog -> implementation tab. In this case, the dialog automatically calculates the required constant phase increment for a desired frequency and frequency resolution. 
+   The signal frequency can be set fixed at the design stage by choosing Fixed Phase Increment in the DDS re-customization dialog -> implementation tab. In this case, the dialog automatically calculates the required constant phase increment for a desired frequency and frequency resolution.
 
    To change the frequency during an operation, we choose Streaming Phase Increment in the re-customization dialog, which requires a phase increment value to be continuously supplied to the S_AXIS_PHASE input interface.
 
   **Output Frequency:**
   f_out = f_clk * phase_increment / 2^(B_phasewidth)
-  - phase_increment is what we input on `S_AXIS_PHASE` port
-  - B_phasewidth is the number of bits in the phase acumulator, which we can find on Re-customize IP dialog -> Summary tab -> Phase Width
+
+- phase_increment is what we input on `S_AXIS_PHASE` port
+- B_phasewidth is the number of bits in the phase acumulator, which we can find on Re-customize IP dialog -> Summary tab -> Phase Width
 
    More details on Xilinix search Product Guide [(PG141)](reference/pg141-dds-compiler.pdf), or on [zhihu](https://zhuanlan.zhihu.com/p/350989496)
-
 
 #### 4.3.2.2. AXI4-Stream Constant
 
@@ -528,6 +549,7 @@ endmodule
 概念：**Primitive**(原语)
 
 与全局时钟资源相关的Xilinx器件原语：
+
 - IBUFG
   
   与专用**全局时钟**输入管脚相连接的首级全局缓冲。所有从全局时钟管脚输入的信号必须经过IBUF元，否则在布局布线时会报错。
@@ -546,24 +568,25 @@ endmodule
 >使用 IBUFG 或 IBUFGDS 的充分必要条件是信号从专用**全局时钟**管脚输入。换言之，当某个信号从全局时钟管脚输入，不论它是否为时钟信号，都必须使用 IBUFG或IBUFGDS；如果对某个信号使用了IBUFG或IBUFGDS硬件原语，则这个信号必定是从全局时钟管脚输入的。如果违反了这条原则，那么在布局布线时会报错。这条规则的使用是由FPGA的内部结构决定的：IBUFG和IBUFGDS的输入端仅仅与芯片的专用全局时钟输入管脚有物理连接，与普通IO和其它内部CLB等没有物理连接。另外，由于BUFGP相当于IBUFG和BUFG的组合，所以BUFGP的使用也必须遵循上述的原则。
 
 使用全局时钟的五种方法：
+
 1. IBUFG + BUFG的使用方法：
-   
+
    IBUFG后面连接BUFG的方法是最基本的全局时钟资源使用方法，由于IBUFG组合BUFG相当于BUFGP，所以在这种使用方法也称为BUFGP方法。
 
 2. IBUFGDS + BUFG的使用方法：
-   
+
    当输入时钟信号为差分信号时，需要使用IBUFGDS代替IBUFG。
 
 3. IBUFG + DCM + BUFG的使用方法：
-   
+
    这种使用方法最灵活，对全局时钟的控制更加有效。通过DCM模块不仅仅能对时钟进行同步、移相、分频和倍频等变换，而且可以使全局时钟的输出达到无抖动延迟。
 
 4. Logic ＋ BUFG的使用方法：
-   
+
    BUFG不但可以驱动IBUFG的输出，还可以驱动其它普通信号的输出。当某个信号(时钟、使能、快速路径)的扇出非常大，并且要求抖动延迟最小时，可以使用BUFG驱动该信号，使该信号利用全局时钟资源。但需要注意的是，普通IO的输入或普通片内信号进入全局时钟布线层需要一个固有的延时，一般在 10ns左右，即普通IO和普通片内信号从输入到BUFG输出有一个约10ns左右的固有延时，但是BUFG的输出到片内所有单元(IOB、CLB、选择性块RAM)的延时可以忽略不计为“0”ns。
 
 5. Logic + DCM + BUFG的使用方法：
-   
+
    DCM同样也可以控制并变换普通时钟信号，即DCM的输入也可以是普通片内信号。
 
 #### 4.3.3.2. 原码、反码与补码
@@ -578,7 +601,7 @@ endmodule
 | 5 | 0101 | 1101 | -5 | 1101 | 1010 | 1011 | 0011 |
 | 6 | 0110 | 1110 | -6 | 1110 | 1001 | 1010 | 0010 |
 | 7 | 0111 | 1111 | -7 | 1111 | 1000 | 1001 | 0001 |
-|   |      || -8 |      |      | 1000 | 0000 |
+|   |      |      | -8 |      | 1000 | 0000 |
 
 原码 (True Form): 直观，存在问题: 1. 加减运算复杂. 2. 有两个0.
 反码 (Inverse Code): 负数的原码除符号位外按位取反，实现了一个数加上它的相反数是0.  
@@ -591,8 +614,8 @@ endmodule
 3. There is an **inverting amplifier** somewhere between the SMA connector and the ADC input. My ADC IP core inverts the ADC samples to have the same signal polarity as at the SMA connector.
 4. [The ODDR primitive](https://bbs.huaweicloud.com/blogs/283583)
 
-
 **DAC module**
+
 ```verilog
 
 `timescale 1 ns / 1 ps
@@ -674,6 +697,7 @@ endmodule
 ```
 
 **ADC Module**
+
 ```verilog
 `timescale 1 ns / 1 ps
 
@@ -702,7 +726,7 @@ module axis_red_pitaya_adc #
   reg  [ADC_DATA_WIDTH-1:0] int_dat_a_reg;
   reg  [ADC_DATA_WIDTH-1:0] int_dat_b_reg;
   wire                      int_clk0;
-  wire 						int_clk;
+  wire       int_clk;
 
   IBUFGDS adc_clk_inst0 (.I(adc_clk_p), .IB(adc_clk_n), .O(int_clk0));
   BUFG adc_clk_inst (.I(int_clk0), .O(int_clk));
@@ -731,6 +755,7 @@ endmodule
 直译为寄存器转换级，顾名思义，也就是在这个级别下，要描述各级寄存器（时序逻辑中的寄存器），以及寄存器之间的信号的是如何转换的（时序逻辑中的组合逻辑）。通俗来讲，RTL代码不是在“写代码”，是在画电路结构。RTL代码需要“画”出输入输出端口，各级寄存器，寄存器之间的组合逻辑和前三者之间的连接。对于组合逻辑，只需要软件级描述，将其功能包装在“黑匣子”中即可，无需考虑其门级结构。
 
 signal spliter
+
 ```verilog
 `timescale 1ns / 1ps
 
@@ -763,7 +788,7 @@ endmodule
 
 #### 4.3.4.1. Quick power 2
 
-Input: n 
+Input: n
 
 Output: 2^n
 
@@ -771,20 +796,20 @@ Output: 2^n
 `timescale 1ns / 1ps
 module pow2 # 
 (
-	parameter LOG2N_WIDTH = 5,
-	parameter N_WIDTH = 32
+ parameter LOG2N_WIDTH = 5,
+ parameter N_WIDTH = 32
 )
 (
     input unsigned [LOG2N_WIDTH-1:0]  log2N,
-    output unsigned [N_WIDTH-1:0]	  N
+    output unsigned [N_WIDTH-1:0]   N
 );
-	
+ 
     assign N = (1<<log2N);
-	
+ 
 endmodule
 ```
 
-#### 4.3.4.2. ...
+#### 4.3.4.2
 
 ## 4.4. Pin assignment
 
@@ -847,11 +872,53 @@ endmodule
 
     cd C:/kichi/RedPitaya-FPGA/prj/Examples/Simple_moving_average/
 
-
-# 7. Delay 
-
+# 7. Delayer & GainM
 
 [systemverilog-data-types](https://www.doulos.com/knowhow/systemverilog/systemverilog-tutorials/systemverilog-data-types/)
 [IEEE 754 floating number](https://www.h-schmidt.net/FloatConverter/IEEE754.html)
 
 [how to reduce net delay](https://support.xilinx.com/s/question/0D52E00006hpfv4SAA/method-to-reduce-net-delay-?language=en_US)
+
+finished
+
+# 8. Transmitter
+
+'''
+ cd /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1
+'''
+
+'''
+ scp system_wrapper.bit root@192.168.1.42:transmitter.bit
+'''
+
+'''
+ scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.42:transmitter.bit
+'''
+
+## 8.1. [AXI - GPIO](/reference/pg144-axi-gpio.pdf)
+
+1. GPIO 使用AXI-lite协议，因此和AXI-lite一样，是半双工的 (AXI是全双工). 因此 port 除了有 `gpio_io_i` `gpio_io_o`，还有`gpio_io_t`.
+
+2. AXI-GPIO 存在最大最大速度 $F_{max}$, 即 Vivado IP Optimization (Fmax Characterization) 约为百MHz量级.
+
+3. Register Space:
+
+    | Address Space Offset | Register Space | Access Type | Description|
+    | --- | --- | --- | --- |
+    | 0x0000 | GPIO_DATA | R/W | channel 1 data register |
+    | 0x0004 | GPIO_TRI | R/W | channel 1 3-state control register, indicate the data direction|
+    | 0x0008 | GPIO_DATA | R/W | channel 2 data register |
+    | 0x000C | GPIO_TRI | R/W | channel 2 3-state control register, indicate the data direction|
+    | 0x011C | GIER | R/W | global interrupt enable register |
+    | 0x0128 | IP_IER | R/W | IP interrupt enable register (IP IER) |
+    | 0x0120 | IP_ISR | R/TOW | IP interrupt status register |
+
+4. The port `gpio_io_t`:
+
+    It can be seen that there is only one register space in each data channel, which means that the `gpio_io_i` and `gpio_io_o` can not working at same time on each data I/O bit.
+
+    They are controlled by `gpio_io_t`. The `gpio_io_t` has same bitwidth with `gpio_io_i` and `gpio_io_o`. Each I/O pin of the AXI GPIO is individually programmable as an input or output.
+
+    For each of the bits:
+    0 = I/O pin configured as output.
+    1 = I/O pin configured as input.

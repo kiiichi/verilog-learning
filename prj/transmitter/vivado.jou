@@ -1,0 +1,200 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Dec 25 09:52:28 2023
+# Process ID: 9156
+# Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9444 C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.xpr
+# Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/vivado.log
+# Journal file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_intf_nets adc_M_AXIS_PORT1] [get_bd_nets FIFO_delay_port1_m_axis_tdata] [get_bd_nets FIFO_delay_port1_m_axis_tvalid] [get_bd_cells FIFO_delay_port1]
+delete_bd_objs [get_bd_intf_nets signal_split_0_M_AXIS_PORT2] [get_bd_nets GPIO_change_0_areset_out] [get_bd_nets fifo_generator_0_m_axis_tdata] [get_bd_nets fifo_generator_0_m_axis_tvalid] [get_bd_nets GPIO_change_0_delay_cycnum] [get_bd_cells FIFO_delay_port2]
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_cells GPIO_change_0]
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
+undo
+open_run synth_1 -name synth_1
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+regenerate_bd_layout
+regenerate_bd_layout -routing
+undo
+undo
+redo
+redo
+undo
+undo
+redo
+undo
+redo
+undo
+set_property location {2.5 2422 625} [get_bd_cells axi_gpio_0]
+set_property location {3 2272 414} [get_bd_cells axi_gpio_0]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio2_io_i] [get_bd_pins axi_gpio_0/gpio2_io_o]
+connect_bd_net [PS7/FCLK_CLK0] [get_bd_pins exp_p_tri_io]
+connect_bd_net [processing_system7_0/FCLK_CLK0] [get_bd_pins exp_p_tri_io]
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins exp_p_tri_io]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0
+endgroup
+set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells util_vector_logic_0]
+set_property location {6 5078 183} [get_bd_cells util_vector_logic_0]
+set_property location {6 4969 176} [get_bd_cells util_vector_logic_0]
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins util_vector_logic_0/Op1]
+connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins exp_n_tri_io]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins dac/S_AXIS_PORT1_tdata]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property location {2 702 716} [get_bd_cells xlconstant_0]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT1_tvalid]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT2_tdata]
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT1_tvalid]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT2_tvalid]
+startgroup
+set_property -dict [list CONFIG.C_ALL_OUTPUTS_2 {1}] [get_bd_cells axi_gpio_0]
+endgroup
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins axi_gpio_0/gpio_io_i]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/gpio_io_i]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0
+endgroup
+set_property -dict [list CONFIG.Output_Width {1}] [get_bd_cells c_counter_binary_0]
+set_property -dict [list CONFIG.Output_Width {16}] [get_bd_cells c_counter_binary_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+set_property location {2 1845 73} [get_bd_cells c_counter_binary_0]
+set_property location {2 1629 -39} [get_bd_cells c_counter_binary_0]
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins c_counter_binary_0/CLK]
+set_property -dict [list CONFIG.DIN_TO {2} CONFIG.DIN_FROM {2} CONFIG.DIN_WIDTH {16} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+connect_bd_net [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_0/Din]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins axi_gpio_0/gpio_io_i]
+startgroup
+set_property -dict [list CONFIG.C_SIZE {8}] [get_bd_cells util_vector_logic_0]
+endgroup
+regenerate_bd_layout
+close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/DIO_combine.v w ]
+add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/DIO_combine.v
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets util_vector_logic_0_Res] [get_bd_cells util_vector_logic_0]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_ports exp_p_tri_io]
+create_bd_cell -type module -reference DIO_combine DIO_combine_0
+set_property location {3 3059 767} [get_bd_cells DIO_combine_0]
+connect_bd_net [get_bd_pins DIO_combine_0/DIO_p_data] [get_bd_pins exp_p_tri_io]
+connect_bd_net [get_bd_pins DIO_combine_0/DIO_n_data] [get_bd_pins exp_n_tri_io]
+regenerate_bd_layout
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT0_data]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT1_data]
+save_bd_design
+reset_run synth_1
+reset_run system_axi_gpio_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+regenerate_bd_layout
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT7_data]
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT6_data]
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT2_data]
+connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT4_data]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT3_data]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT5_data]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd]
+refresh_design
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.DIN_TO {3} CONFIG.DIN_FROM {3} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+endgroup
+close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v w ]
+add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v] -no_script -reset -force -quiet
+remove_files  C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v
+file delete -force C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
+create_bd_cell -type module -reference signal_split signal_split_0
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins signal_split_0/S_AXIS_tvalid]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins signal_split_0/S_AXIS_tdata]
+delete_bd_objs [get_bd_nets dac/fifo_generator_0_m_axis_tdata] [get_bd_pins dac/S_AXIS_PORT2_tdata]
+delete_bd_objs [get_bd_nets dac/fifo_generator_0_m_axis_tvalid] [get_bd_pins dac/S_AXIS_PORT2_tvalid]
+delete_bd_objs [get_bd_nets dac/S_AXIS_PORT1_tdata_1] [get_bd_pins dac/S_AXIS_PORT1_tdata]
+delete_bd_objs [get_bd_nets dac/S_AXIS_PORT1_tvalid_1] [get_bd_pins dac/S_AXIS_PORT1_tvalid]
+connect_bd_intf_net [get_bd_intf_pins signal_split_0/M_AXIS_PORT1] [get_bd_intf_pins dac/signal_combine_0/S_AXIS_PORT1]
+connect_bd_intf_net [get_bd_intf_pins signal_split_0/M_AXIS_PORT2] [get_bd_intf_pins dac/signal_combine_0/S_AXIS_PORT2]
+startgroup
+set_property -dict [list CONFIG.C_TRI_DEFAULT {0x0000FFFF} CONFIG.C_ALL_INPUTS {0}] [get_bd_cells axi_gpio_0]
+endgroup
+startgroup
+endgroup
+close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v w ]
+add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v] -no_script -reset -force -quiet
+remove_files  C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v
+add_files -norecurse C:/Users/rinu2/Documents/kichi@git/verilog-learning/code/GPIO_MSB_OUT.v
+update_compile_order -fileset sources_1
+update_files -from_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_MSB_OUT.v -to_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/code/GPIO_MSB_OUT.v -filesets [get_filesets *]
+create_bd_cell -type module -reference GPIO_MSB_OUT GPIO_MSB_OUT_0
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins GPIO_MSB_OUT_0/GPIO_DATA]
+startgroup
+set_property -dict [list CONFIG.GPIO_OUT_WIDTH {1}] [get_bd_cells GPIO_MSB_OUT_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.GPIO_OUT_WIDTH {2}] [get_bd_cells GPIO_MSB_OUT_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.GPIO_OUT_WIDTH {16}] [get_bd_cells GPIO_MSB_OUT_0]
+endgroup
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT6_data]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT2_data]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT4_data]
+regenerate_bd_layout
+regenerate_bd_layout -routing
+disconnect_bd_net /xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT7_data]
+disconnect_bd_net /xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT3_data]
+disconnect_bd_net /xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT5_data]
+connect_bd_net [get_bd_pins GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT] [get_bd_pins DIO_combine_0/DIO_PORT2_data]
+save_bd_design
+update_compile_order -fileset sources_1
+reset_run synth_1
+reset_run system_axi_gpio_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+startgroup
+set_property -dict [list CONFIG.C_IS_DUAL {1} CONFIG.C_ALL_INPUTS {0} CONFIG.C_ALL_OUTPUTS {1} CONFIG.C_ALL_OUTPUTS_2 {1}] [get_bd_cells axi_gpio_1]
+endgroup
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_o]
+connect_bd_net [get_bd_pins axi_gpio_1/gpio_io_o] [get_bd_pins GPIO_MSB_OUT_0/GPIO_DATA]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
