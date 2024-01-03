@@ -892,7 +892,7 @@ finished
 '''
 
 '''
- scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.42:transmitter.bit
+ scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.15:transmitter.bit
 '''
 
 ## 8.1. [AXI - GPIO](/reference/pg144-axi-gpio.pdf)

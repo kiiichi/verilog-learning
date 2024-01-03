@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Jan  2 19:50:22 2024
+# Process ID: 4920
+# Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/dac_player/dac_player.runs/synth_1
+# Command line: vivado.exe -log axi_hub.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi_hub.tcl
+# Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/dac_player/dac_player.runs/synth_1/axi_hub.vds
+# Journal file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/dac_player/dac_player.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source axi_hub.tcl -notrace

@@ -1,0 +1,134 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Dec 26 10:35:24 2023
+# Process ID: 20268
+# Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6304 C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.xpr
+# Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/vivado.log
+# Journal file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1024.969 ; gain = 0.000
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_1
+Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_2
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_125M
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+INFO: [BD 41-434] Could not find an IP with XCI file by name: system_s00_data_fifo_0 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: system_auto_pc_0 
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_wr_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
+Adding component instance block -- pavel-demin:user:axis_red_pitaya_adc:1.0 - axis_red_pitaya_adc_0
+Adding component instance block -- xilinx.com:module_ref:signal_combine:1.0 - signal_combine_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- pavel-demin:user:axis_red_pitaya_dac:1.0 - axis_red_pitaya_dac_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding component instance block -- xilinx.com:module_ref:DIO_combine:1.0 - DIO_combine_0
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
+Adding component instance block -- xilinx.com:module_ref:GPIO_MSB_OUT:1.0 - GPIO_MSB_OUT_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT0_data(undef)
+Successfully read diagram <system> from BD file <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd>
+INFO: [BD 41-433] 
+Design successfully migrated to use XCI files...
+open_bd_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1311.891 ; gain = 22.680
+regenerate_bd_layout
+update_compile_order -fileset sources_1
+close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/redpitaya_dac.v w ]
+add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/redpitaya_dac.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/redpitaya_adc.v w ]
+add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/redpitaya_adc.v
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets adc/axis_red_pitaya_adc_0_adc_csn] [get_bd_intf_nets adc/axis_red_pitaya_adc_0_M_AXIS] [get_bd_nets adc/axis_red_pitaya_adc_0_adc_clk] [get_bd_nets adc/adc_clk_p_i_1] [get_bd_nets adc/adc_clk_n_i_1] [get_bd_nets adc/adc_dat_a_i_1] [get_bd_nets adc/adc_dat_b_i_1] [get_bd_cells adc/axis_red_pitaya_adc_0]
+create_bd_cell -type module -reference redpitaya_adc adc/redpitaya_adc_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk_n' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk_p' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'm_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk' does not have any bus interfaces associated with it.
+CRITICAL WARNING: [IP_Flow 19-4751] Bus Interface 'adc_clk': FREQ_HZ bus parameter is missing for output clock interface.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk_n' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk_p' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
+connect_bd_net [get_bd_pins adc/adc_clk_p_i] [get_bd_pins adc/redpitaya_adc_0/adc_clk_p]
+connect_bd_net [get_bd_pins adc/adc_clk_n_i] [get_bd_pins adc/redpitaya_adc_0/adc_clk_n]
+connect_bd_net [get_bd_pins adc/adc_dat_a_i] [get_bd_pins adc/redpitaya_adc_0/adc_dat_a]
+connect_bd_net [get_bd_pins adc/adc_dat_b_i] [get_bd_pins adc/redpitaya_adc_0/adc_dat_b]
+connect_bd_intf_net [get_bd_intf_pins adc/redpitaya_adc_0/m_axis] [get_bd_intf_pins adc/signal_split_0/S_AXIS]
+connect_bd_net [get_bd_pins adc/adc_clk] [get_bd_pins adc/redpitaya_adc_0/adc_clk]
+connect_bd_net [get_bd_pins adc/adc_csn_o] [get_bd_pins adc/redpitaya_adc_0/adc_csn]
+create_bd_cell -type module -reference redpitaya_dac dac/redpitaya_dac_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 's_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'dac_rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'dac_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ddr_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's_axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'dac_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'dac_rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'dac_clk' does not have any bus interfaces associated with it.
+CRITICAL WARNING: [IP_Flow 19-4751] Bus Interface 'dac_clk': FREQ_HZ bus parameter is missing for output clock interface.
+WARNING: [IP_Flow 19-5661] Bus Interface 'ddr_clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
+delete_bd_objs [get_bd_intf_nets dac/signal_combine_0_M_AXIS] [get_bd_nets dac/clk_wiz_0_clk_out1] [get_bd_nets dac/clk_wiz_0_locked] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_clk] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_rst] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_sel] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_wrt] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_dat] [get_bd_cells dac/axis_red_pitaya_dac_0]
+connect_bd_intf_net [get_bd_intf_pins dac/signal_combine_0/M_AXIS] [get_bd_intf_pins dac/redpitaya_dac_0/s_axis]
+connect_bd_net [get_bd_pins dac/clk_wiz_0/clk_out1] [get_bd_pins dac/redpitaya_dac_0/ddr_clk]
+connect_bd_net [get_bd_pins dac/clk_wiz_0/locked] [get_bd_pins dac/redpitaya_dac_0/locked]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins dac/clk_wiz_0/locked] [get_bd_pins dac/redpitaya_dac_0/locked]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins dac/clk_wiz_0/clk_out1] [get_bd_pins dac/redpitaya_dac_0/ddr_clk]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_intf_net [get_bd_intf_pins dac/signal_combine_0/M_AXIS] [get_bd_intf_pins dac/redpitaya_dac_0/s_axis]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_intf_nets dac/signal_combine_0_M_AXIS] [get_bd_nets dac/clk_wiz_0_clk_out1] [get_bd_nets dac/clk_wiz_0_locked] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_clk] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_rst] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_sel] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_wrt] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_dat] [get_bd_cells dac/axis_red_pitaya_dac_0]'
+delete_bd_objs [get_bd_intf_nets dac/signal_combine_0_M_AXIS] [get_bd_nets dac/clk_wiz_0_clk_out1] [get_bd_nets dac/clk_wiz_0_locked] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_clk] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_rst] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_sel] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_wrt] [get_bd_nets dac/axis_red_pitaya_dac_0_dac_dat] [get_bd_cells dac/axis_red_pitaya_dac_0]
+connect_bd_net [get_bd_pins dac/aclk] [get_bd_pins dac/redpitaya_dac_0/aclk]
+connect_bd_net [get_bd_pins dac/clk_wiz_0/clk_out1] [get_bd_pins dac/redpitaya_dac_0/ddr_clk]
+connect_bd_net [get_bd_pins dac/clk_wiz_0/locked] [get_bd_pins dac/redpitaya_dac_0/locked]
+connect_bd_intf_net [get_bd_intf_pins dac/signal_combine_0/M_AXIS] [get_bd_intf_pins dac/redpitaya_dac_0/s_axis]
+connect_bd_net [get_bd_pins dac/dac_clk_o] [get_bd_pins dac/redpitaya_dac_0/dac_clk]
+connect_bd_net [get_bd_pins dac/dac_rst_o] [get_bd_pins dac/redpitaya_dac_0/dac_rst]
+connect_bd_net [get_bd_pins dac/dac_sel_o] [get_bd_pins dac/redpitaya_dac_0/dac_sel]
+connect_bd_net [get_bd_pins dac/dac_wrt_o] [get_bd_pins dac/redpitaya_dac_0/dac_wrt]
+connect_bd_net [get_bd_pins dac/dac_dat_o] [get_bd_pins dac/redpitaya_dac_0/dac_dat]
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+regenerate_bd_layout
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+CRITICAL WARNING: [BD 41-967] AXI interface pin /adc/redpitaya_adc_0/m_axis is not associated to any clock pin. It may not work correctly.
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /adc/signal_split_0/S_AXIS(125000000) and /adc/redpitaya_adc_0/m_axis(100000000)
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /dac/redpitaya_dac_0/s_axis(100000000) and /dac/signal_combine_0/M_AXIS(125000000)
+ERROR: [BD 41-238] Port/Pin property FREQ_HZ does not match between /dac/clk_wiz_0/clk_in1(125000000) and /adc/redpitaya_adc_0/adc_clk(100000000)
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd 
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 26 10:47:01 2023...

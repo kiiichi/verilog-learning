@@ -20,12 +20,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_util_ds_
 # IP: bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axi_gpio_0_0 || ORIG_REF_NAME==system_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_red_pitaya_adc_0_0 || ORIG_REF_NAME==system_axis_red_pitaya_adc_0_0} -quiet] -quiet
-
-# IP: bd/system/ip/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_red_pitaya_dac_0_0 || ORIG_REF_NAME==system_axis_red_pitaya_dac_0_0} -quiet] -quiet
-
 # IP: bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_clk_wiz_0_0 || ORIG_REF_NAME==system_clk_wiz_0_0} -quiet] -quiet
 
@@ -62,8 +56,23 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_DIO_comb
 # IP: bd/system/ip/system_signal_split_0_1/system_signal_split_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_signal_split_0_1 || ORIG_REF_NAME==system_signal_split_0_1} -quiet] -quiet
 
-# IP: bd/system/ip/system_GPIO_MSB_OUT_0_0/system_GPIO_MSB_OUT_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_GPIO_MSB_OUT_0_0 || ORIG_REF_NAME==system_GPIO_MSB_OUT_0_0} -quiet] -quiet
+# IP: bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_redpitaya_adc_0_0 || ORIG_REF_NAME==system_redpitaya_adc_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_redpitaya_dac_0_0/system_redpitaya_dac_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_redpitaya_dac_0_0 || ORIG_REF_NAME==system_redpitaya_dac_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_xlslice_0_1/system_xlslice_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlslice_0_1 || ORIG_REF_NAME==system_xlslice_0_1} -quiet] -quiet
+
+# IP: bd/system/ip/system_xlslice_0_2/system_xlslice_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlslice_0_2 || ORIG_REF_NAME==system_xlslice_0_2} -quiet] -quiet
+
+# IP: bd/system/ip/system_xlslice_0_3/system_xlslice_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlslice_0_3 || ORIG_REF_NAME==system_xlslice_0_3} -quiet] -quiet
+
+# IP: bd/system/ip/system_xlslice_0_4/system_xlslice_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlslice_0_4 || ORIG_REF_NAME==system_xlslice_0_4} -quiet] -quiet
 
 # IP: bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_s00_data_fifo_0 || ORIG_REF_NAME==system_s00_data_fifo_0} -quiet] -quiet

@@ -1,0 +1,529 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Dec 26 11:07:01 2023
+# Process ID: 13504
+# Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21364 C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.xpr
+# Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/vivado.log
+# Journal file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1029.102 ; gain = 0.000
+open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_1
+Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_2
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_125M
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+INFO: [BD 41-434] Could not find an IP with XCI file by name: system_s00_data_fifo_0 
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: system_auto_pc_0 
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_wr_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
+Adding component instance block -- xilinx.com:module_ref:redpitaya_adc:1.0 - redpitaya_adc_0
+Adding component instance block -- xilinx.com:module_ref:signal_combine:1.0 - signal_combine_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:module_ref:redpitaya_dac:1.0 - redpitaya_dac_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding component instance block -- xilinx.com:module_ref:DIO_combine:1.0 - DIO_combine_0
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
+Adding component instance block -- xilinx.com:module_ref:GPIO_MSB_OUT:1.0 - GPIO_MSB_OUT_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT0_data(undef)
+Successfully read diagram <system> from BD file <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd>
+INFO: [BD 41-433] 
+Design successfully migrated to use XCI files...
+open_bd_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1341.102 ; gain = 21.977
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+CRITICAL WARNING: [BD 41-967] AXI interface pin /adc/redpitaya_adc_0/m_axis is not associated to any clock pin. It may not work correctly.
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /adc/signal_split_0/S_AXIS(125000000) and /adc/redpitaya_adc_0/m_axis(100000000)
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /dac/redpitaya_dac_0/s_axis(100000000) and /dac/signal_combine_0/M_AXIS(125000000)
+ERROR: [BD 41-238] Port/Pin property FREQ_HZ does not match between /dac/clk_wiz_0/clk_in1(125000000) and /adc/redpitaya_adc_0/adc_clk(100000000)
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd 
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+set_property -dict [list CONFIG.FREQ_HZ {125000000}] [get_bd_intf_pins adc/redpitaya_adc_0/m_axis]
+set_property -dict [list CONFIG.FREQ_HZ {125000000}] [get_bd_intf_pins dac/redpitaya_dac_0/s_axis]
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /dac/redpitaya_dac_0/s_axis(100000000) and /dac/signal_combine_0/M_AXIS(125000000)
+ERROR: [BD 41-238] Port/Pin property FREQ_HZ does not match between /dac/clk_wiz_0/clk_in1(125000000) and /adc/redpitaya_adc_0/adc_clk(100000000)
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd 
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+set_property -dict [list CONFIG.FREQ_HZ {125000000}] [get_bd_intf_pins dac/redpitaya_dac_0/s_axis]
+set_property -dict [list CONFIG.FREQ_HZ {125000000}] [get_bd_pins dac/redpitaya_dac_0/dac_clk]
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /dac/redpitaya_dac_0/s_axis(100000000) and /dac/signal_combine_0/M_AXIS(125000000)
+ERROR: [BD 41-238] Port/Pin property FREQ_HZ does not match between /dac/clk_wiz_0/clk_in1(125000000) and /adc/redpitaya_adc_0/adc_clk(100000000)
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd 
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+set_property -dict [list CONFIG.FREQ_HZ {125000000}] [get_bd_intf_pins dac/redpitaya_dac_0/s_axis]
+set_property -dict [list CONFIG.FREQ_HZ {100000000}] [get_bd_pins dac/redpitaya_dac_0/dac_clk]
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+set_property -dict [list CONFIG.FREQ_HZ {125000000}] [get_bd_pins adc/redpitaya_adc_0/adc_clk]
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+regenerate_bd_layout
+regenerate_bd_layout -routing
+move_bd_cells [get_bd_cells adc] [get_bd_cells signal_split_0]
+WARNING: [BD 41-1306] The connection to interface pin /adc/signal_split_1/S_AXIS_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+WARNING: [BD 41-1306] The connection to interface pin /adc/signal_split_1/S_AXIS_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS
+undo
+INFO: [Common 17-17] undo 'move_bd_cells [get_bd_cells adc] [get_bd_cells signal_split_0]'
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT3_data
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block adc/redpitaya_adc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dac/redpitaya_dac_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 3.552 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 3.552 MB.
+[Tue Dec 26 11:17:32 2023] Launched system_xbar_0_synth_1, system_redpitaya_adc_0_0_synth_1, system_redpitaya_dac_0_0_synth_1, synth_1...
+Run output will be captured here:
+system_xbar_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_xbar_0_synth_1/runme.log
+system_redpitaya_adc_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_redpitaya_adc_0_0_synth_1/runme.log
+system_redpitaya_dac_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_redpitaya_dac_0_0_synth_1/runme.log
+synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 11:17:33 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:27 . Memory (MB): peak = 1404.906 ; gain = 0.000
+startgroup
+set_property -dict [list CONFIG.DIN_TO {1} CONFIG.DIN_FROM {1} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+endgroup
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT3_data
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Tue Dec 26 11:23:48 2023] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 11:23:48 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:20 . Memory (MB): peak = 1404.906 ; gain = 0.000
+startgroup
+set_property -dict [list CONFIG.DIN_TO {2} CONFIG.DIN_FROM {2} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+endgroup
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT3_data
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Tue Dec 26 11:30:59 2023] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 11:30:59 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:00:37 . Memory (MB): peak = 1404.906 ; gain = 0.000
+startgroup
+set_property -dict [list CONFIG.DIN_TO {3} CONFIG.DIN_FROM {3} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+endgroup
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT3_data
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Tue Dec 26 11:34:20 2023] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 11:34:20 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 1404.906 ; gain = 0.000
+connect_bd_net [get_bd_pins axi_gpio_1/gpio2_io_o] [get_bd_pins DIO_combine_0/DIO_PORT3_data]
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_1/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT3_data'(1) to pin '/axi_gpio_1/gpio2_io_o'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT3_data'(1) to pin '/axi_gpio_1/gpio2_io_o'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Tue Dec 26 12:43:21 2023] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 12:43:21 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:22 . Memory (MB): peak = 1410.781 ; gain = 5.875
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
+connect_bd_net [get_bd_pins axi_gpio_1/gpio_io_o] [get_bd_pins signal_split_0/S_AXIS_tdata]
+WARNING: [BD 41-1306] The connection to interface pin /signal_split_0/S_AXIS_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT3_data'(1) to pin '/axi_gpio_1/gpio2_io_o'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT3_data'(1) to pin '/axi_gpio_1/gpio2_io_o'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Tue Dec 26 12:48:38 2023] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 12:48:38 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.258 ; gain = 5.238
+startgroup
+set_property -dict [list CONFIG.DIN_TO {4} CONFIG.DIN_FROM {4} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+endgroup
+save_bd_design
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.0 
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/DIO_combine_0/DIO_PORT4_data
+/DIO_combine_0/DIO_PORT5_data
+/DIO_combine_0/DIO_PORT6_data
+/DIO_combine_0/DIO_PORT7_data
+
+Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT3_data'(1) to pin '/axi_gpio_1/gpio2_io_o'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT3_data'(1) to pin '/axi_gpio_1/gpio2_io_o'(32) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Tue Dec 26 12:56:12 2023] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Tue Dec 26 12:56:12 2023] Launched impl_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:00:32 . Memory (MB): peak = 1416.258 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 26 18:19:26 2023...

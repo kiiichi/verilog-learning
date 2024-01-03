@@ -2,10 +2,10 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Dec 25 09:52:28 2023
-# Process ID: 9156
+# Start of session at: Wed Jan  3 08:43:57 2024
+# Process ID: 10640
 # Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9444 C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4880 C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.xpr
 # Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/vivado.log
 # Journal file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
-open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1029.094 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1027.930 ; gain = 0.000
 update_compile_order -fileset sources_1
 open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
 Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_1
@@ -32,789 +32,91 @@ WARNING: [BD 41-176] The physical port 'S_AXI_GP2_rd_socket' specified in the po
 WARNING: [BD 41-176] The physical port 'S_AXI_GP2_wr_socket' specified in the portmap, is not found on the block! 
 WARNING: [BD 41-176] The physical port 'S_AXI_GP3_rd_socket' specified in the portmap, is not found on the block! 
 WARNING: [BD 41-176] The physical port 'S_AXI_GP3_wr_socket' specified in the portmap, is not found on the block! 
-Adding component instance block -- pavel-demin:user:axis_red_pitaya_adc:1.0 - axis_red_pitaya_adc_0
 Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
-Adding component instance block -- pavel-demin:user:axis_red_pitaya_dac:1.0 - axis_red_pitaya_dac_0
+Adding component instance block -- xilinx.com:module_ref:redpitaya_adc:1.0 - redpitaya_adc_0
 Adding component instance block -- xilinx.com:module_ref:signal_combine:1.0 - signal_combine_0
 Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
-Adding component instance block -- xilinx.com:module_ref:counter_trig:1.0 - counter_trig_PORT2
-Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_fifo_PORT2
-Adding component instance block -- xilinx.com:ip:fifo_generator:13.2 - fifo_generator_PORT2
-INFO: [xilinx.com:ip:fifo_generator:13.2-5968] /FIFO_delay_port2/fifo_generator_PORT2Executing the post_config_ip from bd
-WARNING: [BD 41-1731] Type mismatch between connected pins: /FIFO_delay_port2/s_aresetn(rst) and /FIFO_delay_port2/counter_trig_PORT2/areset(undef)
-Adding component instance block -- xilinx.com:module_ref:GPIO_change:1.0 - GPIO_change_0
-Adding component instance block -- xilinx.com:module_ref:counter_trig:1.0 - counter_trig_PORT1
-Adding component instance block -- xilinx.com:ip:fifo_generator:13.2 - fifo_generator_PORT1
-INFO: [xilinx.com:ip:fifo_generator:13.2-5968] /FIFO_delay_port1/fifo_generator_PORT1Executing the post_config_ip from bd
-Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_fifo_PORT1
-WARNING: [BD 41-1731] Type mismatch between connected pins: /FIFO_delay_port1/s_aresetn(rst) and /FIFO_delay_port1/counter_trig_PORT1/areset(undef)
+Adding component instance block -- xilinx.com:module_ref:redpitaya_dac:1.0 - redpitaya_dac_0
 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
-WARNING: [BD 41-1731] Type mismatch between connected pins: /GPIO_change_0/areset_out(undef) and /FIFO_delay_port1/s_aresetn(rst)
-WARNING: [BD 41-1731] Type mismatch between connected pins: /GPIO_change_0/areset_out(undef) and /FIFO_delay_port2/s_aresetn(rst)
-Successfully read diagram <system> from BD file <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd>
-delete_bd_objs [get_bd_intf_nets adc_M_AXIS_PORT1] [get_bd_nets FIFO_delay_port1_m_axis_tdata] [get_bd_nets FIFO_delay_port1_m_axis_tvalid] [get_bd_cells FIFO_delay_port1]
-delete_bd_objs [get_bd_intf_nets signal_split_0_M_AXIS_PORT2] [get_bd_nets GPIO_change_0_areset_out] [get_bd_nets fifo_generator_0_m_axis_tdata] [get_bd_nets fifo_generator_0_m_axis_tvalid] [get_bd_nets GPIO_change_0_delay_cycnum] [get_bd_cells FIFO_delay_port2]
-update_compile_order -fileset sources_1
-delete_bd_objs [get_bd_cells GPIO_change_0]
-update_compile_order -fileset sources_1
-open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
-open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
-apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
-INFO: [BoardRule 102-8] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_rtl_1
-INFO: [BoardRule 102-9] connect_bd_intf_net /gpio_rtl_1 /axi_gpio_0/GPIO
-undo
-INFO: [Common 17-17] undo 'apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]'
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7z010clg400-1
-INFO: [Device 21-403] Loading part xc7z010clg400-1
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_GPIO_change_0_0/system_GPIO_change_0_0.dcp' for cell 'system_i/GPIO_change_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.dcp' for cell 'system_i/axi_gpio_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.dcp' for cell 'system_i/axi_gpio_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_1_0/system_util_ds_buf_1_0.dcp' for cell 'system_i/util_ds_buf_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0.dcp' for cell 'system_i/util_ds_buf_2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_counter_trig_0_1/system_counter_trig_0_1.dcp' for cell 'system_i/FIFO_delay_port1/counter_trig_PORT1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_fifo_generator_0_1/system_fifo_generator_0_1.dcp' for cell 'system_i/FIFO_delay_port1/fifo_generator_PORT1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_counter_trig_0_0/system_counter_trig_0_0.dcp' for cell 'system_i/FIFO_delay_port2/counter_trig_PORT2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_fifo_generator_0_0/system_fifo_generator_0_0.dcp' for cell 'system_i/FIFO_delay_port2/fifo_generator_PORT2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.dcp' for cell 'system_i/PS7/processing_system7_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0.dcp' for cell 'system_i/PS7/rst_ps7_0_125M'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp' for cell 'system_i/PS7/ps7_0_axi_periph/xbar'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp' for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0.dcp' for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0.dcp' for cell 'system_i/adc/axis_red_pitaya_adc_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_signal_split_0_0/system_signal_split_0_0.dcp' for cell 'system_i/adc/signal_split_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0.dcp' for cell 'system_i/dac/axis_red_pitaya_dac_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.dcp' for cell 'system_i/dac/clk_wiz_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_signal_combine_0_0/system_signal_combine_0_0.dcp' for cell 'system_i/dac/signal_combine_0'
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1586.723 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 133 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2020.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. system_i/dac/clk_wiz_0/inst/clkin1_ibufg 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'system_i/dac/clk_wiz_0/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'DIFF_TERM' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[0]' is not directly connected to top level port. Synthesis is ignored for DIFF_TERM but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[0]' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'DIFF_TERM' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[1]' is not directly connected to top level port. Synthesis is ignored for DIFF_TERM but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[1]' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'system_i/util_ds_buf_2/OBUF_IN[0]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'system_i/util_ds_buf_2/OBUF_IN[1]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/PS7/processing_system7_0/inst'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/PS7/processing_system7_0/inst'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_1_0/system_util_ds_buf_1_0_board.xdc] for cell 'system_i/util_ds_buf_1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_1_0/system_util_ds_buf_1_0_board.xdc] for cell 'system_i/util_ds_buf_1/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'system_i/util_ds_buf_2/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'system_i/util_ds_buf_2/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc] for cell 'system_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc] for cell 'system_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc] for cell 'system_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc] for cell 'system_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc:57]
-INFO: [Timing 38-2] Deriving generated clocks [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2116.465 ; gain = 529.742
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0_board.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0_board.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_fifo_generator_0_0/system_fifo_generator_0_0.xdc] for cell 'system_i/FIFO_delay_port2/fifo_generator_PORT2/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_fifo_generator_0_0/system_fifo_generator_0_0.xdc] for cell 'system_i/FIFO_delay_port2/fifo_generator_PORT2/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_fifo_generator_0_1/system_fifo_generator_0_1.xdc] for cell 'system_i/FIFO_delay_port1/fifo_generator_PORT1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_fifo_generator_0_1/system_fifo_generator_0_1.xdc] for cell 'system_i/FIFO_delay_port1/fifo_generator_PORT1/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_board.xdc] for cell 'system_i/axi_gpio_1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_board.xdc] for cell 'system_i/axi_gpio_1/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.xdc] for cell 'system_i/axi_gpio_1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.xdc] for cell 'system_i/axi_gpio_1/U0'
-Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/clocks.xdc]
-Finished Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/clocks.xdc]
-Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc]
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:123]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:123]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:124]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:124]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:125]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:125]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:126]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:126]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:127]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:127]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:128]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:128]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:129]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:129]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:130]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:130]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:131]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:131]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:132]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:132]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:134]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:134]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:135]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:135]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:136]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:136]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:137]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:137]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:138]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:138]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:139]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:139]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:140]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:140]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:141]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:141]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:142]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:142]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:143]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:143]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:173]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:173]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:174]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:174]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:175]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:175]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:177]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:177]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[*]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:179]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:179]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[*]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:180]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:180]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[*]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:181]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:181]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[0]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:183]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:183]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[1]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:184]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:184]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[2]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:185]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:185]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[3]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:186]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:186]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc]
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo/inst'
-WARNING: [Vivado 12-180] No cells matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:2]
-WARNING: [Vivado 12-508] No pins matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:2]
-WARNING: [Vivado_Tcl 4-939] Waiver ID 'LUTAR-1' object list should not be empty (perhaps an invalid wildcard was used or only unsupported objects). [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:2]
-WARNING: [Vivado 12-180] No cells matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:6]
-WARNING: [Vivado 12-508] No pins matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:6]
-WARNING: [Vivado_Tcl 4-939] Waiver ID 'LUTAR-1' object list should not be empty (perhaps an invalid wildcard was used or only unsupported objects). [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:6]
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo/inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'system_i/FIFO_delay_port2/fifo_generator_PORT2/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'system_i/FIFO_delay_port2/fifo_generator_PORT2/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'system_i/FIFO_delay_port1/fifo_generator_PORT1/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'system_i/FIFO_delay_port1/fifo_generator_PORT1/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2116.465 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
-
-open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 2172.328 ; gain = 585.605
-open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
-regenerate_bd_layout
-regenerate_bd_layout -routing
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout'
-redo
-INFO: [Common 17-16] redo 'regenerate_bd_layout'
-redo
-INFO: [Common 17-16] redo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout'
-redo
-INFO: [Common 17-16] redo 'regenerate_bd_layout'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout'
-redo
-INFO: [Common 17-16] redo 'regenerate_bd_layout'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout'
-set_property location {2.5 2422 625} [get_bd_cells axi_gpio_0]
-set_property location {3 2272 414} [get_bd_cells axi_gpio_0]
-delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
-connect_bd_net [get_bd_pins axi_gpio_0/gpio2_io_i] [get_bd_pins axi_gpio_0/gpio2_io_o]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio2_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
-connect_bd_net [PS7/FCLK_CLK0] [get_bd_pins exp_p_tri_io]
-invalid command name "PS7/FCLK_CLK0"
-connect_bd_net [processing_system7_0/FCLK_CLK0] [get_bd_pins exp_p_tri_io]
-invalid command name "processing_system7_0/FCLK_CLK0"
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins exp_p_tri_io]
-save_bd_design
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
-INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	FREQ_HZ = 125000000 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	PHASE = 0.0 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
-Please check your design and connect them as needed: 
-/dac/S_AXIS_PORT2_tvalid
-/dac/S_AXIS_PORT1_tvalid
-
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
-Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
-Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
-Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 17:14:56 2023] Launched system_auto_pc_0_synth_1, system_s00_data_fifo_0_synth_1, synth_1...
-Run output will be captured here:
-system_auto_pc_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_auto_pc_0_synth_1/runme.log
-system_s00_data_fifo_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_s00_data_fifo_0_synth_1/runme.log
-synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 17:14:56 2023] Launched impl_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:20 . Memory (MB): peak = 2172.328 ; gain = 0.000
-WARNING: [IP_Flow 19-4318] IP-XACT file does not exist: c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/mref/counter_trig/component.xml. It will be created.
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 17:16:28 2023] Launched synth_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 17:16:28 2023] Launched impl_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0
-endgroup
-set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells util_vector_logic_0]
-set_property location {6 5078 183} [get_bd_cells util_vector_logic_0]
-set_property location {6 4969 176} [get_bd_cells util_vector_logic_0]
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins util_vector_logic_0/Op1]
-connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins exp_n_tri_io]
-save_bd_design
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-delete_bd_objs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2195.406 ; gain = 0.000
-WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
-INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	FREQ_HZ = 125000000 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	PHASE = 0.0 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
-Please check your design and connect them as needed: 
-/dac/S_AXIS_PORT2_tvalid
-/dac/S_AXIS_PORT1_tvalid
-
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
-Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
-Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
-Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 1.193 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 1.193 MB.
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 17:33:02 2023] Launched system_util_vector_logic_0_0_synth_1, synth_1...
-Run output will be captured here:
-system_util_vector_logic_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_util_vector_logic_0_0_synth_1/runme.log
-synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 17:33:02 2023] Launched impl_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.375 ; gain = 1.969
-regenerate_bd_layout
-delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
-connect_bd_net [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins dac/S_AXIS_PORT1_tdata]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
-endgroup
-set_property location {2 702 716} [get_bd_cells xlconstant_0]
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT1_tvalid]
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT2_tdata]
-delete_bd_objs [get_bd_nets xlconstant_0_dout]
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT1_tvalid]
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins dac/S_AXIS_PORT2_tvalid]
-startgroup
-set_property -dict [list CONFIG.C_ALL_OUTPUTS_2 {1}] [get_bd_cells axi_gpio_0]
-endgroup
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins axi_gpio_0/gpio_io_i]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
-WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /axi_gpio_0/gpio_io_i(undef)
-disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/gpio_io_i]
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0
-endgroup
-set_property -dict [list CONFIG.Output_Width {1}] [get_bd_cells c_counter_binary_0]
-set_property -dict [list CONFIG.Output_Width {16}] [get_bd_cells c_counter_binary_0]
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
-endgroup
-set_property location {2 1845 73} [get_bd_cells c_counter_binary_0]
-set_property location {2 1629 -39} [get_bd_cells c_counter_binary_0]
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins c_counter_binary_0/CLK]
-set_property -dict [list CONFIG.DIN_TO {2} CONFIG.DIN_FROM {2} CONFIG.DIN_WIDTH {16} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
-connect_bd_net [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_0/Din]
-connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins axi_gpio_0/gpio_io_i]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
-startgroup
-set_property -dict [list CONFIG.C_SIZE {8}] [get_bd_cells util_vector_logic_0]
-endgroup
-regenerate_bd_layout
-close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/DIO_combine.v w ]
-add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/DIO_combine.v
-update_compile_order -fileset sources_1
-delete_bd_objs [get_bd_nets util_vector_logic_0_Res] [get_bd_cells util_vector_logic_0]
-disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_ports exp_p_tri_io]
-create_bd_cell -type module -reference DIO_combine DIO_combine_0
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
-set_property location {3 3059 767} [get_bd_cells DIO_combine_0]
-connect_bd_net [get_bd_pins DIO_combine_0/DIO_p_data] [get_bd_pins exp_p_tri_io]
-connect_bd_net [get_bd_pins DIO_combine_0/DIO_n_data] [get_bd_pins exp_n_tri_io]
-regenerate_bd_layout
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT0_data]
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding component instance block -- xilinx.com:module_ref:DIO_combine:1.0 - DIO_combine_0
+Adding component instance block -- xilinx.com:module_ref:GPIO_MSB_OUT:1.0 - GPIO_MSB_OUT_0
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
 WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT0_data(undef)
-connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT1_data]
+Successfully read diagram <system> from BD file <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd>
+open_bd_design: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1547.965 ; gain = 0.547
+delete_bd_objs [get_bd_nets GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT] [get_bd_cells GPIO_MSB_OUT_0]
+delete_bd_objs [get_bd_nets axi_gpio_1_gpio2_io_o]
+update_compile_order -fileset sources_1
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+set_property name xlslice_clk [get_bd_cells xlslice_0]
+set_property name xlslice_0 [get_bd_cells xlslice_1]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+delete_bd_objs [get_bd_cells xlslice_4]
+set_property location {3 1636 482} [get_bd_cells xlslice_0]
+set_property -dict [list CONFIG.DIN_TO {0} CONFIG.DIN_FROM {0} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
+set_property -dict [list CONFIG.DIN_WIDTH {32}] [get_bd_cells xlslice_0]
+set_property -dict [list CONFIG.DIN_TO {3} CONFIG.DIN_FROM {3} CONFIG.DIN_WIDTH {32}] [get_bd_cells xlslice_3]
+set_property -dict [list CONFIG.DIN_TO {2} CONFIG.DIN_FROM {2} CONFIG.DIN_WIDTH {32}] [get_bd_cells xlslice_2]
+set_property -dict [list CONFIG.DIN_TO {1} CONFIG.DIN_FROM {1} CONFIG.DIN_WIDTH {32}] [get_bd_cells xlslice_1]
+set_property location {3 1633 145} [get_bd_cells xlslice_0]
+connect_bd_net [get_bd_pins axi_gpio_1/gpio2_io_o] [get_bd_pins xlslice_0/Din]
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_1/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+connect_bd_net [get_bd_pins axi_gpio_1/gpio2_io_o] [get_bd_pins xlslice_1/Din]
+connect_bd_net [get_bd_pins axi_gpio_1/gpio2_io_o] [get_bd_pins xlslice_2/Din]
+connect_bd_net [get_bd_pins axi_gpio_1/gpio2_io_o] [get_bd_pins xlslice_3/Din]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT2_data]
+connect_bd_net [get_bd_pins xlslice_1/Dout] [get_bd_pins DIO_combine_0/DIO_PORT3_data]
+connect_bd_net [get_bd_pins xlslice_2/Dout] [get_bd_pins DIO_combine_0/DIO_PORT4_data]
+connect_bd_net [get_bd_pins xlslice_3/Dout] [get_bd_pins DIO_combine_0/DIO_PORT5_data]
+startgroup
+set_property -dict [list CONFIG.DIN_TO {4} CONFIG.DIN_FROM {4} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DIN_TO {8} CONFIG.DIN_FROM {8} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DIN_TO {12} CONFIG.DIN_FROM {12} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_3]
+endgroup
 save_bd_design
 Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
 Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
 reset_run synth_1
-reset_run system_axi_gpio_0_0_synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 8
 WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
 INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+WARNING: [BD 41-927] Following properties on pin /DIO_combine_0/DIO_PORT0_data have been updated from connected ip, but BD cell '/DIO_combine_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	PHASE = 0.000 
+Please resolve any mismatches by directly setting properties on BD cell </DIO_combine_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
 	FREQ_HZ = 125000000 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /dac/redpitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/redpitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
 	PHASE = 0.0 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
+Please resolve any mismatches by directly setting properties on BD cell </dac/redpitaya_dac_0> to completely resolve these warnings.
 CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
 Please check your design and connect them as needed: 
-/DIO_combine_0/DIO_PORT2_data
-/DIO_combine_0/DIO_PORT3_data
-/DIO_combine_0/DIO_PORT4_data
-/DIO_combine_0/DIO_PORT5_data
 /DIO_combine_0/DIO_PORT6_data
 /DIO_combine_0/DIO_PORT7_data
 
 Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
 Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_clk/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
 VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_clk/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
 VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
 VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block DIO_combine_0 .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
-Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
-Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
-Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 1.211 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 1.211 MB.
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 20:10:20 2023] Launched system_axi_gpio_0_0_synth_1, system_c_counter_binary_0_0_synth_1, system_DIO_combine_0_0_synth_1, synth_1...
-Run output will be captured here:
-system_axi_gpio_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_axi_gpio_0_0_synth_1/runme.log
-system_c_counter_binary_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_c_counter_binary_0_0_synth_1/runme.log
-system_DIO_combine_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_DIO_combine_0_0_synth_1/runme.log
-synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 20:10:20 2023] Launched impl_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:24 . Memory (MB): peak = 2266.020 ; gain = 5.438
-regenerate_bd_layout
-connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT7_data]
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT6_data]
-WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT6_data(undef)
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT2_data]
-WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT2_data(undef)
-connect_bd_net [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins DIO_combine_0/DIO_PORT4_data]
-WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT4_data(undef)
-connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT3_data]
-connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins DIO_combine_0/DIO_PORT5_data]
-save_bd_design
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
-INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	FREQ_HZ = 125000000 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	PHASE = 0.0 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
-Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
-Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
-Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 1.910 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 1.910 MB.
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 20:21:27 2023] Launched synth_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 20:21:27 2023] Launched impl_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:24 . Memory (MB): peak = 2295.828 ; gain = 29.809
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd]
-refresh_design
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_DIO_combine_0_0/system_DIO_combine_0_0.dcp' for cell 'system_i/DIO_combine_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.dcp' for cell 'system_i/axi_gpio_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.dcp' for cell 'system_i/axi_gpio_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/system_c_counter_binary_0_0.dcp' for cell 'system_i/c_counter_binary_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_1_0/system_util_ds_buf_1_0.dcp' for cell 'system_i/util_ds_buf_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0.dcp' for cell 'system_i/util_ds_buf_2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.dcp' for cell 'system_i/PS7/processing_system7_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0.dcp' for cell 'system_i/PS7/rst_ps7_0_125M'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp' for cell 'system_i/PS7/ps7_0_axi_periph/xbar'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp' for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0.dcp' for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0.dcp' for cell 'system_i/adc/axis_red_pitaya_adc_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_signal_split_0_0/system_signal_split_0_0.dcp' for cell 'system_i/adc/signal_split_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0.dcp' for cell 'system_i/dac/axis_red_pitaya_dac_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.dcp' for cell 'system_i/dac/clk_wiz_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_signal_combine_0_0/system_signal_combine_0_0.dcp' for cell 'system_i/dac/signal_combine_0'
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 2311.754 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2020.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. system_i/dac/clk_wiz_0/inst/clkin1_ibufg 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'system_i/dac/clk_wiz_0/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'DIFF_TERM' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[0]' is not directly connected to top level port. Synthesis is ignored for DIFF_TERM but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[0]' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'DIFF_TERM' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[1]' is not directly connected to top level port. Synthesis is ignored for DIFF_TERM but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'system_i/util_ds_buf_1/IBUF_OUT[1]' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'system_i/util_ds_buf_2/OBUF_IN[0]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
-WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'system_i/util_ds_buf_2/OBUF_IN[1]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/PS7/processing_system7_0/inst'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/PS7/processing_system7_0/inst'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_1_0/system_util_ds_buf_1_0_board.xdc] for cell 'system_i/util_ds_buf_1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_1_0/system_util_ds_buf_1_0_board.xdc] for cell 'system_i/util_ds_buf_1/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'system_i/util_ds_buf_2/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'system_i/util_ds_buf_2/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc] for cell 'system_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc] for cell 'system_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc] for cell 'system_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc] for cell 'system_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc:57]
-INFO: [Timing 38-2] Deriving generated clocks [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc:57]
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/dac/clk_wiz_0/inst'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0_board.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0_board.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_rst_ps7_0_125M_0/system_rst_ps7_0_125M_0.xdc] for cell 'system_i/PS7/rst_ps7_0_125M/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_board.xdc] for cell 'system_i/axi_gpio_1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_board.xdc] for cell 'system_i/axi_gpio_1/U0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.xdc] for cell 'system_i/axi_gpio_1/U0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.xdc] for cell 'system_i/axi_gpio_1/U0'
-Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/clocks.xdc]
-Finished Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/clocks.xdc]
-Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc]
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:123]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:123]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:124]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:124]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:125]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:125]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:126]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:126]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:127]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:127]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:128]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:128]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:129]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:129]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:130]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:130]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:131]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:131]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:132]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:132]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:134]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:134]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:135]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:135]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:136]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:136]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:137]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:137]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:138]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:138]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:139]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:139]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:140]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:140]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:141]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:141]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:142]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:142]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:143]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:143]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:173]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:173]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:174]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:174]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:175]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:175]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_p_trg'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:177]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:177]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[*]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:179]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:179]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[*]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:180]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:180]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[*]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:181]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:181]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[0]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:183]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:183]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[1]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:184]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:184]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[2]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:185]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:185]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'exp_n_alex[3]'. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:186]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc:186]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/constrs_1/imports/cfg/ports.xdc]
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo/inst'
-WARNING: [Vivado 12-180] No cells matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:2]
-WARNING: [Vivado 12-508] No pins matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:2]
-WARNING: [Vivado_Tcl 4-939] Waiver ID 'LUTAR-1' object list should not be empty (perhaps an invalid wildcard was used or only unsupported objects). [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:2]
-WARNING: [Vivado 12-180] No cells matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:6]
-WARNING: [Vivado 12-508] No pins matched '*'. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:6]
-WARNING: [Vivado_Tcl 4-939] Waiver ID 'LUTAR-1' object list should not be empty (perhaps an invalid wildcard was used or only unsupported objects). [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc:6]
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_clocks.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo/inst'
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-refresh_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2386.230 ; gain = 90.402
-open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
-regenerate_bd_layout
-startgroup
-set_property -dict [list CONFIG.DIN_TO {3} CONFIG.DIN_FROM {3} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_0]
-endgroup
-close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v w ]
-add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v] -no_script -reset -force -quiet
-remove_files  C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v
-file delete -force C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_split.v
-delete_bd_objs [get_bd_nets xlconstant_0_dout]
-delete_bd_objs [get_bd_nets axi_gpio_0_gpio2_io_o]
-create_bd_cell -type module -reference signal_split signal_split_0
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins signal_split_0/S_AXIS_tvalid]
-WARNING: [BD 41-1306] The connection to interface pin /signal_split_0/S_AXIS_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS
-connect_bd_net [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins signal_split_0/S_AXIS_tdata]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
-WARNING: [BD 41-1306] The connection to interface pin /signal_split_0/S_AXIS_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS
-delete_bd_objs [get_bd_nets dac/fifo_generator_0_m_axis_tdata] [get_bd_pins dac/S_AXIS_PORT2_tdata]
-delete_bd_objs [get_bd_nets dac/fifo_generator_0_m_axis_tvalid] [get_bd_pins dac/S_AXIS_PORT2_tvalid]
-delete_bd_objs [get_bd_nets dac/S_AXIS_PORT1_tdata_1] [get_bd_pins dac/S_AXIS_PORT1_tdata]
-delete_bd_objs [get_bd_nets dac/S_AXIS_PORT1_tvalid_1] [get_bd_pins dac/S_AXIS_PORT1_tvalid]
-connect_bd_intf_net [get_bd_intf_pins signal_split_0/M_AXIS_PORT1] [get_bd_intf_pins dac/signal_combine_0/S_AXIS_PORT1]
-connect_bd_intf_net [get_bd_intf_pins signal_split_0/M_AXIS_PORT2] [get_bd_intf_pins dac/signal_combine_0/S_AXIS_PORT2]
-startgroup
-set_property -dict [list CONFIG.C_TRI_DEFAULT {0x0000FFFF} CONFIG.C_ALL_INPUTS {0}] [get_bd_cells axi_gpio_0]
-endgroup
-startgroup
-endgroup
-close [ open C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v w ]
-add_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v] -no_script -reset -force -quiet
-remove_files  C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_16MSB.v
-add_files -norecurse C:/Users/rinu2/Documents/kichi@git/verilog-learning/code/GPIO_MSB_OUT.v
-update_compile_order -fileset sources_1
-update_files -from_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_MSB_OUT.v -to_files C:/Users/rinu2/Documents/kichi@git/verilog-learning/code/GPIO_MSB_OUT.v -filesets [get_filesets *]
-INFO: [filemgmt 20-762] Replacing file 'C:/Users/rinu2/Documents/kichi@git/verilog-learning/code/GPIO_MSB_OUT.v' with file 'C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/new/GPIO_MSB_OUT.v'.
-create_bd_cell -type module -reference GPIO_MSB_OUT GPIO_MSB_OUT_0
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
-connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins GPIO_MSB_OUT_0/GPIO_DATA]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_0/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
-startgroup
-set_property -dict [list CONFIG.GPIO_OUT_WIDTH {1}] [get_bd_cells GPIO_MSB_OUT_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.GPIO_OUT_WIDTH {2}] [get_bd_cells GPIO_MSB_OUT_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.GPIO_OUT_WIDTH {16}] [get_bd_cells GPIO_MSB_OUT_0]
-endgroup
-disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT6_data]
-disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT2_data]
-disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT4_data]
-regenerate_bd_layout
-regenerate_bd_layout -routing
-disconnect_bd_net /xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT7_data]
-disconnect_bd_net /xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT3_data]
-disconnect_bd_net /xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT5_data]
-connect_bd_net [get_bd_pins GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT] [get_bd_pins DIO_combine_0/DIO_PORT2_data]
-save_bd_design
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-update_compile_order -fileset sources_1
-reset_run synth_1
-reset_run system_axi_gpio_0_0_synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
-INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	FREQ_HZ = 125000000 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	PHASE = 0.0 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
-Please check your design and connect them as needed: 
-/DIO_combine_0/DIO_PORT3_data
-/DIO_combine_0/DIO_PORT4_data
-/DIO_combine_0/DIO_PORT5_data
-/DIO_combine_0/DIO_PORT6_data
-/DIO_combine_0/DIO_PORT7_data
-
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block signal_split_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block GPIO_MSB_OUT_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_3 .
 WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
 INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
 WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
@@ -825,6 +127,7 @@ Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-le
 WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
 WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
 WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
+WARNING: [BD 41-2265] Clock pin for protocol instance pin m_axis could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/redpitaya_adc_0
 WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
 WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
 WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
@@ -832,80 +135,10 @@ WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not
 WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
 WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
 WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 1.910 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 1.910 MB.
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 21:06:00 2023] Launched system_axi_gpio_0_0_synth_1, system_signal_split_0_1_synth_1, system_GPIO_MSB_OUT_0_0_synth_1, synth_1...
-Run output will be captured here:
-system_axi_gpio_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_axi_gpio_0_0_synth_1/runme.log
-system_signal_split_0_1_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_signal_split_0_1_synth_1/runme.log
-system_GPIO_MSB_OUT_0_0_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_GPIO_MSB_OUT_0_0_synth_1/runme.log
-synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 21:06:00 2023] Launched impl_1...
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 4.057 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 4.057 MB.
+[Wed Jan  3 11:36:01 2024] Launched synth_1...
+Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
+[Wed Jan  3 11:36:01 2024] Launched impl_1...
 Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:21 . Memory (MB): peak = 2783.961 ; gain = 0.000
-startgroup
-set_property -dict [list CONFIG.C_IS_DUAL {1} CONFIG.C_ALL_INPUTS {0} CONFIG.C_ALL_OUTPUTS {1} CONFIG.C_ALL_OUTPUTS_2 {1}] [get_bd_cells axi_gpio_1]
-endgroup
-delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_o]
-connect_bd_net [get_bd_pins axi_gpio_1/gpio_io_o] [get_bd_pins GPIO_MSB_OUT_0/GPIO_DATA]
-WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_1/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
-save_bd_design
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
-INFO: [xilinx.com:ip:clk_wiz:6.0-1] /dac/clk_wiz_0 clk_wiz propagate
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/aclk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	FREQ_HZ = 125000000 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-WARNING: [BD 41-927] Following properties on pin /dac/axis_red_pitaya_dac_0/ddr_clk have been updated from connected ip, but BD cell '/dac/axis_red_pitaya_dac_0' does not accept parameter changes, so they may not be synchronized with cell properties:
-	PHASE = 0.0 
-Please resolve any mismatches by directly setting properties on BD cell </dac/axis_red_pitaya_dac_0> to completely resolve these warnings.
-CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
-Please check your design and connect them as needed: 
-/DIO_combine_0/DIO_PORT3_data
-/DIO_combine_0/DIO_PORT4_data
-/DIO_combine_0/DIO_PORT5_data
-/DIO_combine_0/DIO_PORT6_data
-/DIO_combine_0/DIO_PORT7_data
-
-Wrote  : <C:\Users\rinu2\Documents\kichi@git\verilog-learning\prj\transmitter\transmitter.srcs\sources_1\bd\system\system.bd> 
-Wrote  : <C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/axi_gpio_0/gpio_io_i'(32) to pin '/xlslice_0/Dout'(1) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-CRITICAL WARNING: [BD 41-2383] Width mismatch when connecting input pin '/DIO_combine_0/DIO_PORT2_data'(1) to pin '/GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/sim/system.v
-VHDL Output written to : C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block PS7/ps7_0_axi_periph/s00_couplers/auto_pc .
-Exporting to file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system.hwh
-Generated Block Design Tcl file C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
-Generated Hardware Definition File C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.hwdef
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /adc/signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin S_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /dac/signal_combine_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT1 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
-WARNING: [BD 41-2265] Clock pin for protocol instance pin M_AXIS_PORT2 could not be determined. Make sure that ASSOCIATED_BUSIF and ASSOCIATED_RESET properties are set or propagated on clock pins of block /signal_split_0
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4334efbd1258b0fe; cache size = 2.593 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_s00_data_fifo_0, cache-ID = 91566a5dfb42d1cc; cache size = 2.593 MB.
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Dec 25 22:33:52 2023] Launched system_axi_gpio_0_2_synth_1, synth_1...
-Run output will be captured here:
-system_axi_gpio_0_2_synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_axi_gpio_0_2_synth_1/runme.log
-synth_1: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/runme.log
-[Mon Dec 25 22:33:52 2023] Launched impl_1...
-Run output will be captured here: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:18 . Memory (MB): peak = 2783.961 ; gain = 0.000
-open_bd_design {C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/system.bd}
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:29 . Memory (MB): peak = 1547.965 ; gain = 0.000

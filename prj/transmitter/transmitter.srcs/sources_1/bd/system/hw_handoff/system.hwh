@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec 25 22:33:44 2023" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan  3 11:35:50 2024" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" LEFT="13" NAME="adc_dat_a_i" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_adc_dat_a_i">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_dat_a"/>
+        <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_dat_a"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="13" NAME="adc_dat_b_i" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_adc_dat_b_i">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_dat_b"/>
+        <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_dat_b"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="adc_clk_p_i" SIGIS="undef" SIGNAME="External_Ports_adc_clk_p_i">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_clk_p"/>
+        <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_clk_p"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="adc_clk_n_i" SIGIS="undef" SIGNAME="External_Ports_adc_clk_n_i">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_clk_n"/>
+        <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_clk_n"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="adc_enc_p_o" SIGIS="undef"/>
     <PORT DIR="O" NAME="adc_enc_n_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="adc_csn_o" SIGIS="undef" SIGNAME="adc_axis_red_pitaya_adc_0_adc_csn">
+    <PORT DIR="O" NAME="adc_csn_o" SIGIS="undef" SIGNAME="adc_redpitaya_adc_0_adc_csn">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_csn"/>
+        <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_csn"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="13" NAME="dac_dat_o" RIGHT="0" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_dat">
+    <PORT DIR="O" LEFT="13" NAME="dac_dat_o" RIGHT="0" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_dat">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="dac_dat"/>
+        <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="dac_dat"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="dac_clk_o" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_clk">
+    <PORT DIR="O" NAME="dac_clk_o" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="dac_clk"/>
+        <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="dac_clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="dac_rst_o" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_rst">
+    <PORT DIR="O" NAME="dac_rst_o" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_rst">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="dac_rst"/>
+        <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="dac_rst"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="dac_sel_o" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_sel">
+    <PORT DIR="O" NAME="dac_sel_o" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_sel">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="dac_sel"/>
+        <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="dac_sel"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="dac_wrt_o" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_wrt">
+    <PORT DIR="O" NAME="dac_wrt_o" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_wrt">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="dac_wrt"/>
+        <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="dac_wrt"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="3" NAME="dac_pwm_o" RIGHT="0" SIGIS="undef"/>
@@ -274,19 +274,31 @@
             <CONNECTION INSTANCE="PS7_processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="DIO_PORT1_data" RIGHT="1" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="I" LEFT="1" NAME="DIO_PORT1_data" RIGHT="1" SIGIS="undef" SIGNAME="xlslice_clk_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_clk" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="DIO_PORT2_data" RIGHT="2" SIGIS="undef" SIGNAME="xlslice_0_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="DIO_PORT2_data" RIGHT="2" SIGIS="undef" SIGNAME="GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT">
+        <PORT DIR="I" LEFT="3" NAME="DIO_PORT3_data" RIGHT="3" SIGIS="undef" SIGNAME="xlslice_1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="GPIO_MSB_OUT_0" PORT="GPIO_MSB_DATA_OUT"/>
+            <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="DIO_PORT3_data" RIGHT="3" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="4" NAME="DIO_PORT4_data" RIGHT="4" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="5" NAME="DIO_PORT5_data" RIGHT="5" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="4" NAME="DIO_PORT4_data" RIGHT="4" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_2" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="5" NAME="DIO_PORT5_data" RIGHT="5" SIGIS="undef" SIGNAME="xlslice_3_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_3" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="6" NAME="DIO_PORT6_data" RIGHT="6" SIGIS="undef"/>
         <PORT DIR="I" LEFT="7" NAME="DIO_PORT7_data" RIGHT="7" SIGIS="undef"/>
         <PORT DIR="O" LEFT="7" NAME="DIO_p_data" RIGHT="0" SIGIS="undef" SIGNAME="DIO_combine_0_DIO_p_data">
@@ -297,28 +309,6 @@
         <PORT DIR="O" LEFT="7" NAME="DIO_n_data" RIGHT="0" SIGIS="undef" SIGNAME="DIO_combine_0_DIO_n_data">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="exp_n_tri_io"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/GPIO_MSB_OUT_0" HWVERSION="1.0" INSTANCE="GPIO_MSB_OUT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="GPIO_MSB_OUT" VLNV="xilinx.com:module_ref:GPIO_MSB_OUT:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="GPIO_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="GPIO_OUT_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_GPIO_MSB_OUT_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="31" NAME="GPIO_DATA" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio_io_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="GPIO_MSB_DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DIO_combine_0" PORT="DIO_PORT2_data"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2774,22 +2764,22 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/adc/axis_red_pitaya_adc_0" HWVERSION="1.0" INSTANCE="adc_axis_red_pitaya_adc_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_red_pitaya_adc" VLNV="pavel-demin:user:axis_red_pitaya_adc:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/adc/redpitaya_adc_0" HWVERSION="1.0" INSTANCE="adc_redpitaya_adc_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="redpitaya_adc" VLNV="xilinx.com:module_ref:redpitaya_adc:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="ADC_DATA_WIDTH" VALUE="14"/>
         <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_axis_red_pitaya_adc_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_redpitaya_adc_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="O" NAME="adc_clk" SIGIS="clk" SIGNAME="adc_axis_red_pitaya_adc_0_adc_clk">
+        <PORT CLKFREQUENCY="125000000" DIR="O" NAME="adc_clk" SIGIS="clk" SIGNAME="adc_redpitaya_adc_0_adc_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="aclk"/>
             <CONNECTION INSTANCE="dac_clk_wiz_0" PORT="clk_in1"/>
+            <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="adc_csn" SIGIS="undef" SIGNAME="adc_axis_red_pitaya_adc_0_adc_csn">
+        <PORT DIR="O" NAME="adc_csn" SIGIS="undef" SIGNAME="adc_redpitaya_adc_0_adc_csn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="adc_csn_o"/>
           </CONNECTIONS>
@@ -2814,19 +2804,19 @@
             <CONNECTION INSTANCE="External_Ports" PORT="adc_dat_b_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="adc_axis_red_pitaya_adc_0_m_axis_tvalid">
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="adc_redpitaya_adc_0_m_axis_tvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="adc_signal_split_0" PORT="S_AXIS_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_axis_red_pitaya_adc_0_m_axis_tdata">
+        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_redpitaya_adc_0_m_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="adc_signal_split_0" PORT="S_AXIS_tdata"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="adc_axis_red_pitaya_adc_0_M_AXIS" NAME="M_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="adc_redpitaya_adc_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -2837,7 +2827,7 @@
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_axis_red_pitaya_adc_0_0_adc_clk"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PORTMAPS>
@@ -2856,14 +2846,14 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_axis_red_pitaya_adc_0_m_axis_tdata">
+        <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_redpitaya_adc_0_m_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="m_axis_tdata"/>
+            <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="m_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef" SIGNAME="adc_axis_red_pitaya_adc_0_m_axis_tvalid">
+        <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef" SIGNAME="adc_redpitaya_adc_0_m_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="m_axis_tvalid"/>
+            <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="m_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M_AXIS_PORT1_tdata" RIGHT="0" SIGIS="undef"/>
@@ -2910,7 +2900,7 @@
             <PORTMAP LOGICAL="TVALID" PHYSICAL="M_AXIS_PORT2_tvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="adc_axis_red_pitaya_adc_0_M_AXIS" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="adc_redpitaya_adc_0_m_axis" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
@@ -3107,7 +3097,7 @@
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_GPIO_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_ALL_INPUTS" VALUE="0"/>
+        <PARAMETER NAME="C_ALL_INPUTS" VALUE="1"/>
         <PARAMETER NAME="C_ALL_INPUTS_2" VALUE="0"/>
         <PARAMETER NAME="C_ALL_OUTPUTS" VALUE="0"/>
         <PARAMETER NAME="C_ALL_OUTPUTS_2" VALUE="1"/>
@@ -3221,18 +3211,12 @@
             <CONNECTION INSTANCE="PS7_ps7_0_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_clk_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+            <CONNECTION INSTANCE="xlslice_clk" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="gpio_io_t" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="signal_split_0" PORT="S_AXIS_tdata"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="PS7_ps7_0_axi_periph_M00_AXI" DATAWIDTH="32" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -3290,8 +3274,6 @@
         <BUSINTERFACE BUSNAME="__NOC__" NAME="GPIO" TYPE="INITIATOR" VLNV="xilinx.com:interface:gpio:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="TRI_I" PHYSICAL="gpio_io_i"/>
-            <PORTMAP LOGICAL="TRI_O" PHYSICAL="gpio_io_o"/>
-            <PORTMAP LOGICAL="TRI_T" PHYSICAL="gpio_io_t"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="GPIO2" TYPE="INITIATOR" VLNV="xilinx.com:interface:gpio:1.0">
@@ -3593,10 +3575,17 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="GPIO_MSB_OUT_0" PORT="GPIO_DATA"/>
+            <CONNECTION INSTANCE="signal_split_0" PORT="S_AXIS_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Din"/>
+            <CONNECTION INSTANCE="xlslice_1" PORT="Din"/>
+            <CONNECTION INSTANCE="xlslice_2" PORT="Din"/>
+            <CONNECTION INSTANCE="xlslice_3" PORT="Din"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="PS7_ps7_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -3723,95 +3712,11 @@
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="Q" RIGHT="0" SIGIS="data" SIGNAME="c_counter_binary_0_Q">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Din"/>
+            <CONNECTION INSTANCE="xlslice_clk" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/dac/axis_red_pitaya_dac_0" HWVERSION="1.0" INSTANCE="dac_axis_red_pitaya_dac_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_red_pitaya_dac" VLNV="pavel-demin:user:axis_red_pitaya_dac:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DAC_DATA_WIDTH" VALUE="14"/>
-        <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_axis_red_pitaya_dac_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="adc_axis_red_pitaya_adc_0_adc_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_clk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="ddr_clk" SIGIS="clk" SIGNAME="dac_clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="locked" SIGIS="undef" SIGNAME="dac_clk_wiz_0_locked">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_clk_wiz_0" PORT="locked"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="dac_clk" SIGIS="clk" SIGNAME="dac_axis_red_pitaya_dac_0_dac_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dac_clk_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="dac_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="dac_axis_red_pitaya_dac_0_dac_rst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dac_rst_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="dac_sel" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_sel">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dac_sel_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="dac_wrt" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_wrt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dac_wrt_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="13" NAME="dac_dat" RIGHT="0" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_dac_dat">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dac_dat_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_s_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_signal_combine_0" PORT="M_AXIS_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_signal_combine_0" PORT="M_AXIS_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="dac_signal_combine_0_M_AXIS" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_axis_red_pitaya_adc_0_0_adc_clk"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="5" FULLNAME="/dac/clk_wiz_0" HWVERSION="6.0" INSTANCE="dac_clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
@@ -4391,23 +4296,107 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk_in1" SIGIS="clk" SIGNAME="adc_axis_red_pitaya_adc_0_adc_clk">
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk_in1" SIGIS="clk" SIGNAME="adc_redpitaya_adc_0_adc_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+            <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="250000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="dac_clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="ddr_clk"/>
+            <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="ddr_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="dac_clk_wiz_0_locked">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="locked"/>
+            <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="locked"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dac/redpitaya_dac_0" HWVERSION="1.0" INSTANCE="dac_redpitaya_dac_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="redpitaya_dac" VLNV="xilinx.com:module_ref:redpitaya_dac:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DAC_DATA_WIDTH" VALUE="14"/>
+        <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_redpitaya_dac_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="adc_redpitaya_adc_0_adc_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_redpitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="ddr_clk" SIGIS="clk" SIGNAME="dac_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="locked" SIGIS="undef" SIGNAME="dac_clk_wiz_0_locked">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_clk_wiz_0" PORT="locked"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="dac_clk" SIGIS="clk" SIGNAME="dac_redpitaya_dac_0_dac_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_clk_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="dac_redpitaya_dac_0_dac_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_rst_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_sel" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_sel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_sel_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_wrt" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_wrt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_wrt_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="13" NAME="dac_dat" RIGHT="0" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_dac_dat">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_dat_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_signal_combine_0" PORT="M_AXIS_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_signal_combine_0" PORT="M_AXIS_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="dac_signal_combine_0_M_AXIS" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_redpitaya_adc_0_0_adc_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/dac/signal_combine_0" HWVERSION="1.0" INSTANCE="dac_signal_combine_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="signal_combine" VLNV="xilinx.com:module_ref:signal_combine:1.0">
       <DOCUMENTS/>
@@ -4438,14 +4427,14 @@
             <CONNECTION INSTANCE="signal_split_0" PORT="M_AXIS_PORT2_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_s_axis_tdata">
+        <PORT DIR="O" LEFT="31" NAME="M_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_s_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="s_axis_tdata"/>
+            <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="s_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M_AXIS_tvalid" SIGIS="undef" SIGNAME="dac_axis_red_pitaya_dac_0_s_axis_tvalid">
+        <PORT DIR="O" NAME="M_AXIS_tvalid" SIGIS="undef" SIGNAME="dac_redpitaya_dac_0_s_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dac_axis_red_pitaya_dac_0" PORT="s_axis_tvalid"/>
+            <CONNECTION INSTANCE="dac_redpitaya_dac_0" PORT="s_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4518,9 +4507,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio_io_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef" SIGNAME="xlconstant_0_dout">
@@ -4706,9 +4695,105 @@
     <MODULE COREREVISION="2" FULLNAME="/xlslice_0" HWVERSION="1.0" INSTANCE="xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIO_combine_0" PORT="DIO_PORT2_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_1" HWVERSION="1.0" INSTANCE="xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="4"/>
+        <PARAMETER NAME="DIN_TO" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_2"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIO_combine_0" PORT="DIO_PORT3_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_2" HWVERSION="1.0" INSTANCE="xlslice_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="8"/>
+        <PARAMETER NAME="DIN_TO" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_3"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIO_combine_0" PORT="DIO_PORT4_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_3" HWVERSION="1.0" INSTANCE="xlslice_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="12"/>
+        <PARAMETER NAME="DIN_TO" VALUE="12"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_4"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_3_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIO_combine_0" PORT="DIO_PORT5_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_clk" HWVERSION="1.0" INSTANCE="xlslice_clk" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="3"/>
-        <PARAMETER NAME="DIN_TO" VALUE="3"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="4"/>
+        <PARAMETER NAME="DIN_TO" VALUE="4"/>
         <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -4719,7 +4804,7 @@
             <CONNECTION INSTANCE="c_counter_binary_0" PORT="Q"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_clk_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_i"/>
             <CONNECTION INSTANCE="DIO_combine_0" PORT="DIO_PORT1_data"/>
