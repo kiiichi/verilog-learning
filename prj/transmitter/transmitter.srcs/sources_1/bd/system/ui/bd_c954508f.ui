@@ -1,8 +1,8 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_Layers":"/util_ds_buf_2_OBUF_DS_P:true|/util_ds_buf_1_IBUF_OUT:true|/PS7/processing_system7_0_FCLK_CLK0:true|/PS7/processing_system7_0_FCLK_RESET0_N:true|/PS7/rst_ps7_0_125M_peripheral_aresetn:true|/axis_red_pitaya_dac_0_dac_rst:true|/DataAcquisition/axis_red_pitaya_adc_0_adc_clk:true|/util_ds_buf_2_OBUF_DS_N:true|/clk_wiz_0_clk_out1:true|/axis_red_pitaya_dac_0_dac_clk:true|/adc/axis_red_pitaya_adc_0_adc_clk:true|/dac/axis_red_pitaya_dac_0_dac_clk:true|/dac/axis_red_pitaya_dac_0_dac_rst:true|/dac/clk_wiz_0_clk_out1:true|",
-   "Default View_ScaleFactor":"0.980132",
-   "Default View_TopLeft":"2469,491",
+   "Default View_ScaleFactor":"0.982833",
+   "Default View_TopLeft":"1328,37",
    "Display-PortTypeClock":"true",
    "Display-PortTypeOthers":"true",
    "Display-PortTypeReset":"true",
@@ -10,150 +10,102 @@
    "Interfaces View_Layers":"/util_ds_buf_2_OBUF_DS_P:false|/util_ds_buf_1_IBUF_OUT:false|/PS7/processing_system7_0_FCLK_CLK0:false|/PS7/processing_system7_0_FCLK_RESET0_N:false|/PS7/rst_ps7_0_125M_peripheral_aresetn:false|/axis_red_pitaya_dac_0_dac_rst:false|/DataAcquisition/axis_red_pitaya_adc_0_adc_clk:false|/util_ds_buf_2_OBUF_DS_N:false|/clk_wiz_0_clk_out1:false|/axis_red_pitaya_dac_0_dac_clk:false|/adc/axis_red_pitaya_adc_0_adc_clk:false|/dac/axis_red_pitaya_dac_0_dac_clk:false|/dac/axis_red_pitaya_dac_0_dac_rst:false|/dac/clk_wiz_0_clk_out1:false|",
    "Interfaces View_ScaleFactor":"0.932296",
    "Interfaces View_TopLeft":"-163,-24",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port Vp_Vn -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
-preplace port Vaux0 -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
-preplace port Vaux1 -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
-preplace port Vaux9 -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
-preplace port Vaux8 -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 4420 -y 590 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 5 -x 4420 -y 260 -defaultsOSRD
-preplace port gpio_rtl_0 -pg 1 -lvl 5 -x 4420 -y 80 -defaultsOSRD
-preplace port adc_clk_p_i -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
-preplace port adc_clk_n_i -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
-preplace port adc_enc_p_o -pg 1 -lvl 5 -x 4420 -y 40 -defaultsOSRD
-preplace port adc_enc_n_o -pg 1 -lvl 5 -x 4420 -y 20 -defaultsOSRD
-preplace port adc_csn_o -pg 1 -lvl 5 -x 4420 -y 190 -defaultsOSRD
-preplace port dac_clk_o -pg 1 -lvl 5 -x 4420 -y 350 -defaultsOSRD
-preplace port dac_rst_o -pg 1 -lvl 5 -x 4420 -y 370 -defaultsOSRD
-preplace port dac_sel_o -pg 1 -lvl 5 -x 4420 -y 390 -defaultsOSRD
-preplace port dac_wrt_o -pg 1 -lvl 5 -x 4420 -y 410 -defaultsOSRD
-preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
-preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
-preplace portBus dac_dat_o -pg 1 -lvl 5 -x 4420 -y 430 -defaultsOSRD
-preplace portBus dac_pwm_o -pg 1 -lvl 5 -x 4420 -y 60 -defaultsOSRD
-preplace portBus exp_p_tri_io -pg 1 -lvl 5 -x 4420 -y 710 -defaultsOSRD
-preplace portBus exp_n_tri_io -pg 1 -lvl 5 -x 4420 -y 730 -defaultsOSRD
-preplace portBus daisy_p_o -pg 1 -lvl 5 -x 4420 -y 910 -defaultsOSRD
-preplace portBus daisy_n_o -pg 1 -lvl 5 -x 4420 -y 930 -defaultsOSRD
-preplace portBus daisy_p_i -pg 1 -lvl 0 -x 0 -y 780 -defaultsOSRD
-preplace portBus daisy_n_i -pg 1 -lvl 0 -x 0 -y 940 -defaultsOSRD
-preplace portBus led_o -pg 1 -lvl 5 -x 4420 -y 100 -defaultsOSRD
-preplace inst util_ds_buf_1 -pg 1 -lvl 3 -x 2890 -y 920 -defaultsOSRD
-preplace inst util_ds_buf_2 -pg 1 -lvl 4 -x 3780 -y 920 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 2 -x 2480 -y 550 -defaultsOSRD
-preplace inst PS7 -pg 1 -lvl 1 -x 130 -y 290 -defaultsOSRD
-preplace inst adc -pg 1 -lvl 3 -x 2890 -y 90 -defaultsOSRD
-preplace inst dac -pg 1 -lvl 4 -x 3780 -y 360 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 2 -x 2480 -y 860 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 2 -x 2480 -y 380 -defaultsOSRD
-preplace inst c_counter_binary_0 -pg 1 -lvl 2 -x 2480 -y 700 -defaultsOSRD
-preplace inst xlslice_0 -pg 1 -lvl 3 -x 2890 -y 700 -defaultsOSRD
-preplace inst DIO_combine_0 -pg 1 -lvl 4 -x 3780 -y 720 -defaultsOSRD
-preplace inst signal_split_0 -pg 1 -lvl 3 -x 2890 -y 360 -defaultsOSRD
-preplace inst GPIO_MSB_OUT_0 -pg 1 -lvl 3 -x 2890 -y 540 -defaultsOSRD
-preplace inst PS7|rst_ps7_0_125M -pg 1 -lvl 1 -x 320 -y 630 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph -pg 1 -lvl 2 -x 820 -y 420 -defaultsOSRD
-preplace inst PS7|processing_system7_0 -pg 1 -lvl 1 -x 320 -y 360 -defaultsOSRD
-preplace inst adc|axis_red_pitaya_adc_0 -pg 1 -lvl 1 -x 2920 -y 120 -defaultsOSRD
-preplace inst adc|signal_split_0 -pg 1 -lvl 2 -x 3200 -y 100 -defaultsOSRD
-preplace inst dac|axis_red_pitaya_dac_0 -pg 1 -lvl 2 -x 4130 -y 390 -defaultsOSRD
-preplace inst dac|signal_combine_0 -pg 1 -lvl 1 -x 3840 -y 360 -defaultsOSRD
-preplace inst dac|clk_wiz_0 -pg 1 -lvl 1 -x 3840 -y 500 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph|xbar -pg 1 -lvl 2 -x 1650 -y 530 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph|s00_couplers -pg 1 -lvl 1 -x 930 -y 470 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph|m00_couplers -pg 1 -lvl 3 -x 1920 -y 410 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph|m01_couplers -pg 1 -lvl 3 -x 1920 -y 580 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph|s00_couplers|s00_data_fifo -pg 1 -lvl 2 -x 1300 -y 510 -defaultsOSRD
-preplace inst PS7|ps7_0_axi_periph|s00_couplers|auto_pc -pg 1 -lvl 1 -x 1050 -y 490 -defaultsOSRD
-preplace netloc daisy_p_i_1 1 0 3 NJ 780 NJ 780 2620J
-preplace netloc daisy_n_i_1 1 0 3 NJ 940 NJ 940 NJ
-preplace netloc util_ds_buf_2_OBUF_DS_P 1 4 1 NJ 910
-preplace netloc util_ds_buf_2_OBUF_DS_N 1 4 1 NJ 930
-preplace netloc util_ds_buf_1_IBUF_OUT 1 3 1 N 920
-preplace netloc adc_clk_p_i_1 1 0 3 NJ 90 NJ 90 NJ
-preplace netloc adc_clk_n_i_1 1 0 3 NJ 110 NJ 110 NJ
-preplace netloc adc_dat_a_i_1 1 0 3 NJ 130 NJ 130 NJ
-preplace netloc adc_dat_b_i_1 1 0 3 NJ 150 NJ 150 NJ
-preplace netloc axis_red_pitaya_adc_0_adc_csn 1 3 2 NJ 190 NJ
-preplace netloc axis_red_pitaya_dac_0_dac_clk 1 4 1 NJ 350
-preplace netloc axis_red_pitaya_dac_0_dac_rst 1 4 1 NJ 370
-preplace netloc axis_red_pitaya_dac_0_dac_sel 1 4 1 NJ 390
-preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 4 1 NJ 410
-preplace netloc axis_red_pitaya_dac_0_dac_dat 1 4 1 NJ 430
-preplace netloc rst_ps7_0_125M_peripheral_aresetn 1 1 1 2340 570n
-preplace netloc axis_red_pitaya_adc_0_adc_clk 1 3 1 3530 170n
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 3 2330 760 2650J 640 3520
-preplace netloc c_counter_binary_0_Q 1 2 1 NJ 700
-preplace netloc xlslice_0_Dout 1 2 2 2630 600 3510
-preplace netloc DIO_combine_0_DIO_p_data 1 4 1 NJ 710
-preplace netloc DIO_combine_0_DIO_n_data 1 4 1 NJ 730
-preplace netloc xlconstant_0_dout 1 2 1 NJ 380
-preplace netloc axi_gpio_0_gpio2_io_o 1 2 1 2620 360n
-preplace netloc GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT 1 3 1 3530 540n
-preplace netloc axi_gpio_1_gpio_io_o 1 2 1 2640 540n
-preplace netloc ps7_0_axi_periph_M00_AXI 1 1 1 2340 220n
-preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 260 NJ 260 NJ 260 NJ
-preplace netloc processing_system7_0_DDR 1 1 4 2330J 250 NJ 250 NJ 250 4400J
-preplace netloc PS7_M01_AXI1 1 1 1 2320 580n
-preplace netloc signal_split_0_M_AXIS_PORT1 1 3 1 N 350
-preplace netloc signal_split_0_M_AXIS_PORT2 1 3 1 N 370
-preplace netloc PS7|processing_system7_0_FCLK_CLK0 1 0 3 70 520 570 750 NJ
-preplace netloc PS7|rst_ps7_0_125M_peripheral_aresetn 1 1 2 560 730 NJ
-preplace netloc PS7|processing_system7_0_FCLK_RESET0_N 1 0 2 80 530 560
-preplace netloc PS7|Conn1 1 2 1 N 580
-preplace netloc PS7|processing_system7_0_M_AXI_GP0 1 1 1 580 360n
-preplace netloc PS7|ps7_0_axi_periph_M00_AXI 1 2 1 2150 220n
-preplace netloc PS7|processing_system7_0_FIXED_IO 1 1 2 580 260 NJ
-preplace netloc PS7|processing_system7_0_DDR 1 1 2 N 280 NJ
-preplace netloc adc|axis_red_pitaya_adc_0_adc_clk 1 1 2 3050 170 NJ
-preplace netloc adc|axis_red_pitaya_adc_0_adc_csn 1 1 2 3040 190 NJ
-preplace netloc adc|adc_clk_p_i_1 1 0 1 N 90
-preplace netloc adc|adc_clk_n_i_1 1 0 1 N 110
-preplace netloc adc|adc_dat_a_i_1 1 0 1 N 130
-preplace netloc adc|adc_dat_b_i_1 1 0 1 N 150
-preplace netloc adc|axis_red_pitaya_adc_0_M_AXIS 1 1 1 N 100
-preplace netloc adc|DataAcquisition_M_AXIS_PORT1 1 2 1 N 90
-preplace netloc adc|signal_split_0_M_AXIS_PORT2 1 2 1 N 110
-preplace netloc dac|axis_red_pitaya_adc_0_adc_clk 1 0 2 3690 430 3990
-preplace netloc dac|axis_red_pitaya_dac_0_dac_clk 1 2 1 N 350
-preplace netloc dac|axis_red_pitaya_dac_0_dac_rst 1 2 1 N 370
-preplace netloc dac|axis_red_pitaya_dac_0_dac_sel 1 2 1 N 390
-preplace netloc dac|axis_red_pitaya_dac_0_dac_wrt 1 2 1 N 410
-preplace netloc dac|axis_red_pitaya_dac_0_dac_dat 1 2 1 N 430
-preplace netloc dac|clk_wiz_0_clk_out1 1 1 1 4000 400n
-preplace netloc dac|clk_wiz_0_locked 1 1 1 4010 420n
-preplace netloc dac|signal_combine_0_M_AXIS 1 1 1 N 360
-preplace netloc dac|Conn1 1 0 1 N 350
-preplace netloc dac|Conn2 1 0 1 N 370
-preplace netloc PS7|ps7_0_axi_periph|ps7_0_axi_periph_ACLK_net 1 0 3 740 640 1500 610 1800
-preplace netloc PS7|ps7_0_axi_periph|ps7_0_axi_periph_ARESETN_net 1 0 3 730 650 1510 620 1810
-preplace netloc PS7|ps7_0_axi_periph|ps7_0_axi_periph_to_s00_couplers 1 0 1 N 470
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers_to_xbar 1 1 1 N 510
-preplace netloc PS7|ps7_0_axi_periph|m00_couplers_to_ps7_0_axi_periph 1 3 1 N 410
-preplace netloc PS7|ps7_0_axi_periph|xbar_to_m00_couplers 1 2 1 1790 370n
-preplace netloc PS7|ps7_0_axi_periph|m01_couplers_to_ps7_0_axi_periph 1 3 1 N 580
-preplace netloc PS7|ps7_0_axi_periph|xbar_to_m01_couplers 1 2 1 N 540
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|M_ACLK_1 1 0 2 880J 410 1200
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|M_ARESETN_1 1 0 2 NJ 570 1200
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|S_ACLK_1 1 0 1 890 490n
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|S_ARESETN_1 1 0 1 900 510n
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|s00_data_fifo_to_s00_couplers 1 2 1 N 510
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|s00_couplers_to_auto_pc 1 0 1 N 470
-preplace netloc PS7|ps7_0_axi_periph|s00_couplers|auto_pc_to_s00_data_fifo 1 1 1 N 490
-levelinfo -pg 1 0 130 2480 2890 3780 4420
-levelinfo -hier PS7 * 320 820 *
-levelinfo -hier adc * 2920 3200 *
-levelinfo -hier dac * 3840 4130 *
-levelinfo -hier PS7|ps7_0_axi_periph * 930 1650 1920 *
-levelinfo -hier PS7|ps7_0_axi_periph|s00_couplers * 1050 1300 *
-pagesize -pg 1 -db -bbox -sgen -170 0 4580 1000
-pagesize -hier PS7 -db -bbox -sgen 50 200 2180 760
-pagesize -hier adc -db -bbox -sgen 2770 30 3380 210
-pagesize -hier dac -db -bbox -sgen 3660 290 4280 570
-pagesize -hier PS7|ps7_0_axi_periph -db -bbox -sgen 700 310 2060 700
-pagesize -hier PS7|ps7_0_axi_periph|s00_couplers -db -bbox -sgen 850 400 1430 620
+preplace port Vp_Vn -pg 1 -lvl 0 -x -30 -y 140 -defaultsOSRD
+preplace port Vaux0 -pg 1 -lvl 0 -x -30 -y 20 -defaultsOSRD
+preplace port Vaux1 -pg 1 -lvl 0 -x -30 -y 40 -defaultsOSRD
+preplace port Vaux9 -pg 1 -lvl 0 -x -30 -y 120 -defaultsOSRD
+preplace port Vaux8 -pg 1 -lvl 0 -x -30 -y 60 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 2910 -y 220 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 2910 -y 200 -defaultsOSRD
+preplace port gpio_rtl_0 -pg 1 -lvl 5 -x 2910 -y 130 -defaultsOSRD
+preplace port adc_clk_p_i -pg 1 -lvl 0 -x -30 -y 910 -defaultsOSRD
+preplace port adc_clk_n_i -pg 1 -lvl 0 -x -30 -y 930 -defaultsOSRD
+preplace port adc_enc_p_o -pg 1 -lvl 5 -x 2910 -y 40 -defaultsOSRD
+preplace port adc_enc_n_o -pg 1 -lvl 5 -x 2910 -y 20 -defaultsOSRD
+preplace port adc_csn_o -pg 1 -lvl 5 -x 2910 -y 1010 -defaultsOSRD
+preplace port dac_clk_o -pg 1 -lvl 5 -x 2910 -y 750 -defaultsOSRD
+preplace port dac_rst_o -pg 1 -lvl 5 -x 2910 -y 770 -defaultsOSRD
+preplace port dac_sel_o -pg 1 -lvl 5 -x 2910 -y 790 -defaultsOSRD
+preplace port dac_wrt_o -pg 1 -lvl 5 -x 2910 -y 810 -defaultsOSRD
+preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x -30 -y 950 -defaultsOSRD
+preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x -30 -y 970 -defaultsOSRD
+preplace portBus dac_dat_o -pg 1 -lvl 5 -x 2910 -y 830 -defaultsOSRD
+preplace portBus dac_pwm_o -pg 1 -lvl 5 -x 2910 -y 110 -defaultsOSRD
+preplace portBus exp_p_tri_io -pg 1 -lvl 5 -x 2910 -y 540 -defaultsOSRD
+preplace portBus exp_n_tri_io -pg 1 -lvl 5 -x 2910 -y 560 -defaultsOSRD
+preplace portBus daisy_p_o -pg 1 -lvl 5 -x 2910 -y 70 -defaultsOSRD
+preplace portBus daisy_n_o -pg 1 -lvl 5 -x 2910 -y 90 -defaultsOSRD
+preplace portBus daisy_p_i -pg 1 -lvl 0 -x -30 -y 80 -defaultsOSRD
+preplace portBus daisy_n_i -pg 1 -lvl 0 -x -30 -y 100 -defaultsOSRD
+preplace portBus led_o -pg 1 -lvl 5 -x 2910 -y 150 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 3 -x 1640 -y -110 -defaultsOSRD
+preplace inst util_ds_buf_2 -pg 1 -lvl 4 -x 2680 -y 80 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 2 -x 1230 -y 620 -defaultsOSRD
+preplace inst PS7 -pg 1 -lvl 1 -x 130 -y 240 -defaultsOSRD
+preplace inst adc -pg 1 -lvl 3 -x 1640 -y 930 -defaultsOSRD
+preplace inst dac -pg 1 -lvl 4 -x 2680 -y 760 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 2 -x 1230 -y 320 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -x 1230 -y 840 -defaultsOSRD
+preplace inst c_counter_binary_0 -pg 1 -lvl 2 -x 1230 -y 460 -defaultsOSRD
+preplace inst xlslice_clk -pg 1 -lvl 3 -x 1640 -y 40 -defaultsOSRD
+preplace inst DIO_combine_0 -pg 1 -lvl 4 -x 2680 -y 550 -defaultsOSRD
+preplace inst signal_split_0 -pg 1 -lvl 3 -x 1640 -y 770 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 3 -x 1640 -y 140 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 3 -x 1640 -y 240 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 3 -x 1640 -y 340 -defaultsOSRD
+preplace inst xlslice_3 -pg 1 -lvl 3 -x 1640 -y 440 -defaultsOSRD
+preplace inst PS7|rst_ps7_0_125M -pg 1 -lvl 1 -x 320 -y 580 -defaultsOSRD
+preplace inst PS7|ps7_0_axi_periph -pg 1 -lvl 2 -x 730 -y 390 -defaultsOSRD
+preplace inst PS7|processing_system7_0 -pg 1 -lvl 1 -x 320 -y 310 -defaultsOSRD
+preplace netloc daisy_p_i_1 1 0 3 NJ 80 NJ 80 1370J
+preplace netloc daisy_n_i_1 1 0 3 NJ 100 NJ 100 1380J
+preplace netloc util_ds_buf_2_OBUF_DS_P 1 4 1 NJ 70
+preplace netloc util_ds_buf_2_OBUF_DS_N 1 4 1 NJ 90
+preplace netloc util_ds_buf_1_IBUF_OUT 1 3 1 1890 -110n
+preplace netloc adc_clk_p_i_1 1 0 3 NJ 910 NJ 910 1400J
+preplace netloc adc_clk_n_i_1 1 0 3 NJ 930 NJ 930 1390J
+preplace netloc adc_dat_a_i_1 1 0 3 NJ 950 NJ 950 1400J
+preplace netloc adc_dat_b_i_1 1 0 3 -10J 960 NJ 960 NJ
+preplace netloc axis_red_pitaya_adc_0_adc_csn 1 3 2 NJ 960 2870J
+preplace netloc axis_red_pitaya_dac_0_dac_clk 1 4 1 2890J 720n
+preplace netloc axis_red_pitaya_dac_0_dac_rst 1 4 1 2880J 740n
+preplace netloc axis_red_pitaya_dac_0_dac_sel 1 4 1 2870J 760n
+preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 4 1 2860J 780n
+preplace netloc axis_red_pitaya_dac_0_dac_dat 1 4 1 2850J 800n
+preplace netloc rst_ps7_0_125M_peripheral_aresetn 1 1 1 1060 340n
+preplace netloc axis_red_pitaya_adc_0_adc_clk 1 3 1 1890 780n
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 3 1090 530 NJ 530 1880
+preplace netloc c_counter_binary_0_Q 1 2 1 1390J 40n
+preplace netloc xlslice_0_Dout 1 2 2 1420 510 1830
+preplace netloc DIO_combine_0_DIO_p_data 1 4 1 NJ 540
+preplace netloc DIO_combine_0_DIO_n_data 1 4 1 NJ 560
+preplace netloc axi_gpio_1_gpio_io_o 1 2 1 1400 310n
+preplace netloc xlconstant_0_dout 1 2 1 1390J 790n
+preplace netloc axi_gpio_1_gpio2_io_o 1 2 1 1420 140n
+preplace netloc xlslice_0_Dout1 1 3 1 1890 140n
+preplace netloc xlslice_1_Dout 1 3 1 1870 240n
+preplace netloc xlslice_2_Dout 1 3 1 1850 340n
+preplace netloc xlslice_3_Dout 1 3 1 1840 440n
+preplace netloc signal_split_0_M_AXIS_PORT2 1 3 1 1860 760n
+preplace netloc signal_split_0_M_AXIS_PORT1 1 3 1 1830 740n
+preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 210 1410J 500 1820J 200 NJ
+preplace netloc PS7_M01_AXI1 1 1 1 1050 300n
+preplace netloc processing_system7_0_DDR 1 1 4 1070J 520 NJ 520 1860J 220 NJ
+preplace netloc ps7_0_axi_periph_M00_AXI 1 1 1 1080 170n
+preplace netloc PS7|processing_system7_0_FCLK_CLK0 1 0 3 70 470 570 550 NJ
+preplace netloc PS7|rst_ps7_0_125M_peripheral_aresetn 1 1 2 580 530 NJ
+preplace netloc PS7|processing_system7_0_FCLK_RESET0_N 1 0 2 80 480 560
+preplace netloc PS7|processing_system7_0_DDR 1 1 2 N 230 NJ
+preplace netloc PS7|ps7_0_axi_periph_M00_AXI 1 2 1 880 170n
+preplace netloc PS7|Conn1 1 2 1 N 400
+preplace netloc PS7|processing_system7_0_FIXED_IO 1 1 2 580 210 NJ
+preplace netloc PS7|processing_system7_0_M_AXI_GP0 1 1 1 N 310
+levelinfo -pg 1 -30 130 1230 1640 2680 2910
+levelinfo -hier PS7 * 320 730 *
+pagesize -pg 1 -db -bbox -sgen -200 -190 3070 1350
+pagesize -hier PS7 -db -bbox -sgen 50 150 910 680
 "
 }
 {

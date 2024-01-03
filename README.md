@@ -918,6 +918,7 @@ gcc -o transmitter transmitter.c
 cat transmitter.bit > /dev/xdevcfg
 ```
 
+
 ## 8.1. [AXI - GPIO](/reference/pg144-axi-gpio.pdf)
 
 1. GPIO 使用AXI-lite协议，因此和AXI-lite一样，是半双工的 (AXI是全双工). 因此 port 除了有 `gpio_io_i` `gpio_io_o`，还有`gpio_io_t`.

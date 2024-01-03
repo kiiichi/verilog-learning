@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Mon Dec 25 22:35:34 2023
+| Date         : Wed Jan  3 11:37:16 2024
 | Host         : SU running 64-bit major release  (build 9200)
 | Command      : report_utilization -file system_wrapper_utilization_placed.rpt -pb system_wrapper_utilization_placed.pb
 | Design       : system_wrapper
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs                 |  754 |     0 |     17600 |  4.28 |
-|   LUT as Logic             |  692 |     0 |     17600 |  3.93 |
+| Slice LUTs                 |  693 |     0 |     17600 |  3.94 |
+|   LUT as Logic             |  631 |     0 |     17600 |  3.59 |
 |   LUT as Memory            |   62 |     0 |      6000 |  1.03 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   62 |     0 |           |       |
-| Slice Registers            | 1381 |     0 |     35200 |  3.92 |
-|   Register as Flip Flop    | 1381 |     0 |     35200 |  3.92 |
+| Slice Registers            | 1324 |     0 |     35200 |  3.76 |
+|   Register as Flip Flop    | 1324 |     0 |     35200 |  3.76 |
 |   Register as Latch        |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 37    |          Yes |         Set |            - |
-| 1344  |          Yes |       Reset |            - |
+| 1287  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,25 +69,25 @@ Table of Contents
 +--------------------------------------------+------+-------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Available | Util% |
 +--------------------------------------------+------+-------+-----------+-------+
-| Slice                                      |  372 |     0 |      4400 |  8.45 |
-|   SLICEL                                   |  235 |     0 |           |       |
-|   SLICEM                                   |  137 |     0 |           |       |
-| LUT as Logic                               |  692 |     0 |     17600 |  3.93 |
+| Slice                                      |  356 |     0 |      4400 |  8.09 |
+|   SLICEL                                   |  225 |     0 |           |       |
+|   SLICEM                                   |  131 |     0 |           |       |
+| LUT as Logic                               |  631 |     0 |     17600 |  3.59 |
 |   using O5 output only                     |    0 |       |           |       |
-|   using O6 output only                     |  520 |       |           |       |
-|   using O5 and O6                          |  172 |       |           |       |
+|   using O6 output only                     |  460 |       |           |       |
+|   using O5 and O6                          |  171 |       |           |       |
 | LUT as Memory                              |   62 |     0 |      6000 |  1.03 |
 |   LUT as Distributed RAM                   |    0 |     0 |           |       |
 |   LUT as Shift Register                    |   62 |     0 |           |       |
 |     using O5 output only                   |    0 |       |           |       |
 |     using O6 output only                   |   58 |       |           |       |
 |     using O5 and O6                        |    4 |       |           |       |
-| Slice Registers                            | 1381 |     0 |     35200 |  3.92 |
-|   Register driven from within the Slice    |  634 |       |           |       |
-|   Register driven from outside the Slice   |  747 |       |           |       |
-|     LUT in front of the register is unused |  658 |       |           |       |
-|     LUT in front of the register is used   |   89 |       |           |       |
-| Unique Control Sets                        |   50 |       |      4400 |  1.14 |
+| Slice Registers                            | 1324 |     0 |     35200 |  3.76 |
+|   Register driven from within the Slice    |  600 |       |           |       |
+|   Register driven from outside the Slice   |  724 |       |           |       |
+|     LUT in front of the register is unused |  641 |       |           |       |
+|     LUT in front of the register is used   |   83 |       |           |       |
+| Unique Control Sets                        |   49 |       |      4400 |  1.11 |
 +--------------------------------------------+------+-------+-----------+-------+
 * * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
 
@@ -180,19 +180,19 @@ Table of Contents
 +------------+------+----------------------+
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
-| FDRE       | 1344 |         Flop & Latch |
+| FDRE       | 1287 |         Flop & Latch |
 | LUT3       |  241 |                  LUT |
-| LUT5       |  221 |                  LUT |
-| LUT6       |  190 |                  LUT |
+| LUT5       |  190 |                  LUT |
+| LUT6       |  158 |                  LUT |
 | BIBUF      |  130 |                   IO |
-| LUT4       |  107 |                  LUT |
+| LUT4       |  105 |                  LUT |
 | LUT2       |   60 |                  LUT |
+| LUT1       |   48 |                  LUT |
 | SRLC32E    |   47 |   Distributed Memory |
-| LUT1       |   45 |                  LUT |
 | FDSE       |   37 |         Flop & Latch |
 | OBUF       |   35 |                   IO |
+| CARRY4     |   20 |           CarryLogic |
 | SRL16E     |   19 |   Distributed Memory |
-| CARRY4     |   19 |           CarryLogic |
 | ODDR       |   18 |                   IO |
 | OBUFT      |   14 |                   IO |
 | OBUFDS     |    4 |                   IO |
@@ -215,26 +215,25 @@ Table of Contents
 10. Instantiated Netlists
 -------------------------
 
-+--------------------------------+------+
-|            Ref Name            | Used |
-+--------------------------------+------+
-| system_xbar_0                  |    1 |
-| system_util_ds_buf_2_0         |    1 |
-| system_util_ds_buf_1_0         |    1 |
-| system_signal_split_0_1        |    1 |
-| system_signal_combine_0_0      |    1 |
-| system_s00_data_fifo_0         |    1 |
-| system_rst_ps7_0_125M_0        |    1 |
-| system_processing_system7_0_0  |    1 |
-| system_clk_wiz_0_0             |    1 |
-| system_c_counter_binary_0_0    |    1 |
-| system_axis_red_pitaya_dac_0_0 |    1 |
-| system_axis_red_pitaya_adc_0_0 |    1 |
-| system_axi_gpio_0_2            |    1 |
-| system_axi_gpio_0_0            |    1 |
-| system_auto_pc_0               |    1 |
-| system_GPIO_MSB_OUT_0_0        |    1 |
-| system_DIO_combine_0_0         |    1 |
-+--------------------------------+------+
++-------------------------------+------+
+|            Ref Name           | Used |
++-------------------------------+------+
+| system_xbar_0                 |    1 |
+| system_util_ds_buf_2_0        |    1 |
+| system_util_ds_buf_1_0        |    1 |
+| system_signal_split_0_1       |    1 |
+| system_signal_combine_0_0     |    1 |
+| system_s00_data_fifo_0        |    1 |
+| system_rst_ps7_0_125M_0       |    1 |
+| system_redpitaya_dac_0_0      |    1 |
+| system_redpitaya_adc_0_0      |    1 |
+| system_processing_system7_0_0 |    1 |
+| system_clk_wiz_0_0            |    1 |
+| system_c_counter_binary_0_0   |    1 |
+| system_axi_gpio_0_2           |    1 |
+| system_axi_gpio_0_0           |    1 |
+| system_auto_pc_0              |    1 |
+| system_DIO_combine_0_0        |    1 |
++-------------------------------+------+
 
 

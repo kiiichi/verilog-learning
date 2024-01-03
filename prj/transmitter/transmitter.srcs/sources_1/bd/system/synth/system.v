@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Mon Dec 25 22:33:43 2023
+//Date        : Wed Jan  3 11:35:49 2024
 //Host        : SU running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -475,10 +475,10 @@ module adc_imp_ZPM671
   wire adc_clk_p_i_1;
   wire [13:0]adc_dat_a_i_1;
   wire [13:0]adc_dat_b_i_1;
-  wire [31:0]axis_red_pitaya_adc_0_M_AXIS_TDATA;
-  wire axis_red_pitaya_adc_0_M_AXIS_TVALID;
-  wire axis_red_pitaya_adc_0_adc_clk;
-  wire axis_red_pitaya_adc_0_adc_csn;
+  wire redpitaya_adc_0_adc_clk;
+  wire redpitaya_adc_0_adc_csn;
+  wire [31:0]redpitaya_adc_0_m_axis_TDATA;
+  wire redpitaya_adc_0_m_axis_TVALID;
   wire [31:0]signal_split_0_M_AXIS_PORT2_TDATA;
   wire signal_split_0_M_AXIS_PORT2_TVALID;
 
@@ -486,28 +486,28 @@ module adc_imp_ZPM671
   assign M_AXIS_PORT1_tvalid = DataAcquisition_M_AXIS_PORT1_TVALID;
   assign M_AXIS_PORT2_tdata = signal_split_0_M_AXIS_PORT2_TDATA[0];
   assign M_AXIS_PORT2_tvalid = signal_split_0_M_AXIS_PORT2_TVALID;
-  assign adc_clk = axis_red_pitaya_adc_0_adc_clk;
+  assign adc_clk = redpitaya_adc_0_adc_clk;
   assign adc_clk_n_i_1 = adc_clk_n_i;
   assign adc_clk_p_i_1 = adc_clk_p_i;
-  assign adc_csn_o = axis_red_pitaya_adc_0_adc_csn;
+  assign adc_csn_o = redpitaya_adc_0_adc_csn;
   assign adc_dat_a_i_1 = adc_dat_a_i[13:0];
   assign adc_dat_b_i_1 = adc_dat_b_i[13:0];
-  system_axis_red_pitaya_adc_0_0 axis_red_pitaya_adc_0
-       (.adc_clk(axis_red_pitaya_adc_0_adc_clk),
+  system_redpitaya_adc_0_0 redpitaya_adc_0
+       (.adc_clk(redpitaya_adc_0_adc_clk),
         .adc_clk_n(adc_clk_n_i_1),
         .adc_clk_p(adc_clk_p_i_1),
-        .adc_csn(axis_red_pitaya_adc_0_adc_csn),
+        .adc_csn(redpitaya_adc_0_adc_csn),
         .adc_dat_a(adc_dat_a_i_1),
         .adc_dat_b(adc_dat_b_i_1),
-        .m_axis_tdata(axis_red_pitaya_adc_0_M_AXIS_TDATA),
-        .m_axis_tvalid(axis_red_pitaya_adc_0_M_AXIS_TVALID));
+        .m_axis_tdata(redpitaya_adc_0_m_axis_TDATA),
+        .m_axis_tvalid(redpitaya_adc_0_m_axis_TVALID));
   system_signal_split_0_0 signal_split_0
        (.M_AXIS_PORT1_tdata(DataAcquisition_M_AXIS_PORT1_TDATA),
         .M_AXIS_PORT1_tvalid(DataAcquisition_M_AXIS_PORT1_TVALID),
         .M_AXIS_PORT2_tdata(signal_split_0_M_AXIS_PORT2_TDATA),
         .M_AXIS_PORT2_tvalid(signal_split_0_M_AXIS_PORT2_TVALID),
-        .S_AXIS_tdata(axis_red_pitaya_adc_0_M_AXIS_TDATA),
-        .S_AXIS_tvalid(axis_red_pitaya_adc_0_M_AXIS_TVALID));
+        .S_AXIS_tdata(redpitaya_adc_0_m_axis_TDATA),
+        .S_AXIS_tvalid(redpitaya_adc_0_m_axis_TVALID));
 endmodule
 
 module dac_imp_10A61H2
@@ -537,13 +537,13 @@ module dac_imp_10A61H2
   wire [31:0]Conn2_TDATA;
   wire Conn2_TVALID;
   wire axis_red_pitaya_adc_0_adc_clk;
-  wire axis_red_pitaya_dac_0_dac_clk;
-  wire [13:0]axis_red_pitaya_dac_0_dac_dat;
-  wire axis_red_pitaya_dac_0_dac_rst;
-  wire axis_red_pitaya_dac_0_dac_sel;
-  wire axis_red_pitaya_dac_0_dac_wrt;
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_locked;
+  wire redpitaya_dac_0_dac_clk;
+  wire [13:0]redpitaya_dac_0_dac_dat;
+  wire redpitaya_dac_0_dac_rst;
+  wire redpitaya_dac_0_dac_sel;
+  wire redpitaya_dac_0_dac_wrt;
   wire [31:0]signal_combine_0_M_AXIS_TDATA;
   wire signal_combine_0_M_AXIS_TVALID;
 
@@ -552,26 +552,26 @@ module dac_imp_10A61H2
   assign Conn2_TDATA = S_AXIS_PORT2_tdata[31:0];
   assign Conn2_TVALID = S_AXIS_PORT2_tvalid;
   assign axis_red_pitaya_adc_0_adc_clk = aclk;
-  assign dac_clk_o = axis_red_pitaya_dac_0_dac_clk;
-  assign dac_dat_o[13:0] = axis_red_pitaya_dac_0_dac_dat;
-  assign dac_rst_o = axis_red_pitaya_dac_0_dac_rst;
-  assign dac_sel_o = axis_red_pitaya_dac_0_dac_sel;
-  assign dac_wrt_o = axis_red_pitaya_dac_0_dac_wrt;
-  system_axis_red_pitaya_dac_0_0 axis_red_pitaya_dac_0
-       (.aclk(axis_red_pitaya_adc_0_adc_clk),
-        .dac_clk(axis_red_pitaya_dac_0_dac_clk),
-        .dac_dat(axis_red_pitaya_dac_0_dac_dat),
-        .dac_rst(axis_red_pitaya_dac_0_dac_rst),
-        .dac_sel(axis_red_pitaya_dac_0_dac_sel),
-        .dac_wrt(axis_red_pitaya_dac_0_dac_wrt),
-        .ddr_clk(clk_wiz_0_clk_out1),
-        .locked(clk_wiz_0_locked),
-        .s_axis_tdata(signal_combine_0_M_AXIS_TDATA),
-        .s_axis_tvalid(signal_combine_0_M_AXIS_TVALID));
+  assign dac_clk_o = redpitaya_dac_0_dac_clk;
+  assign dac_dat_o[13:0] = redpitaya_dac_0_dac_dat;
+  assign dac_rst_o = redpitaya_dac_0_dac_rst;
+  assign dac_sel_o = redpitaya_dac_0_dac_sel;
+  assign dac_wrt_o = redpitaya_dac_0_dac_wrt;
   system_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(axis_red_pitaya_adc_0_adc_clk),
         .clk_out1(clk_wiz_0_clk_out1),
         .locked(clk_wiz_0_locked));
+  system_redpitaya_dac_0_0 redpitaya_dac_0
+       (.aclk(axis_red_pitaya_adc_0_adc_clk),
+        .dac_clk(redpitaya_dac_0_dac_clk),
+        .dac_dat(redpitaya_dac_0_dac_dat),
+        .dac_rst(redpitaya_dac_0_dac_rst),
+        .dac_sel(redpitaya_dac_0_dac_sel),
+        .dac_wrt(redpitaya_dac_0_dac_wrt),
+        .ddr_clk(clk_wiz_0_clk_out1),
+        .locked(clk_wiz_0_locked),
+        .s_axis_tdata(signal_combine_0_M_AXIS_TDATA),
+        .s_axis_tvalid(signal_combine_0_M_AXIS_TVALID));
   system_signal_combine_0_0 signal_combine_0
        (.M_AXIS_tdata(signal_combine_0_M_AXIS_TDATA),
         .M_AXIS_tvalid(signal_combine_0_M_AXIS_TVALID),
@@ -1214,7 +1214,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(auto_pc_to_s00_data_fifo_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=27,numReposBlks=20,numNonXlnxBlks=2,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=7,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=23,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=7,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1301,7 +1301,6 @@ module system
 
   wire [7:0]DIO_combine_0_DIO_n_data;
   wire [7:0]DIO_combine_0_DIO_p_data;
-  wire [15:0]GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT;
   wire [31:0]PS7_M01_AXI1_ARADDR;
   wire PS7_M01_AXI1_ARREADY;
   wire PS7_M01_AXI1_ARVALID;
@@ -1323,7 +1322,7 @@ module system
   wire adc_clk_p_i_1;
   wire [13:0]adc_dat_a_i_1;
   wire [13:0]adc_dat_b_i_1;
-  wire [31:0]axi_gpio_0_gpio2_io_o;
+  wire [31:0]axi_gpio_1_gpio2_io_o;
   wire [31:0]axi_gpio_1_gpio_io_o;
   wire axis_red_pitaya_adc_0_adc_clk;
   wire axis_red_pitaya_adc_0_adc_csn;
@@ -1384,6 +1383,10 @@ module system
   wire [1:0]util_ds_buf_2_OBUF_DS_P;
   wire [0:0]xlconstant_0_dout;
   wire [0:0]xlslice_0_Dout;
+  wire [0:0]xlslice_0_Dout1;
+  wire [0:0]xlslice_1_Dout;
+  wire [0:0]xlslice_2_Dout;
+  wire [0:0]xlslice_3_Dout;
 
   assign adc_clk_n_i_1 = adc_clk_n_i;
   assign adc_clk_p_i_1 = adc_clk_p_i;
@@ -1402,17 +1405,14 @@ module system
   system_DIO_combine_0_0 DIO_combine_0
        (.DIO_PORT0_data(processing_system7_0_FCLK_CLK0),
         .DIO_PORT1_data(xlslice_0_Dout),
-        .DIO_PORT2_data(GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT[0]),
-        .DIO_PORT3_data(1'b0),
-        .DIO_PORT4_data(1'b0),
-        .DIO_PORT5_data(1'b0),
+        .DIO_PORT2_data(xlslice_0_Dout1),
+        .DIO_PORT3_data(xlslice_1_Dout),
+        .DIO_PORT4_data(xlslice_2_Dout),
+        .DIO_PORT5_data(xlslice_3_Dout),
         .DIO_PORT6_data(1'b0),
         .DIO_PORT7_data(1'b0),
         .DIO_n_data(exp_n_tri_io[7:0]),
         .DIO_p_data(exp_p_tri_io[7:0]));
-  system_GPIO_MSB_OUT_0_0 GPIO_MSB_OUT_0
-       (.GPIO_DATA(axi_gpio_1_gpio_io_o),
-        .GPIO_MSB_DATA_OUT(GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT));
   PS7_imp_1QJPAX8 PS7
        (.DDR_addr(DDR_addr[14:0]),
         .DDR_ba(DDR_ba[2:0]),
@@ -1479,8 +1479,7 @@ module system
         .adc_dat_a_i(adc_dat_a_i_1),
         .adc_dat_b_i(adc_dat_b_i_1));
   system_axi_gpio_0_0 axi_gpio_0
-       (.gpio2_io_o(axi_gpio_0_gpio2_io_o),
-        .gpio_io_i({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,xlslice_0_Dout}),
+       (.gpio_io_i({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,xlslice_0_Dout}),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(ps7_0_axi_periph_M00_AXI_ARADDR[8:0]),
         .s_axi_aresetn(rst_ps7_0_125M_peripheral_aresetn),
@@ -1501,7 +1500,8 @@ module system
         .s_axi_wstrb(ps7_0_axi_periph_M00_AXI_WSTRB),
         .s_axi_wvalid(ps7_0_axi_periph_M00_AXI_WVALID));
   system_axi_gpio_0_2 axi_gpio_1
-       (.gpio_io_o(axi_gpio_1_gpio_io_o),
+       (.gpio2_io_o(axi_gpio_1_gpio2_io_o),
+        .gpio_io_o(axi_gpio_1_gpio_io_o),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(PS7_M01_AXI1_ARADDR[8:0]),
         .s_axi_aresetn(rst_ps7_0_125M_peripheral_aresetn),
@@ -1540,7 +1540,7 @@ module system
         .M_AXIS_PORT1_tvalid(signal_split_0_M_AXIS_PORT1_TVALID),
         .M_AXIS_PORT2_tdata(signal_split_0_M_AXIS_PORT2_TDATA),
         .M_AXIS_PORT2_tvalid(signal_split_0_M_AXIS_PORT2_TVALID),
-        .S_AXIS_tdata(axi_gpio_0_gpio2_io_o),
+        .S_AXIS_tdata(axi_gpio_1_gpio_io_o),
         .S_AXIS_tvalid(xlconstant_0_dout));
   system_util_ds_buf_1_0 util_ds_buf_1
        (.IBUF_DS_N(daisy_n_i_1),
@@ -1552,7 +1552,19 @@ module system
         .OBUF_IN(util_ds_buf_1_IBUF_OUT));
   system_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));
-  system_xlslice_0_0 xlslice_0
+  system_xlslice_0_1 xlslice_0
+       (.Din(axi_gpio_1_gpio2_io_o),
+        .Dout(xlslice_0_Dout1));
+  system_xlslice_0_2 xlslice_1
+       (.Din(axi_gpio_1_gpio2_io_o),
+        .Dout(xlslice_1_Dout));
+  system_xlslice_0_3 xlslice_2
+       (.Din(axi_gpio_1_gpio2_io_o),
+        .Dout(xlslice_2_Dout));
+  system_xlslice_0_4 xlslice_3
+       (.Din(axi_gpio_1_gpio2_io_o),
+        .Dout(xlslice_3_Dout));
+  system_xlslice_0_0 xlslice_clk
        (.Din(c_counter_binary_0_Q),
         .Dout(xlslice_0_Dout));
 endmodule

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/freq/freq.runs/system_xbar_0_synth_1'
+HD_PWD='C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/system_xbar_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

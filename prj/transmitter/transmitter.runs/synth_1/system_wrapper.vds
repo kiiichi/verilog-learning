@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Dec 25 22:34:22 2023
-# Process ID: 22408
+# Start of session at: Wed Jan  3 11:36:03 2024
+# Process ID: 3052
 # Current directory: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1
 # Command line: vivado.exe -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/system_wrapper.vds
@@ -22,19 +22,17 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 22240
+INFO: [Synth 8-7075] Helper process launched with PID 14480
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1027.676 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1028.465 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'system' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1218]
-INFO: [Synth 8-6157] synthesizing module 'system_DIO_combine_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_DIO_combine_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_DIO_combine_0_0' (1#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_DIO_combine_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_GPIO_MSB_OUT_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_GPIO_MSB_OUT_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_GPIO_MSB_OUT_0_0' (2#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_GPIO_MSB_OUT_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_DIO_combine_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_DIO_combine_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_DIO_combine_0_0' (1#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_DIO_combine_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'PS7_imp_1QJPAX8' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (3#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (2#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:261]
 WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:261]
 WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:261]
@@ -69,97 +67,122 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_processing_sys
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:261]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:261]
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'system_processing_system7_0_0' has 131 connections declared, but only 98 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:261]
-INFO: [Synth 8-6157] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1560]
+INFO: [Synth 8-6157] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1572]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_18YNG6Z' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:584]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_18YNG6Z' (4#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:584]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_18YNG6Z' (3#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:584]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_3FSQWA' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:716]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_3FSQWA' (5#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:716]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_3FSQWA' (4#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:716]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_15HE6GA' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:848]
-INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (6#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_s00_data_fifo_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_s00_data_fifo_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_s00_data_fifo_0' (7#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_s00_data_fifo_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_15HE6GA' (8#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:848]
-INFO: [Synth 8-6157] synthesizing module 'system_xbar_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_xbar_0' (9#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_xbar_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_xbar_0' is unconnected for instance 'xbar' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:2064]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_xbar_0' is unconnected for instance 'xbar' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:2064]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'system_xbar_0' has 40 connections declared, but only 38 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:2064]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0_axi_periph_0' (10#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1560]
-INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_125M_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_rst_ps7_0_125M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_125M_0' (11#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (5#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_s00_data_fifo_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_s00_data_fifo_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_s00_data_fifo_0' (6#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_s00_data_fifo_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_15HE6GA' (7#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:848]
+INFO: [Synth 8-6157] synthesizing module 'system_xbar_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_xbar_0' (8#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_xbar_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_xbar_0' is unconnected for instance 'xbar' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:2076]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_xbar_0' is unconnected for instance 'xbar' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:2076]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'system_xbar_0' has 40 connections declared, but only 38 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:2076]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0_axi_periph_0' (9#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1572]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_125M_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_125M_0' (10#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_rst_ps7_0_125M_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:441]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:441]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:441]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:441]
 WARNING: [Synth 8-7023] instance 'rst_ps7_0_125M' of module 'system_rst_ps7_0_125M_0' has 10 connections declared, but only 6 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:441]
-INFO: [Synth 8-6155] done synthesizing module 'PS7_imp_1QJPAX8' (12#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'PS7_imp_1QJPAX8' (11#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:12]
 INFO: [Synth 8-6157] synthesizing module 'adc_imp_ZPM671' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:450]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_adc_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_adc_0_0' (13#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_signal_split_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_signal_split_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_signal_split_0_0' (14#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_signal_split_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'adc_imp_ZPM671' (15#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:450]
+INFO: [Synth 8-6157] synthesizing module 'system_redpitaya_adc_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_redpitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_redpitaya_adc_0_0' (12#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_redpitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_signal_split_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_signal_split_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_signal_split_0_0' (13#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_signal_split_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'adc_imp_ZPM671' (14#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:450]
 WARNING: [Synth 8-7071] port 'M_AXIS_PORT1_tdata' of module 'adc_imp_ZPM671' is unconnected for instance 'adc' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1474]
 WARNING: [Synth 8-7071] port 'M_AXIS_PORT1_tvalid' of module 'adc_imp_ZPM671' is unconnected for instance 'adc' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1474]
 WARNING: [Synth 8-7071] port 'M_AXIS_PORT2_tdata' of module 'adc_imp_ZPM671' is unconnected for instance 'adc' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1474]
 WARNING: [Synth 8-7071] port 'M_AXIS_PORT2_tvalid' of module 'adc_imp_ZPM671' is unconnected for instance 'adc' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1474]
 WARNING: [Synth 8-7023] instance 'adc' of module 'adc_imp_ZPM671' has 10 connections declared, but only 6 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1474]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_gpio_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpio_0_0' (16#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axi_gpio_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'gpio_io_o' of module 'system_axi_gpio_0_0' is unconnected for instance 'axi_gpio_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1481]
-WARNING: [Synth 8-7071] port 'gpio_io_t' of module 'system_axi_gpio_0_0' is unconnected for instance 'axi_gpio_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1481]
-WARNING: [Synth 8-7023] instance 'axi_gpio_0' of module 'system_axi_gpio_0_0' has 23 connections declared, but only 21 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1481]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_gpio_0_2' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axi_gpio_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpio_0_2' (17#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axi_gpio_0_2_stub.v:6]
-WARNING: [Synth 8-7071] port 'gpio2_io_o' of module 'system_axi_gpio_0_2' is unconnected for instance 'axi_gpio_1' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1503]
-WARNING: [Synth 8-7023] instance 'axi_gpio_1' of module 'system_axi_gpio_0_2' has 21 connections declared, but only 20 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1503]
-INFO: [Synth 8-6157] synthesizing module 'system_c_counter_binary_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_c_counter_binary_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_c_counter_binary_0_0' (18#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_c_counter_binary_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_gpio_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpio_0_0' (15#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_axi_gpio_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'gpio2_io_o' of module 'system_axi_gpio_0_0' is unconnected for instance 'axi_gpio_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1481]
+WARNING: [Synth 8-7023] instance 'axi_gpio_0' of module 'system_axi_gpio_0_0' has 21 connections declared, but only 20 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1481]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_gpio_0_2' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_axi_gpio_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpio_0_2' (16#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_axi_gpio_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_c_counter_binary_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_c_counter_binary_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_c_counter_binary_0_0' (17#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_c_counter_binary_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'dac_imp_10A61H2' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:513]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (19#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 's_axis_tready' of module 'system_axis_red_pitaya_dac_0_0' is unconnected for instance 'axis_red_pitaya_dac_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:560]
-WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:560]
-INFO: [Synth 8-6157] synthesizing module 'system_clk_wiz_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'system_clk_wiz_0_0' (20#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'system_signal_combine_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_signal_combine_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_signal_combine_0_0' (21#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_signal_combine_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'dac_imp_10A61H2' (22#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:513]
-INFO: [Synth 8-6157] synthesizing module 'system_signal_split_0_1' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_signal_split_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_signal_split_0_1' (23#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_signal_split_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_1_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_util_ds_buf_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_1_0' (24#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_util_ds_buf_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_2_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_2_0' (25#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-22408-SU/realtime/system_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_clk_wiz_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'system_clk_wiz_0_0' (18#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'system_redpitaya_dac_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_redpitaya_dac_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_redpitaya_dac_0_0' (19#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_redpitaya_dac_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 's_axis_tready' of module 'system_redpitaya_dac_0_0' is unconnected for instance 'redpitaya_dac_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:564]
+WARNING: [Synth 8-7023] instance 'redpitaya_dac_0' of module 'system_redpitaya_dac_0_0' has 11 connections declared, but only 10 given [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:564]
+INFO: [Synth 8-6157] synthesizing module 'system_signal_combine_0_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_signal_combine_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_signal_combine_0_0' (20#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_signal_combine_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dac_imp_10A61H2' (21#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:513]
+INFO: [Synth 8-6157] synthesizing module 'system_signal_split_0_1' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_signal_split_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_signal_split_0_1' (22#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_signal_split_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_1_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_util_ds_buf_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_1_0' (23#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_util_ds_buf_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_2_0' [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_2_0' (24#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/.Xil/Vivado-3052-SU/realtime/system_util_ds_buf_2_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_0' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (26#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_0' (27#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_0' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_0/synth/system_xlslice_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (25#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_0' (26#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_1' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_1/synth/system_xlslice_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 0 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (27#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_1' (28#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_1/synth/system_xlslice_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_2' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_2/synth/system_xlslice_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 4 - type: integer 
+	Parameter DIN_TO bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (28#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_2' (29#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_2/synth/system_xlslice_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_3' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_3/synth/system_xlslice_0_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 8 - type: integer 
+	Parameter DIN_TO bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (29#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_3' (30#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_3/synth/system_xlslice_0_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_4' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_4/synth/system_xlslice_0_4.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 12 - type: integer 
+	Parameter DIN_TO bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (30#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_4' (31#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_4/synth/system_xlslice_0_4.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_0' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_0/synth/system_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 16 - type: integer 
-	Parameter DIN_FROM bound to: 3 - type: integer 
-	Parameter DIN_TO bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (28#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_0' (29#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_0/synth/system_xlslice_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'system' (30#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1218]
-INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (31#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+	Parameter DIN_FROM bound to: 4 - type: integer 
+	Parameter DIN_TO bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (31#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_0' (32#1) [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_xlslice_0_0/synth/system_xlslice_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'system' (33#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/synth/system.v:1218]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (34#1) [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1027.676 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1028.465 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1027.676 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1028.465 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1027.676 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1028.465 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1027.676 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1028.465 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -175,10 +198,6 @@ WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/rinu2/Documents/kichi@gi
 Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0/system_util_ds_buf_2_0_in_context.xdc] for cell 'system_i/util_ds_buf_2'
 Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0/system_axi_gpio_0_0_in_context.xdc] for cell 'system_i/axi_gpio_0'
 Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0/system_axi_gpio_0_0_in_context.xdc] for cell 'system_i/axi_gpio_0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0_in_context.xdc] for cell 'system_i/adc/axis_red_pitaya_adc_0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0_in_context.xdc] for cell 'system_i/adc/axis_red_pitaya_adc_0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0_in_context.xdc] for cell 'system_i/dac/axis_red_pitaya_dac_0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0/system_axis_red_pitaya_dac_0_0_in_context.xdc] for cell 'system_i/dac/axis_red_pitaya_dac_0'
 Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0/system_clk_wiz_0_0_in_context.xdc] for cell 'system_i/dac/clk_wiz_0'
 WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0/system_clk_wiz_0_0_in_context.xdc:1]
 WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0/system_clk_wiz_0_0_in_context.xdc:4]
@@ -199,8 +218,10 @@ Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transm
 Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_DIO_combine_0_0/system_DIO_combine_0_0/system_DIO_combine_0_0_in_context.xdc] for cell 'system_i/DIO_combine_0'
 Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_signal_split_0_1/system_signal_split_0_1/system_signal_split_0_1_in_context.xdc] for cell 'system_i/signal_split_0'
 Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_signal_split_0_1/system_signal_split_0_1/system_signal_split_0_1_in_context.xdc] for cell 'system_i/signal_split_0'
-Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_GPIO_MSB_OUT_0_0/system_GPIO_MSB_OUT_0_0/system_GPIO_MSB_OUT_0_0_in_context.xdc] for cell 'system_i/GPIO_MSB_OUT_0'
-Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_GPIO_MSB_OUT_0_0/system_GPIO_MSB_OUT_0_0/system_GPIO_MSB_OUT_0_0_in_context.xdc] for cell 'system_i/GPIO_MSB_OUT_0'
+Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0_in_context.xdc] for cell 'system_i/adc/redpitaya_adc_0'
+Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0_in_context.xdc] for cell 'system_i/adc/redpitaya_adc_0'
+Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_dac_0_0/system_redpitaya_dac_0_0/system_redpitaya_dac_0_0_in_context.xdc] for cell 'system_i/dac/redpitaya_dac_0'
+Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_dac_0_0/system_redpitaya_dac_0_0/system_redpitaya_dac_0_0_in_context.xdc] for cell 'system_i/dac/redpitaya_dac_0'
 Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0/system_s00_data_fifo_0_in_context.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo'
 Finished Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0/system_s00_data_fifo_0_in_context.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo'
 Parsing XDC File [c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0/system_auto_pc_0_in_context.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc'
@@ -247,23 +268,23 @@ Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transm
 Finished Parsing XDC File [C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1044.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1045.266 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1044.426 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1045.266 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/axi_gpio_0' at clock pin 's_axi_aclk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/axi_gpio_1' at clock pin 's_axi_aclk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/util_ds_buf_1' at clock pin 'IBUF_DS_P[1]' is different from the actual clock period '4.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1044.453 ; gain = 16.777
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1045.340 ; gain = 16.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1044.453 ; gain = 16.777
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1045.340 ; gain = 16.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -544,17 +565,15 @@ Applied set_property IO_BUFFER_TYPE = NONE for daisy_p_o[0]. (constraint file  c
 Applied set_property CLOCK_BUFFER_TYPE = NONE for daisy_p_o[0]. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0/system_util_ds_buf_2_0_in_context.xdc, line 8).
 Applied set_property IO_BUFFER_TYPE = NONE for daisy_p_o[1]. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0/system_util_ds_buf_2_0_in_context.xdc, line 9).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for daisy_p_o[1]. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0/system_util_ds_buf_2_0_in_context.xdc, line 10).
-Applied set_property IO_BUFFER_TYPE = NONE for adc_clk_n_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0_in_context.xdc, line 1).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for adc_clk_n_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0_in_context.xdc, line 2).
-Applied set_property IO_BUFFER_TYPE = NONE for adc_clk_p_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for adc_clk_p_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0/system_axis_red_pitaya_adc_0_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for adc_clk_n_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for adc_clk_n_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for adc_clk_p_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for adc_clk_p_i. (constraint file  c:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.srcs/sources_1/bd/system/ip/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0/system_redpitaya_adc_0_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for system_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/processing_system7_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/util_ds_buf_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/util_ds_buf_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/adc/axis_red_pitaya_adc_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/dac/axis_red_pitaya_dac_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/dac/clk_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/ps7_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/rst_ps7_0_125M. (constraint file  auto generated constraint, line ).
@@ -564,17 +583,22 @@ Applied set_property DONT_TOUCH = true for system_i/PS7/ps7_0_axi_periph/xbar. (
 Applied set_property DONT_TOUCH = true for system_i/axi_gpio_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlslice_clk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/DIO_combine_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/signal_split_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/GPIO_MSB_OUT_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/adc/redpitaya_adc_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/dac/redpitaya_dac_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlslice_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlslice_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlslice_3. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/ps7_0_axi_periph/s00_couplers/s00_data_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1044.453 ; gain = 16.777
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1045.340 ; gain = 16.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1044.453 ; gain = 16.777
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1045.340 ; gain = 16.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -596,25 +620,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1044.453 ; gain = 16.777
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1045.340 ; gain = 16.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1044.453 ; gain = 16.777
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1048.297 ; gain = 19.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1044.672 ; gain = 16.996
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1048.520 ; gain = 20.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1064.289 ; gain = 36.613
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1067.645 ; gain = 39.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -632,108 +656,106 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+-------------------------------+----------+
-|      |BlackBox name                  |Instances |
-+------+-------------------------------+----------+
-|1     |system_DIO_combine_0_0         |         1|
-|2     |system_GPIO_MSB_OUT_0_0        |         1|
-|3     |system_axi_gpio_0_0            |         1|
-|4     |system_axi_gpio_0_2            |         1|
-|5     |system_c_counter_binary_0_0    |         1|
-|6     |system_signal_split_0_1        |         1|
-|7     |system_util_ds_buf_1_0         |         1|
-|8     |system_util_ds_buf_2_0         |         1|
-|9     |system_xbar_0                  |         1|
-|10    |system_auto_pc_0               |         1|
-|11    |system_s00_data_fifo_0         |         1|
-|12    |system_processing_system7_0_0  |         1|
-|13    |system_rst_ps7_0_125M_0        |         1|
-|14    |system_axis_red_pitaya_adc_0_0 |         1|
-|15    |system_signal_split_0_0        |         1|
-|16    |system_axis_red_pitaya_dac_0_0 |         1|
-|17    |system_clk_wiz_0_0             |         1|
-|18    |system_signal_combine_0_0      |         1|
-+------+-------------------------------+----------+
++------+------------------------------+----------+
+|      |BlackBox name                 |Instances |
++------+------------------------------+----------+
+|1     |system_DIO_combine_0_0        |         1|
+|2     |system_axi_gpio_0_0           |         1|
+|3     |system_axi_gpio_0_2           |         1|
+|4     |system_c_counter_binary_0_0   |         1|
+|5     |system_signal_split_0_1       |         1|
+|6     |system_util_ds_buf_1_0        |         1|
+|7     |system_util_ds_buf_2_0        |         1|
+|8     |system_xbar_0                 |         1|
+|9     |system_auto_pc_0              |         1|
+|10    |system_s00_data_fifo_0        |         1|
+|11    |system_processing_system7_0_0 |         1|
+|12    |system_rst_ps7_0_125M_0       |         1|
+|13    |system_redpitaya_adc_0_0      |         1|
+|14    |system_signal_split_0_0       |         1|
+|15    |system_clk_wiz_0_0            |         1|
+|16    |system_redpitaya_dac_0_0      |         1|
+|17    |system_signal_combine_0_0     |         1|
++------+------------------------------+----------+
 
 Report Cell Usage: 
-+------+-----------------------------+------+
-|      |Cell                         |Count |
-+------+-----------------------------+------+
-|1     |system_DIO_combine_0         |     1|
-|2     |system_GPIO_MSB_OUT_0        |     1|
-|3     |system_auto_pc               |     1|
-|4     |system_axi_gpio_0            |     2|
-|6     |system_axis_red_pitaya_adc_0 |     1|
-|7     |system_axis_red_pitaya_dac_0 |     1|
-|8     |system_c_counter_binary_0    |     1|
-|9     |system_clk_wiz_0             |     1|
-|10    |system_processing_system7_0  |     1|
-|11    |system_rst_ps7_0_125M        |     1|
-|12    |system_s00_data_fifo         |     1|
-|13    |system_signal_combine_0      |     1|
-|14    |system_signal_split_0        |     2|
-|16    |system_util_ds_buf_1         |     1|
-|17    |system_util_ds_buf_2         |     1|
-|18    |system_xbar                  |     1|
-|19    |IBUF                         |    28|
-|20    |OBUF                         |    35|
-|21    |OBUFT                        |    14|
-+------+-----------------------------+------+
++------+----------------------------+------+
+|      |Cell                        |Count |
++------+----------------------------+------+
+|1     |system_DIO_combine_0        |     1|
+|2     |system_auto_pc              |     1|
+|3     |system_axi_gpio_0           |     2|
+|5     |system_c_counter_binary_0   |     1|
+|6     |system_clk_wiz_0            |     1|
+|7     |system_processing_system7_0 |     1|
+|8     |system_redpitaya_adc_0      |     1|
+|9     |system_redpitaya_dac_0      |     1|
+|10    |system_rst_ps7_0_125M       |     1|
+|11    |system_s00_data_fifo        |     1|
+|12    |system_signal_combine_0     |     1|
+|13    |system_signal_split_0       |     2|
+|15    |system_util_ds_buf_1        |     1|
+|16    |system_util_ds_buf_2        |     1|
+|17    |system_xbar                 |     1|
+|18    |IBUF                        |    28|
+|19    |OBUF                        |    35|
+|20    |OBUFT                       |    14|
++------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1070.043 ; gain = 25.590
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1070.043 ; gain = 42.367
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1073.383 ; gain = 28.043
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.383 ; gain = 44.918
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1082.105 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1084.238 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1086.449 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1094.207 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-78 Infos, 95 Warnings, 0 Critical Warnings and 0 Errors encountered.
+92 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1086.449 ; gain = 58.773
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1094.207 ; gain = 65.742
 INFO: [Common 17-1381] The checkpoint 'C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter/transmitter.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Dec 25 22:34:53 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  3 11:36:34 2024...

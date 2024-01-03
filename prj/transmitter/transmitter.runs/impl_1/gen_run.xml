@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1703514832">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1704252961">
   <File Type="BITSTR-BMM" Name="system_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="system_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="system_wrapper_timing_summary_init.rpt"/>
@@ -102,7 +102,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/GPIO_MSB_OUT.v">
+    <File Path="$PSRCDIR/sources_1/new/redpitaya_adc.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/redpitaya_dac.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -122,6 +129,14 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/freq/freq.srcs/sources_1/bd/system/hdl/system_wrapper.v"/>
         <Attr Name="ImportTime" Val="1692085043"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/GPIO_MSB_OUT.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -251,18 +266,17 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axis_red_pitaya_dac_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_util_ds_buf_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_GPIO_MSB_OUT_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axis_red_pitaya_adc_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_rst_ps7_0_125M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_util_ds_buf_2_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_signal_combine_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_signal_split_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_DIO_combine_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_util_ds_buf_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_signal_split_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_signal_combine_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_redpitaya_adc_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_c_counter_binary_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_signal_split_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_redpitaya_dac_0_0"/>
 </GenRun>

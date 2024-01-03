@@ -1,0 +1,50 @@
+
+*** Running vivado
+    with args -log axi_hub.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi_hub.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source axi_hub.tcl -notrace
+Command: synth_design -top axi_hub -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4844
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1025.547 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'axi_hub' [C:/Users/rinu2/Documents/kichi@git/red-pitaya-notes/cores/axi_hub.v:4]
+	Parameter CFG_DATA_WIDTH bound to: 1024 - type: integer 
+	Parameter STS_DATA_WIDTH bound to: 1024 - type: integer 
+	Parameter HUB_SIZE bound to: 6 - type: integer 
+	Parameter MUX_SIZE bound to: 8 - type: integer 
+	Parameter CFG_SIZE bound to: 32 - type: integer 
+	Parameter CFG_WIDTH bound to: 5 - type: integer 
+	Parameter STS_SIZE bound to: 32 - type: integer 
+	Parameter STS_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:13724]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (1#1) [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:13724]
+ERROR: [Synth 8-439] module 'inout_buffer' not found [C:/Users/rinu2/Documents/kichi@git/red-pitaya-notes/cores/axi_hub.v:348]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000101100 
+ERROR: [Synth 8-6156] failed synthesizing module 'axi_hub' [C:/Users/rinu2/Documents/kichi@git/red-pitaya-notes/cores/axi_hub.v:4]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1025.547 ; gain = 0.000
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  2 19:50:32 2024...

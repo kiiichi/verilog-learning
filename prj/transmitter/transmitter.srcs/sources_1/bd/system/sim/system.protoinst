@@ -556,10 +556,9 @@
 						"WVALID": { "actual": "s_axi_wvalid[0:0]"}
 					}
 				},
-				"/adc/axis_red_pitaya_adc_0/M_AXIS": {
+				"/adc/redpitaya_adc_0/m_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
-						"ACLK": { "actual": "adc_clk"},
 						"TDATA": { "actual": "m_axis_tdata"},
 						"TVALID": { "actual": "m_axis_tvalid"}
 					}
@@ -647,7 +646,7 @@
 						"TVALID": { "actual": "S_AXIS_PORT2_tvalid"}
 					}
 				},
-				"/dac/axis_red_pitaya_dac_0/S_AXIS": {
+				"/dac/redpitaya_dac_0/s_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "aclk"},

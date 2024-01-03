@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DIO_combine, GPIO_MSB_OUT, signal_split, signal_split, signal_combine
+# DIO_combine, signal_split, redpitaya_adc, signal_split, redpitaya_dac, signal_combine
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -176,9 +176,6 @@ proc create_hier_cell_dac { parentCell nameHier } {
   create_bd_pin -dir O dac_sel_o
   create_bd_pin -dir O dac_wrt_o
 
-  # Create instance: axis_red_pitaya_dac_0, and set properties
-  set axis_red_pitaya_dac_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_red_pitaya_dac:1.0 axis_red_pitaya_dac_0 ]
-
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
@@ -194,6 +191,21 @@ proc create_hier_cell_dac { parentCell nameHier } {
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
 
+  # Create instance: redpitaya_dac_0, and set properties
+  set block_name redpitaya_dac
+  set block_cell_name redpitaya_dac_0
+  if { [catch {set redpitaya_dac_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $redpitaya_dac_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
+ ] [get_bd_pins /dac/redpitaya_dac_0/dac_clk]
+
   # Create instance: signal_combine_0, and set properties
   set block_name signal_combine
   set block_cell_name signal_combine_0
@@ -208,17 +220,17 @@ proc create_hier_cell_dac { parentCell nameHier } {
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins S_AXIS_PORT1] [get_bd_intf_pins signal_combine_0/S_AXIS_PORT1]
   connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins S_AXIS_PORT2] [get_bd_intf_pins signal_combine_0/S_AXIS_PORT2]
-  connect_bd_intf_net -intf_net signal_combine_0_M_AXIS [get_bd_intf_pins axis_red_pitaya_dac_0/S_AXIS] [get_bd_intf_pins signal_combine_0/M_AXIS]
+  connect_bd_intf_net -intf_net signal_combine_0_M_AXIS [get_bd_intf_pins redpitaya_dac_0/s_axis] [get_bd_intf_pins signal_combine_0/M_AXIS]
 
   # Create port connections
-  connect_bd_net -net axis_red_pitaya_adc_0_adc_clk [get_bd_pins aclk] [get_bd_pins axis_red_pitaya_dac_0/aclk] [get_bd_pins clk_wiz_0/clk_in1]
-  connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_pins dac_clk_o] [get_bd_pins axis_red_pitaya_dac_0/dac_clk]
-  connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_pins dac_dat_o] [get_bd_pins axis_red_pitaya_dac_0/dac_dat]
-  connect_bd_net -net axis_red_pitaya_dac_0_dac_rst [get_bd_pins dac_rst_o] [get_bd_pins axis_red_pitaya_dac_0/dac_rst]
-  connect_bd_net -net axis_red_pitaya_dac_0_dac_sel [get_bd_pins dac_sel_o] [get_bd_pins axis_red_pitaya_dac_0/dac_sel]
-  connect_bd_net -net axis_red_pitaya_dac_0_dac_wrt [get_bd_pins dac_wrt_o] [get_bd_pins axis_red_pitaya_dac_0/dac_wrt]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins axis_red_pitaya_dac_0/ddr_clk] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net clk_wiz_0_locked [get_bd_pins axis_red_pitaya_dac_0/locked] [get_bd_pins clk_wiz_0/locked]
+  connect_bd_net -net axis_red_pitaya_adc_0_adc_clk [get_bd_pins aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins redpitaya_dac_0/aclk]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins redpitaya_dac_0/ddr_clk]
+  connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins redpitaya_dac_0/locked]
+  connect_bd_net -net redpitaya_dac_0_dac_clk [get_bd_pins dac_clk_o] [get_bd_pins redpitaya_dac_0/dac_clk]
+  connect_bd_net -net redpitaya_dac_0_dac_dat [get_bd_pins dac_dat_o] [get_bd_pins redpitaya_dac_0/dac_dat]
+  connect_bd_net -net redpitaya_dac_0_dac_rst [get_bd_pins dac_rst_o] [get_bd_pins redpitaya_dac_0/dac_rst]
+  connect_bd_net -net redpitaya_dac_0_dac_sel [get_bd_pins dac_sel_o] [get_bd_pins redpitaya_dac_0/dac_sel]
+  connect_bd_net -net redpitaya_dac_0_dac_wrt [get_bd_pins dac_wrt_o] [get_bd_pins redpitaya_dac_0/dac_wrt]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -272,8 +284,20 @@ proc create_hier_cell_adc { parentCell nameHier } {
   create_bd_pin -dir I -from 13 -to 0 adc_dat_a_i
   create_bd_pin -dir I -from 13 -to 0 adc_dat_b_i
 
-  # Create instance: axis_red_pitaya_adc_0, and set properties
-  set axis_red_pitaya_adc_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_red_pitaya_adc:1.0 axis_red_pitaya_adc_0 ]
+  # Create instance: redpitaya_adc_0, and set properties
+  set block_name redpitaya_adc
+  set block_cell_name redpitaya_adc_0
+  if { [catch {set redpitaya_adc_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $redpitaya_adc_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {125000000} \
+ ] [get_bd_pins /adc/redpitaya_adc_0/adc_clk]
 
   # Create instance: signal_split_0, and set properties
   set block_name signal_split
@@ -288,16 +312,16 @@ proc create_hier_cell_adc { parentCell nameHier } {
   
   # Create interface connections
   connect_bd_intf_net -intf_net DataAcquisition_M_AXIS_PORT1 [get_bd_intf_pins M_AXIS_PORT1] [get_bd_intf_pins signal_split_0/M_AXIS_PORT1]
-  connect_bd_intf_net -intf_net axis_red_pitaya_adc_0_M_AXIS [get_bd_intf_pins axis_red_pitaya_adc_0/M_AXIS] [get_bd_intf_pins signal_split_0/S_AXIS]
+  connect_bd_intf_net -intf_net redpitaya_adc_0_m_axis [get_bd_intf_pins redpitaya_adc_0/m_axis] [get_bd_intf_pins signal_split_0/S_AXIS]
   connect_bd_intf_net -intf_net signal_split_0_M_AXIS_PORT2 [get_bd_intf_pins M_AXIS_PORT2] [get_bd_intf_pins signal_split_0/M_AXIS_PORT2]
 
   # Create port connections
-  connect_bd_net -net adc_clk_n_i_1 [get_bd_pins adc_clk_n_i] [get_bd_pins axis_red_pitaya_adc_0/adc_clk_n]
-  connect_bd_net -net adc_clk_p_i_1 [get_bd_pins adc_clk_p_i] [get_bd_pins axis_red_pitaya_adc_0/adc_clk_p]
-  connect_bd_net -net adc_dat_a_i_1 [get_bd_pins adc_dat_a_i] [get_bd_pins axis_red_pitaya_adc_0/adc_dat_a]
-  connect_bd_net -net adc_dat_b_i_1 [get_bd_pins adc_dat_b_i] [get_bd_pins axis_red_pitaya_adc_0/adc_dat_b]
-  connect_bd_net -net axis_red_pitaya_adc_0_adc_clk [get_bd_pins adc_clk] [get_bd_pins axis_red_pitaya_adc_0/adc_clk]
-  connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_pins adc_csn_o] [get_bd_pins axis_red_pitaya_adc_0/adc_csn]
+  connect_bd_net -net adc_clk_n_i_1 [get_bd_pins adc_clk_n_i] [get_bd_pins redpitaya_adc_0/adc_clk_n]
+  connect_bd_net -net adc_clk_p_i_1 [get_bd_pins adc_clk_p_i] [get_bd_pins redpitaya_adc_0/adc_clk_p]
+  connect_bd_net -net adc_dat_a_i_1 [get_bd_pins adc_dat_a_i] [get_bd_pins redpitaya_adc_0/adc_dat_a]
+  connect_bd_net -net adc_dat_b_i_1 [get_bd_pins adc_dat_b_i] [get_bd_pins redpitaya_adc_0/adc_dat_b]
+  connect_bd_net -net redpitaya_adc_0_adc_clk [get_bd_pins adc_clk] [get_bd_pins redpitaya_adc_0/adc_clk]
+  connect_bd_net -net redpitaya_adc_0_adc_csn [get_bd_pins adc_csn_o] [get_bd_pins redpitaya_adc_0/adc_csn]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1120,20 +1144,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: GPIO_MSB_OUT_0, and set properties
-  set block_name GPIO_MSB_OUT
-  set block_cell_name GPIO_MSB_OUT_0
-  if { [catch {set GPIO_MSB_OUT_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $GPIO_MSB_OUT_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.GPIO_OUT_WIDTH {16} \
- ] $GPIO_MSB_OUT_0
-
   # Create instance: PS7
   create_hier_cell_PS7 [current_bd_instance .] PS7
 
@@ -1143,7 +1153,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
-   CONFIG.C_ALL_INPUTS {0} \
+   CONFIG.C_ALL_INPUTS {1} \
    CONFIG.C_ALL_INPUTS_2 {0} \
    CONFIG.C_ALL_OUTPUTS_2 {1} \
    CONFIG.C_IS_DUAL {1} \
@@ -1199,11 +1209,47 @@ proc create_root_design { parentCell } {
   # Create instance: xlslice_0, and set properties
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
-   CONFIG.DIN_FROM {3} \
-   CONFIG.DIN_TO {3} \
-   CONFIG.DIN_WIDTH {16} \
+   CONFIG.DIN_FROM {0} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {32} \
    CONFIG.DOUT_WIDTH {1} \
  ] $xlslice_0
+
+  # Create instance: xlslice_1, and set properties
+  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {4} \
+   CONFIG.DIN_TO {4} \
+   CONFIG.DIN_WIDTH {32} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_1
+
+  # Create instance: xlslice_2, and set properties
+  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {8} \
+   CONFIG.DIN_TO {8} \
+   CONFIG.DIN_WIDTH {32} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_2
+
+  # Create instance: xlslice_3, and set properties
+  set xlslice_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_3 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {12} \
+   CONFIG.DIN_TO {12} \
+   CONFIG.DIN_WIDTH {32} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_3
+
+  # Create instance: xlslice_clk, and set properties
+  set xlslice_clk [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_clk ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {4} \
+   CONFIG.DIN_TO {4} \
+   CONFIG.DIN_WIDTH {16} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_clk
 
   # Create interface connections
   connect_bd_intf_net -intf_net PS7_M01_AXI1 [get_bd_intf_pins PS7/M01_AXI1] [get_bd_intf_pins axi_gpio_1/S_AXI]
@@ -1216,13 +1262,12 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net DIO_combine_0_DIO_n_data [get_bd_ports exp_n_tri_io] [get_bd_pins DIO_combine_0/DIO_n_data]
   connect_bd_net -net DIO_combine_0_DIO_p_data [get_bd_ports exp_p_tri_io] [get_bd_pins DIO_combine_0/DIO_p_data]
-  connect_bd_net -net GPIO_MSB_OUT_0_GPIO_MSB_DATA_OUT [get_bd_pins DIO_combine_0/DIO_PORT2_data] [get_bd_pins GPIO_MSB_OUT_0/GPIO_MSB_DATA_OUT]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins adc/adc_clk_n_i]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins adc/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins adc/adc_dat_a_i]
   connect_bd_net -net adc_dat_b_i_1 [get_bd_ports adc_dat_b_i] [get_bd_pins adc/adc_dat_b_i]
-  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins signal_split_0/S_AXIS_tdata]
-  connect_bd_net -net axi_gpio_1_gpio_io_o [get_bd_pins GPIO_MSB_OUT_0/GPIO_DATA] [get_bd_pins axi_gpio_1/gpio_io_o]
+  connect_bd_net -net axi_gpio_1_gpio2_io_o [get_bd_pins axi_gpio_1/gpio2_io_o] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din]
+  connect_bd_net -net axi_gpio_1_gpio_io_o [get_bd_pins axi_gpio_1/gpio_io_o] [get_bd_pins signal_split_0/S_AXIS_tdata]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_clk [get_bd_pins adc/adc_clk] [get_bd_pins dac/aclk]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins adc/adc_csn_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_ports dac_clk_o] [get_bd_pins dac/dac_clk_o]
@@ -1230,7 +1275,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axis_red_pitaya_dac_0_dac_rst [get_bd_ports dac_rst_o] [get_bd_pins dac/dac_rst_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_sel [get_bd_ports dac_sel_o] [get_bd_pins dac/dac_sel_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_wrt [get_bd_ports dac_wrt_o] [get_bd_pins dac/dac_wrt_o]
-  connect_bd_net -net c_counter_binary_0_Q [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net c_counter_binary_0_Q [get_bd_pins c_counter_binary_0/Q] [get_bd_pins xlslice_clk/Din]
   connect_bd_net -net daisy_n_i_1 [get_bd_ports daisy_n_i] [get_bd_pins util_ds_buf_1/IBUF_DS_N]
   connect_bd_net -net daisy_p_i_1 [get_bd_ports daisy_p_i] [get_bd_pins util_ds_buf_1/IBUF_DS_P]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DIO_combine_0/DIO_PORT0_data] [get_bd_pins PS7/FCLK_CLK0] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins c_counter_binary_0/CLK]
@@ -1239,7 +1284,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_ports daisy_n_o] [get_bd_pins util_ds_buf_2/OBUF_DS_N]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_ports daisy_p_o] [get_bd_pins util_ds_buf_2/OBUF_DS_P]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins signal_split_0/S_AXIS_tvalid] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT1_data] [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins DIO_combine_0/DIO_PORT1_data] [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins xlslice_clk/Dout]
+  connect_bd_net -net xlslice_0_Dout1 [get_bd_pins DIO_combine_0/DIO_PORT2_data] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins DIO_combine_0/DIO_PORT3_data] [get_bd_pins xlslice_1/Dout]
+  connect_bd_net -net xlslice_2_Dout [get_bd_pins DIO_combine_0/DIO_PORT4_data] [get_bd_pins xlslice_2/Dout]
+  connect_bd_net -net xlslice_3_Dout [get_bd_pins DIO_combine_0/DIO_PORT5_data] [get_bd_pins xlslice_3/Dout]
 
   # Create address segments
   assign_bd_address -offset 0x42000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces PS7/processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
