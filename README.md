@@ -610,9 +610,20 @@ endmodule
 #### 4.3.3.3. [ADC & DAC](https://github.com/pavel-demin/red-pitaya-notes/issues/479)
 
 1. ADC and DAC commonly use **offset binary** to transfer digital and analog, e.g. in a 14 bit convertor `00 0000 0000 0000` represent `-1V`(lowest voltage), `10 0000 0000 0000` represent `0V`, `11 1111 1111 1111` represent `1V`(highest voltage).
-2. In DSP IP cores (CIC, FIR, Complex Multiplier) provided by Xilinx work with the **two's complement** format, so do the redpitaya IP cores.
+2. In DSP IP cores (CIC, FIR, Complex Multiplier) provided by Xilinx work with the **two's complement** format, so do the redpitaya ADDA IP cores.
 3. There is an **inverting amplifier** somewhere between the SMA connector and the ADC input. My ADC IP core inverts the ADC samples to have the same signal polarity as at the SMA connector.
-4. [The ODDR primitive](https://bbs.huaweicloud.com/blogs/283583)
+4. For conclusion, on Redpitaya-STM125-14: 
+
+    > top clipping (+1.1 V) <-> inverting amplifier (-1.1 V) <-> ADC/DAC (00 0000 0000 0000) <-> IP core (0001 1111 1111 1111)/(0x1FFF) <-> signed 16-bit int (8191)
+    
+    >bottom clipping (-1.1 V) <-> inverting amplifier (+1.1 V) <-> ADC/DAC (11 1111 1111 1111) <-> IP core (1110 0000 0000 0000)/(0xE000) <-> signed 16-bit int (-8192)
+
+    >zero voltage up (0+0..V) <-> inverting amplifier (0-0..V) <-> ADC/DAC (01 1111 1111 1111) <-> IP core (0000 0000 0000 0000)/(0x0000) <-> signed 16-bit int (0)
+    
+    >zero voltage down (0-0..V) <-> inverting amplifier (0+0..V) <-> ADC/DAC (10 0000 0000 0000) <-> IP core (1111 1111 1111 1111)/(0xFFFF) <-> signed 16-bit int (-1)
+
+
+5. [The ODDR primitive](https://bbs.huaweicloud.com/blogs/283583)
 
 **DAC module**
 
@@ -883,17 +894,30 @@ finished
 
 # 8. Transmitter
 
-'''
- cd /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1
-'''
+```
+cd /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1
+```
 
-'''
- scp system_wrapper.bit root@192.168.1.42:transmitter.bit
-'''
+```
+scp system_wrapper.bit root@192.168.1.35:transmitter.bit
+```
 
-'''
- scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.15:transmitter.bit
-'''
+```
+scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.31:transmitter.bit
+```
+
+```
+scp root@192.168.1.31:/root/transmitter.c /mnt/c/Users/kichi/Documents/Kichi@git/1.c
+```
+
+```
+gcc -o transmitter transmitter.c
+```
+
+```
+cat transmitter.bit > /dev/xdevcfg
+```
+
 
 ## 8.1. [AXI - GPIO](/reference/pg144-axi-gpio.pdf)
 
