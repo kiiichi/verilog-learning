@@ -899,15 +899,15 @@ cd /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/trans
 ```
 
 ```
-scp system_wrapper.bit root@192.168.1.35:transmitter.bit
+scp system_wrapper.bit root@192.168.1.15:transmitter.bit
 ```
 
 ```
-scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.31:transmitter.bit
+scp /mnt/c/Users/rinu2/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.runs/impl_1/system_wrapper.bit root@192.168.1.15:transmitter.bit
 ```
 
 ```
-scp root@192.168.1.31:/root/transmitter.c /mnt/c/Users/kichi/Documents/Kichi@git/1.c
+scp root@192.168.1.15:/root/transmitter.c /mnt/c/Users/kichi/Documents/Kichi@git/1.c
 ```
 
 ```
