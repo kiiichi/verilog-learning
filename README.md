@@ -918,6 +918,14 @@ gcc -o transmitter transmitter.c
 cat transmitter.bit > /dev/xdevcfg
 ```
 
+```
+cd /mnt/c/Users/kichi/Documents/Kichi@git/verilog-learning/code/PDE_code
+```
+
+```
+gcc -o tx2 transmitter2.c -lrt -lpthread
+```
+
 
 ## 8.1. [AXI - GPIO](/reference/pg144-axi-gpio.pdf)
 

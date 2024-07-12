@@ -1,0 +1,157 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri May 31 16:25:29 2024
+# Process ID: 20396
+# Current directory: C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/transmitter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20272 C:\Users\kichi\Documents\Kichi@git\verilog-learning\prj\transmitter\transmitter.xpr
+# Log file: C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/transmitter/vivado.log
+# Journal file: C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/transmitter\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/transmitter/transmitter.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/rinu2/Documents/kichi@git/verilog-learning/prj/transmitter' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores', nor could it be found using path 'C:/Users/rinu2/Documents/kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1024.891 ; gain = 0.000
+update_compile_order -fileset sources_1
+save_project_as BRAM_test C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/BRAM_test -force
+WARNING: [IP_Flow 19-3571] IP 'system_DIO_combine_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_redpitaya_adc_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_redpitaya_dac_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_signal_combine_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_signal_split_0_1' is restricted:
+* Module reference is stale and needs refreshing.
+WARNING: [IP_Flow 19-3571] IP 'system_signal_combine_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_DIO_combine_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_redpitaya_adc_0_0' is restricted:
+* Detected changes to module reference file(s).
+WARNING: [IP_Flow 19-3571] IP 'system_redpitaya_dac_0_0' is restricted:
+* Detected changes to module reference file(s).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk_n' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'adc_clk_p' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 'm_axis': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk' does not have any bus interfaces associated with it.
+CRITICAL WARNING: [IP_Flow 19-4751] Bus Interface 'adc_clk': FREQ_HZ bus parameter is missing for output clock interface.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk_n' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-5661] Bus Interface 'adc_clk_p' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-5107] Inferred bus interface 's_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'dac_rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'dac_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ddr_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's_axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'dac_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'dac_rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'dac_clk' does not have any bus interfaces associated with it.
+CRITICAL WARNING: [IP_Flow 19-4751] Bus Interface 'dac_clk': FREQ_HZ bus parameter is missing for output clock interface.
+WARNING: [IP_Flow 19-5661] Bus Interface 'ddr_clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS_PORT1' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS_PORT2' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS_PORT1': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS_PORT2': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS_PORT1' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS_PORT2' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS_PORT1': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS_PORT2': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS_PORT1' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS_PORT2' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS_PORT1': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS_PORT2': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS': Added interface parameter 'FREQ_HZ' with value '125000000'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kichi/Documents/Kichi@git/RedPitaya-FPGA/prj/Examples/Frequency_counter/tmp/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+save_project_as: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1502.574 ; gain = 0.000
+open_bd_design {C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/BRAM_test/BRAM_test.srcs/sources_1/bd/system/system.bd}
+Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_1
+Adding component instance block -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_2
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_125M
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_wr_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
+Adding component instance block -- xilinx.com:module_ref:redpitaya_adc:1.0 - redpitaya_adc_0
+Adding component instance block -- xilinx.com:module_ref:signal_combine:1.0 - signal_combine_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:module_ref:redpitaya_dac:1.0 - redpitaya_dac_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:c_counter_binary:12.0 - c_counter_binary_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_clk
+Adding component instance block -- xilinx.com:module_ref:DIO_combine:1.0 - DIO_combine_0
+Adding component instance block -- xilinx.com:module_ref:signal_split:1.0 - signal_split_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_1
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_2
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_3
+WARNING: [BD 41-1731] Type mismatch between connected pins: /PS7/FCLK_CLK0(clk) and /DIO_combine_0/DIO_PORT0_data(undef)
+Successfully read diagram <system> from BD file <C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/BRAM_test/BRAM_test.srcs/sources_1/bd/system/system.bd>
+open_bd_design: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1502.574 ; gain = 0.000
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+set_property location {1 95 -231} [get_bd_cells blk_mem_gen_0]
+set_property location {1 132 -221} [get_bd_cells blk_mem_gen_0]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Use_Byte_Write_Enable {true} CONFIG.Byte_Size {8} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Register_PortB_Output_of_Memory_Primitives {false} CONFIG.Use_RSTA_Pin {true} CONFIG.Use_RSTB_Pin {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Port_B_Enable_Rate {100} CONFIG.use_bram_block {BRAM_Controller} CONFIG.EN_SAFETY_CKT {false}] [get_bd_cells blk_mem_gen_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] system_axi_bram_ctrl_0_0: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] system_axi_bram_ctrl_0_0: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+endgroup
+WARNING: [IP_Flow 19-465] param 'READ_LATENCY' already exists. Ignoring.
+WARNING: [IP_Flow 19-465] param 'RD_CMD_OPTIMIZATION' already exists. Ignoring.
+WARNING: [IP_Flow 19-465] param 'READ_LATENCY' already exists. Ignoring.
+WARNING: [IP_Flow 19-465] param 'RD_CMD_OPTIMIZATION' already exists. Ignoring.
+set_property -dict [list CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_ctrl_0]
+set_property location {0.5 -116 -229} [get_bd_cells axi_bram_ctrl_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+save_bd_design
+Wrote  : <C:\Users\kichi\Documents\Kichi@git\verilog-learning\prj\BRAM_test\BRAM_test.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/kichi/Documents/Kichi@git/verilog-learning/prj/BRAM_test/BRAM_test.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  5 18:28:26 2024...
