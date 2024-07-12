@@ -249,8 +249,10 @@ int main(int argc, char **argv) {
 
     free(data_array);
 
-    timestamps[0].start = (start_time1+start_time2)/2;
-    timestamps[0].end = (end_time1+end_time2)/2;
+    timestamps[0].start.tv_sec = (start_time1.tv_sec + start_time2.tv_sec)/2;
+    timestamps[0].start.tv_nsec = (start_time1.tv_nsec + start_time2.tv_nsec)/2;
+    timestamps[0].end.tv_sec = (end_time1.tv_sec + end_time2.tv_sec)/2;
+    timestamps[0].end.tv_nsec = (end_time1.tv_nsec + end_time2.tv_nsec)/2;
 
     double elapsed_time = timespec_diff_sec(&start_time1, &end_time1);
     double freq = NUM_ITERATIONS / elapsed_time;
@@ -262,7 +264,6 @@ int main(int argc, char **argv) {
     printf("End time1: %ld seconds, %ld nanoseconds\n", end_time1.tv_sec, end_time1.tv_nsec);
     printf("End time2: %ld seconds, %ld nanoseconds\n", end_time2.tv_sec, end_time2.tv_nsec);
     printf("End time_diff: %f microseconds\n", End_time_diff);
-    printf("End time: %ld seconds, %ld nanoseconds\n", end_time.tv_sec, end_time.tv_nsec);
     printf("Elapsed time: %f seconds\n", elapsed_time);
     printf("freq: %f Hz\n", freq);
     printf("Threshold time: %d microseconds\n", threshold_time);
